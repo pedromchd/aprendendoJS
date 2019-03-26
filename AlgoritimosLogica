@@ -1,0 +1,101 @@
+//1_ALGORITMO AreaCircunferencia
+var raio, area;
+raio = parseFloat(prompt("Informe o raio da circunferência"));
+area = 3.14159 * (raio **2);
+alert("A área da circunferência é: " + area);
+
+//2_ALGORITMO SalarioLiquido
+var vHAula, vtrabMes, per_descINSS, sLiq, sBrut, descINSS;
+vHAula = parseFloat(prompt("Insira o valor da Hora Aula"));
+vtrabMes = parseFloat(prompt("Insira o número de horas trabalhadas no mês"));
+per_descINSS = parseFloat(prompt("Insira o percentual de desconto do INSS"));
+sBrut = vHAula *vtrabMes;
+descINSS = per_descINSS /100 *sBrut;
+sLiq = sBrut -descINSS;
+alert("O salário líquido é: " + sLiq);
+
+//3_ALGORITMO CelsiusFarenheit
+var C, F;
+C = parseFloat(prompt("Insira a temperatura em Celsius"));
+F = (9 *C +160) /5;
+alert("Sua temperatura em Celsius equivale a: " + F + " Farenheit");
+
+//4_ALGORITMO FarenheitCelsius
+var C, F;
+F = parseFloat(prompt("Insira a temperatura em Farenheit"));
+C = 5 *(F - 32) /9;
+alert("Sua temperatura em Farenheit equivale a: " + C + " Celsius");
+
+//5_ALGORITMO Volume
+var volm, raio, height;
+raio = parseFloat(prompt("Insira o valor do raio da lata de óleo"));
+height = parseFloat(prompt("Insira a altura da lata de óleo"));
+//base10 = 10e5 * 10e-5;
+volm = 3.14159 *raio **2 *height;
+alert("O volume da lata de óleo é: " + volm);
+
+//6_ALGORITMO GastoViagem
+var tGasto, velMed, dVT, ltUso;
+tGasto = parseFloat(prompt("Insira o tempo gasto durante a viagem em horas"));
+velMed = parseFloat(prompt("Forneça a velocidade média do automóvel em km/h"));
+dVT = velMed *tGasto;
+ltUso = dVT /12;
+alert("Tempo gasto (h): " + tGasto);
+alert("Velocidade média (km/h): " + velMed);
+alert("Distâcia percorrida (km): " + dVT);
+alert("Litros gastos: " + ltUso);
+
+//7_ALGORITMO PrestaçãoAtraso
+var prest, val, tempo, tax;
+val = parseFloat(prompt("Insira o valor da prestação"));
+tempo = parseFloat(prompt("Insira o tempo em meses"));
+tax = parseFloat(prompt("Insira a taxa de juros"));
+prest = val +(val -tax /100) *tempo;
+alert("O valor da prestação em atraso é: " + prest);
+
+//8_ALGORITMO VolumeRetângulo
+var volm, widht, height, compr;
+compr = parseFloat(prompt("Insira o comprimento da caixa"));
+height = parseFloat(prompt("Insira a altura da caixa"));
+widht = parseFloat(prompt("Insira a largura da caixa"));
+volm = compr *widht *height;
+alert("O volume da caixa é: " + volm);
+
+//9_ALGORITMO DolarReal
+var cot, dol, real;
+//const cot = 3.81;
+//parseFloat>>>Number
+dol = parseFloat(prompt("Insira a quantia a ser convertida em reais:"));
+cot = parseFloat(prompt("Insira a cotação do Dólar:"));
+real = dol * cot;
+alert("Você tem: " + real + " reais.");
+
+//11_ALGORITMO Troca
+var a, b, temp;
+a = parseFloat(prompt("Insira o valor de A"));
+b = parseFloat(prompt("Insira o valor de B"));
+alert("A = " + a + " e " + "B = " + b);
+temp = a;
+a = b;
+b = temp;
+alert("Agora A = " + a + " e " + "B = " + b);
+
+//17_ALGORITIMO ApuraçãoUrna
+var A, B, C, N, Br, total, pA, pB, pC, pN, pBr;
+A = parseInt(prompt("Votos válidos para A"));
+B = parseInt(prompt("Votos válidos para B"));
+C = parseInt(prompt("Votos válidos para C"));
+N = parseInt(prompt("Votos nulos"));
+Br = parseInt(prompt("Votos brancos"));
+total = A +B +C +N +Br;
+pA = A *100 /total;
+pB = B *100 /total;
+pC = C *100 /total;
+pN = N *100 /total;
+pBr = Br *100 /total;
+alert("Total de Eleitores: " + total);
+alert("% de votos para A: " + pA);
+alert("% de votos para B: " + pB);
+alert("% de votos para C: " + pC);
+alert("% de votos nulos: " + pN);
+alert("% de votos brancos: " + pBr);
