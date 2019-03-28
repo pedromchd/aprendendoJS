@@ -1,0 +1,40 @@
+//ALGORITMO ProximoPar
+var n1, pp;
+n1 = parseInt(prompt("Insira um numero qualquer para saber o seu próximo par"));
+pp = n1 +(2 -(n1 %2));
+alert("O próximo par de " + n1 + " é " + pp);
+
+//ALGORITMO ParAnterior
+var n1, pa;
+n1 = parseInt(prompt("Insira um numero qualquer para saber o seu par anterior"));
+pa = n1 -(2 -(n1 %2));
+alert("O par anterior de " + n1 + " é " + pa);
+
+//ALGORITMO ProximoPar
+var n1, pp;
+n1 = parseInt(prompt("Insira um numero qualquer para saber o seu próximo par"));
+pp = n1 +(1 +(n1 %2));
+alert("O próximo par de " + n1 + " é " + pp);
+
+//ALGORITMO FarenheitCelsius
+var C, F;
+F = parseFloat(prompt("Insira a temperatura em Farenheit"));
+C = 5 *(F - 32)/9;
+alert("Sua temperatura em Farenheit equivale a: " + C + " Celsius");
+
+//ALGORITMO RealDolar
+var cot, dol, real;
+real = parseFloat(prompt("Insira a quantia a ser convertida em dólares:"));
+cot = parseFloat(prompt("Insira a cotação do Dólar:"));
+dol = real /cot;
+alert("Você tem: " + dol + " dólares");
+
+//ALGORITIMO Pizzaria
+var qntPiz, qntRef, toPiz, toRef, desc, toFinal;
+qntPiz = parseFloat(prompt("A pizza custa R$30, quantas gostaria?"));
+qntRef = parseFloat(prompt("O refrigerante está a R$5, quantos deseja?"));
+toPiz = qntPiz*30;
+toRef = qntRef*5;
+desc = (toPiz + toRef)*0.05;
+toFinal = toPiz +toRef -desc;
+alert(toFinal);
