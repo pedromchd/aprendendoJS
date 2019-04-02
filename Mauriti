@@ -1,0 +1,9 @@
+//Média
+var n1, n2, n3, n4, n5, maior;
+n1 = parseFloat(prompt("Insira n1"));
+n2 = parseFloat(prompt("Insira n2"));
+n3 = parseFloat(prompt("Insira n3"));
+n4 = parseFloat(prompt("Insira n4"));
+n5 = parseFloat(prompt("Insira n5"));
+maior = Math.max(n1,n2,n3,n4,n5);
+alert("O maior número é: " + maior);
