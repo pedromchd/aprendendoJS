@@ -1,0 +1,19 @@
+//ALGORITMO ApuracaoUrna
+var A,B,C,N,Br,total,pA,pB,pC,pN,pBr;
+A=parseInt(prompt("Votos válidos para A"));
+B=parseInt(prompt("Votos válidos para B"));
+C=parseInt(prompt("Votos válidos para C"));
+N=parseInt(prompt("Votos válidos para N"));
+Br=parseInt(prompt("Votos válidos para Br"));
+total=A+B+C+N+Br;
+pA=A*100/total;
+pB=B*100/total;
+pC=C*100/total;
+pN=N*100/total;
+pBr=Br*100/total;
+alert("Total de Eleitores: "+total+"<br/>");
+alert("% de votos para A: "+pA+"<br/>");
+alert("% de votos para B: "+pB+"<br/>");
+alert("% de votos para C: "+pC+"<br/>");
+alert("% de votos nulos: "+pN+"<br/>");
+alert("% de votos brancos: "+pBr+"<br/>");
