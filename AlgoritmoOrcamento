@@ -13,9 +13,9 @@ alert("O piso convencional adiciona 10% na quantidade de piso a ser comprada, o 
 dimPeca = m_compPeca *m_largPeca; //4
 dimPiso = cm_compPiso *cm_largPiso; //100
 qntPiso_assent = dimPeca /(dimPiso /1000); //40
-if (typeAssent = "c") {
+if (typeAssent == "c") {
 	qntPiso_assent += qntPiso_assent *0.1; //44
-} else if (typeAssent = "d") {
+} else if (typeAssent == "d") {
 	qntPiso_assent += qntPiso_assent *0.2; //48
 }
 cust_maoObra = dimPeca *val_maoObraM2; //200
