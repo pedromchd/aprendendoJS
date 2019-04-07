@@ -1,0 +1,61 @@
+//Algoritmo ORÇAMENTO
+var m_compPeca, m_largPeca, cm_compPiso, cm_largPiso, precoUnit_pisoRS, val_maoObraM2, typeAssent;
+var dimPeca, dimPiso, qntPiso_assent;
+var cust_maoObra, cust_pisoAssent, cust_totalObra;
+m_compPeca = parseFloat(prompt("Insira o comprimento da peça em metros")); //2
+m_largPeca = parseFloat(prompt("Insira a largura da peça em metros")); //2
+cm_compPiso = parseFloat(prompt("Insira o comprimento do piso em centímetros")); //10
+cm_largPiso = parseFloat(prompt("Insira a largura do piso em centímetros")); //10
+precoUnit_pisoRS = parseFloat(prompt("Insira o preço unitário do piso, em reais")); //20
+val_maoObraM2 = parseFloat(prompt("Insira o preço da mão de obra por m^2")); //50
+typeAssent = prompt("Insira o tipo de assentamento: [c] para convencional, [d] para diagonal"); //c
+alert("O piso convencional adiciona 10% na quantidade de piso a ser comprada, o diagonal, 20%");
+dimPeca = m_compPeca *m_largPeca; //4
+dimPiso = cm_compPiso *cm_largPiso; //100
+qntPiso_assent = dimPeca /(dimPiso /1000); //40
+if (typeAssent = "c") {
+	qntPiso_assent += qntPiso_assent *0.1; //44
+} else if (typeAssent = "d") {
+	qntPiso_assent += qntPiso_assent *0.2; //48
+}
+cust_maoObra = dimPeca *val_maoObraM2; //200
+cust_pisoAssent = qntPiso_assent *precoUnit_pisoRS; //880
+cust_totalObra = cust_maoObra +cust_pisoAssent; //1080
+alert("Mão de obra: " + cust_maoObra + " reais. Custo do piso por assentamento: " + cust_pisoAssent + " reais. Custo total da obra: " + cust_totalObra + " reais.");
+//200 //880 //1080
+
+//PSEUDOCODIGO
+//Variaveis
+m_compPeca, m_largPeca, cm_compPiso, cm_largPiso, precoUnit_pisoRS, val_maoObraM2: real
+typeAssent: caracter
+dimPeca, dimPiso, qntPiso_assent: real
+cust_maoObra, cust_pisoAssent, cust_totalObra: real
+//Algoritmo ORCAMENTO
+escreval("Insira o comprimento da peça em metros")
+leia(m_compPeca)
+escreval("Insira a largura da peça em metros")
+leia(m_largPeca)
+escreval("Insira o comprimento do piso em centímetros")
+leia(cm_compPiso)
+escreval("Insira a largura do piso em centímetros")
+leia(cm_largPiso)
+escreval("Insira o preço unitário do piso, em reais")
+leia(precoUnit_pisoRS)
+escreval("Insira o preço da mão de obra por m^2")
+leia(val_maoObraM2)
+escreval("Insira o tipo de assentamento: [c] para convencional, [d] para diagonal")
+leia(typeAssent)
+escreval("O piso convencional adiciona 10% na quantidade de piso a ser comprada, o diagonal, 20%")
+dimPeca := m_compPeca *m_largPeca
+dimPiso := cm_compPiso *cm_largPiso
+qntPiso_assent := dimPeca /(dimPiso /1000)
+se typeAssent = "c" entao
+qntPiso_assent := qntPiso_assent +(qntPiso_assent *0.1)
+fimse
+se typeAssent = "d" entao
+qntPiso_assent := qntPiso_assent +(qntPiso_assent *0.2)
+fimse
+cust_maoObra := dimPeca *val_maoObraM2
+cust_pisoAssent := qntPiso_assent *precoUnit_pisoRS
+cust_totalObra := cust_maoObra +cust_pisoAssent
+escreval("Mão de obra: ",cust_maoObra," reais. Custo do piso por assentamento: ",cust_pisoAssent," reais. Custo total da obra: ",cust_totalObra," reais.")
