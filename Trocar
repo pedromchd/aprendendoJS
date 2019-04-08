@@ -1,0 +1,31 @@
+/*
+Dado um número de 3 algarismos n=CDU, onde:
+    C é o algarismo das centenas;
+    D é o algarismo das dezenas;
+    U é o algarismo das unidades;
+Considere o número m constituído pelos algarismos de n em ordem inversa
+Isto é, m=UDC.
+Geral m a partir de n.
+*/
+
+var n, m, c, d, u;
+n = parseFloat(prompt("Insira um número N de 3 algarismos"));
+c = Math.floor(n/100);
+d = Math.floor((n-c*100)/10)*10;
+console.log(c)
+console.log(d)
+u = (n-c*100-d)*100;
+console.log(u)
+m = c + d + u;
+console.log(m)
+//alert(c+""+d+""+u);
+
+var n, c, d, u;
+n = parseFloat(prompt("Insira um número N de 3 algarismos"));
+c = n-n%100;
+console.log(c)
+u = n-(n-n%10);
+console.log(u)
+d = n-c-u;
+console.log(d)
+alert(u+""+d/10+""+c/100);
