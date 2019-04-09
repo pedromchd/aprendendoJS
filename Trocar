@@ -29,3 +29,19 @@ console.log(u)
 d = n-c-u;
 console.log(d)
 alert(u+""+d/10+""+c/100);
+
+
+var n, c, d, u;
+n = parseFloat(prompt("Insira um número N de 3 algarismos"));
+c = Math.floor(n/100);
+d = Math.floor(n%100/10);
+u = n%100%10
+alert(""+u+d+c);
+
+
+var n, cas;
+n = parseInt(prompt("Insira um número"));
+cas = parseInt(prompt("Número de casas a ser arredondada"));
+n = n/Math.pow(10,cas);
+alert(n);
+
