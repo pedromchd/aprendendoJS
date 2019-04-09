@@ -1,0 +1,38 @@
+/* Três amigos foram jantar em um restaurante e querem dividir a conta a pagar. 
+Faça um
+programa que leia o valor do consumo dos três e o percentual de gorgeta para o garçom. 
+Calcule
+e apresente o valor total da conta e o valor que cada um que cada um deverá pagar. */
+
+var cons, gorg, valTotal;
+cons = parseFloat(prompt("Insira o valor do consumo total dos três"));
+gorg = parseFloat(prompt("Insira o percentual da gorgeta ao garçom"));
+valTotal = cons + cons*(gorg/100);
+alert("Valor total: R$" + valTotal.toFixed(2) + " Cada um deverá pagar: R$" + (valTotal/3).toFixed(2));
+
+console.log(cons +", "+ gorg +", "+ valTotal +", "+ valTotal/3);  
+
+
+/* Daniel precisa calcular a duração de um evento em dias.
+Para ajudá-lo, faça um programa que
+calcule o total de dias entre duas datas 
+(D1, M1, A1 e D2, M2, A2), considerando meses de 30
+dias e a segunda data posterior à primeira. */
+
+var d1, m1, a1, d2, m2, a2;
+var convert1, convert2;
+var totalEvento;
+
+d1 = parseInt(prompt("Insira o dia do início"))
+m1 = parseInt(prompt("Insira o mês de início"));
+a1 = parseInt(prompt("Insira o ano de início"));
+
+d2 = parseInt(prompt("Insira o dia de término"))
+m2 = parseInt(prompt("Insira o mês de término"));
+a2 = parseInt(prompt("Insira o ano de término"));
+
+convert1 = a1*360 + m1*30 + d1
+convert2 = a2*360 + m2*30 + d2
+totalEvento = convert2 - convert1;
+
+alert(totalEvento);
