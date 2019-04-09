@@ -60,3 +60,10 @@ alert("x = " + x + " e " + "y = " + y);
 /*  Elaborar um programa que leia um número, calcule e informe os números pares mais próximos
 (anterior e posterior) a ele. */
 
+var n, pp, pa;
+
+n = parseInt(prompt('Insira um número inteiro e descubra seu par anterior e posterior'));
+pa = n -(2 -(n %2));
+pp = n +(2 -(n %2));
+
+alert('O par anterior e o posterior de ' + n + ' é ' + pa + ' e ' + pp);
