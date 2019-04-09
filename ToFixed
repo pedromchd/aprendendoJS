@@ -36,3 +36,27 @@ convert2 = a2*360 + m2*30 + d2
 totalEvento = convert2 - convert1;
 
 alert(totalEvento);
+
+
+/* Escreva um programa que leia os coeficientes a,b,c,d,e e f e calcule e mostra os valores de x e y
+x=(c*e-b*f)/(a*e-b*d) e y=(a*f-c*d)/(a*e-b*d) */
+
+var a, b, c, d, e, f;
+var x, y;
+
+a = parseFloat(prompt("Insira o valor de a"));
+b = parseFloat(prompt("Insira o valor de b"));
+c = parseFloat(prompt("Insira o valor de c"));
+d = parseFloat(prompt("Insira o valor de d"));
+e = parseFloat(prompt("Insira o valor de e"));
+f = parseFloat(prompt("Insira o valor de f"));
+
+x = (c*e-b*f)/(a*e-b*d);
+y = (a*f-c*d)/(a*e-b*d);
+
+alert("x = " + x + " e " + "y = " + y);
+
+
+/*  Elaborar um programa que leia um número, calcule e informe os números pares mais próximos
+(anterior e posterior) a ele. */
+
