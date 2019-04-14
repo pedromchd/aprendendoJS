@@ -1,4 +1,4 @@
-//Algoritmo ORÇAMENTO
+//ALGORITMO OrcamentoObra
 var m_compPeca, m_largPeca, cm_compPiso, cm_largPiso, precoUnit_pisoRS, val_maoObraM2, typeAssent;
 var dimPeca, dimPiso, qntPiso_assent;
 var cust_maoObra, cust_pisoAssent, cust_totalObra;
