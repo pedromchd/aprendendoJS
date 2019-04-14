@@ -1,3 +1,17 @@
+//ALGORITMO Fatorial
+var num, fat;
+num = parseInt(prompt("Digite um número"));
+fat = 1;
+if (num >= 1) {
+    do {
+        fat *= n;
+        num--;
+    } while (n >= 1);
+    alert(fat);
+} else {
+    alert("-1");
+}
+
 //ALGORITMO ParImpar
 var n1, n2, re, ip;
 n1 = parseInt(prompt("Pacela 1"));
