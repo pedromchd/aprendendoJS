@@ -4,9 +4,9 @@ num = parseInt(prompt("Digite um número"));
 fat = 1;
 if (num >= 1) {
     do {
-        fat *= n;
+        fat *= num;
         num--;
-    } while (n >= 1);
+    } while (num >= 1);
     alert(fat);
 } else {
     alert("-1");
