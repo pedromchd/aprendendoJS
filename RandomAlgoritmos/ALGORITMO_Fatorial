@@ -1,0 +1,14 @@
+//ALGORITMO Fatorial
+var num, fat;
+num = parseInt(prompt("Digite um número"));
+fat = 1;
+if (num >= 1) {
+    do {
+        fat *= num;
+        num--;
+    } while (num >= 1);
+    alert(fat);
+} else {
+    num = (num == 0) ? "1": "error";    
+    alert(num);
+}
