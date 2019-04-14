@@ -1,3 +1,18 @@
+/*
+fator = prompt("Digite um número para descobri seu faorial");
+c = fator;
+resultado = 1;
+
+while (c>=1){
+    resultado*=c;
+    c--;
+}
+if (fator<=0){
+    alert("-1");
+}
+alert(resultado);
+*/
+
 //ALGORITMO Fatorial
 var num, fat;
 num = parseInt(prompt("Digite um número"));
