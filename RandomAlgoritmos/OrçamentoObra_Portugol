@@ -1,4 +1,4 @@
-//PSEUDOCODIGO
+//PSEUDOCODIGO OrcamentoObra_Portugol
 //Variaveis
 m_compPeca, m_largPeca, cm_compPiso, cm_largPiso, precoUnit_pisoRS, val_maoObraM2: real
 typeAssent: caracter
