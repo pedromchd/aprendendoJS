@@ -21,4 +21,4 @@ if (typeAssent == "c") {
 cust_maoObra = dimPeca *val_maoObraM2;
 cust_pisoAssent = qntPiso_assent *precoUnit_pisoRS;
 cust_totalObra = cust_maoObra +cust_pisoAssent;
-alert("Mão de obra: R$" + cust_maoObra + ". Piso por assentamento: R$" + cust_pisoAssent + ". Total da obra: R$" + cust_totalObra);
+alert("Mão de obra: R$" +cust_maoObra+ ". Piso por assentamento: R$" +cust_pisoAssent+ ". Total da obra: R$" +cust_totalObra);
