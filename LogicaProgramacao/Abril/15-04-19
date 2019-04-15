@@ -41,6 +41,19 @@ n10 = parseInt(s%100%50%20/10);
 n5 = parseInt(s%100%50%20%10/5);
 alert(n100+"\n"+n50+"\n"+n20+"\n"+n10+"\n"+n5);
 
+var s, n100, n50, n20, n10, n5;
+s = parseInt(prompt("Insira o valor do saque a ser feito"));
+n100 = parseInt(s/100);
+s = s%100;
+n50 = parseInt(s/50);
+s = s%50;
+n20 = parseInt(s/20);
+s = s%20;
+n10 = parseInt(s/10);
+s = s%10;
+n5 = parseInt(s/5);
+alert(n100+"\n"+n50+"\n"+n20+"\n"+n10+"\n"+n5);
+
 
 //*************************************************************************
 /* Calcular a proxima posicao e a posicao anterior em uma lista circular
