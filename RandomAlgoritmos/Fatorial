@@ -9,6 +9,6 @@ if (num >= 1) {
     } while (num >= 1);
     alert(fat);
 } else {
-    fat = (num == 0) ? "1": "error";    
+    fat = (num == 0) ? 1: "NaN";    
     alert(fat);
 }
