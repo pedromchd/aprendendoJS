@@ -1,70 +1,79 @@
-/* Calcular o consumo médio de um automovel (medido em km/l), dado que sao conhecidos a d total percorrida e o 
-volume do combustivel consumido para percorrê-la */
-var dist, combust, consum;
+/* 1) Calcular o consumo médio de um automóvel (medido em quilômetros por litro)
+dado que são conhecidos a distância total percorrida e o volume do combustível consumido para percorrê-la */
+
+var dist, comb, cons;
 dist = parseInt(prompt("Insira a distância total percorrida"));
-combust = parseFloat(prompt("Insira combustível consumido durante o trajeto"));
-consum = dist/combust;
-alert("O consumo médio foi de: " + consum.toFixed(1) + " km/l");
+comb = parseFloat(prompt("Insira combustível consumido durante o trajeto"));
+cons = dist/comb;
+alert("O consumo médio foi de: " + cons.toFixed(1) + " km/l");
 
-//*************************************************************************
-/* construa um programa para pogamento para comissao de vendedores de peças, levando se em consideraçao que sua comissao sera
-de 5% do valor da vendas e que vc tem os seguintes dados:
-identificacao do vendedor
-codigo da peca
-preco unitario da peca
-qntd vendida */
-var comis, nome, code, precoUni, qntVend;
+
+/* 2) Construa um programa de pagamento para comissão de vendedores de peças levando-se em consideração 
+que sua comissão será de 5% do valor da vendas e que você tem os seguintes dados:
+Identificação do vendedor
+Código da peça
+Preço unitario da peça
+Quantidade vendida */
+
+var comi, nome, code, prUn, qntV;
 nome = prompt("Insira o nome do vendedor");
-code = parseInt(prompt("Insira o codigo da peca"));
-precoUni = parseFloat(prompt("Insira o preco unitario da peca"));
-qntVend = parseInt(prompt("Insira a quantidade de pecas vendidas"));
-comis = precoUni*qntVend*0.05;
-alert("A comissão é de R$" + comis.toFixed(2));
-console.log(comis+" "+nome+" "+code+" "+precoUni+" "+qntVend)
+code = parseInt(prompt("Insira o código da peça"));
+prUn = parseFloat(prompt("Insira o preço unitário da peça"));
+qntV = parseInt(prompt("Insira a quantidade de peças vendidas"));
+comi = prUn*qntV*0.05;
+alert("A comissão será de R$" + comi.toFixed(2));
 
-//*************************************************************************
-/* o banco inteligente esta tentado minimizar o numero de notas que o cliente recebe ao relizar o saque.
-para isso eles precisam de sua ajuda para saber dado o valor s do saque, qual a menor quantidade de notas
-que a maquina deve fornecer para o cliente 
-considerando que o banco disponibiliza notas de 2, 5, 10, 20, 50 ,100 */
 
-var s, temp, n100, n50, n20, n10, n5;
-s = parseInt(prompt("Insira o valor do \n saque a ser feito"));
-n100 = parseInt(s/100);
-//s = s%100;
-n50 = parseInt(s%100/50);
-//s = s%50;
-n20 = parseInt(s%100%50/20);
-//s = s%20;
-n10 = parseInt(s%100%50%20/10);
-//s = s%10;
-n5 = parseInt(s%100%50%20%10/5);
-alert(n100+"\n"+n50+"\n"+n20+"\n"+n10+"\n"+n5);
+/* 3) O banco inteligente está tentado minimizar o número de notas que o cliente recebe ao relizar o saque
+para isso eles precisam de sua ajuda para saber dado o valor s do saque, qual a menor quantidade 
+de notas que a máquina deve fornecer para o cliente 
+considerando que o banco disponibiliza notas de 5, 10, 20, 50 ,100 */
 
 var s, n100, n50, n20, n10, n5;
 s = parseInt(prompt("Insira o valor do saque a ser feito"));
 n100 = parseInt(s/100);
-s = s%100;
+s %= 100;
 n50 = parseInt(s/50);
-s = s%50;
+s %= 50;
 n20 = parseInt(s/20);
-s = s%20;
+s %= 20;
 n10 = parseInt(s/10);
-s = s%10;
+s %= 10;
 n5 = parseInt(s/5);
-alert(n100+"\n"+n50+"\n"+n20+"\n"+n10+"\n"+n5);
+alert('\nNotas de:' + '\nR$100: '+ n100 +
+'\nR$50: '+ n50 +'\nR$20: '+ n20 +
+'\nR$10: '+ n10 +'\nR$5: '+ n5);
 
 
-//*************************************************************************
-/* Calcular a proxima posicao e a posicao anterior em uma lista circular
-(sabendo se a çposicao atual e o tamanho da lista )
-considere 0 como posicao inicial*/
-var posAnt, posProx, tamnh, pos;
-tamnh = parseInt(prompt("Insira o tamanhao da lista circular"));
-pos = parseInt(prompt("Insira a posicao do elemento na lista"));
-posProx = tamnh 
+/* 4) Calcular a próxima posição e a posição anterior em uma lista circular
+(sabendo-se a posição atual e o tamanho da lista)
+considere 0 como posição inicial */
 
-pp = (n+1)%4
-pa = (n%4)-1
+var tam, pos, prox, ant;
+tam = parseInt(prompt('Insira o tamanho da lista circular'));
+pos = parseInt(prompt('Insira a posição do elemento'));
+prox = (pos+1)%tam;
+ant = (pos-1+tam)%tam;
+alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
 
-0%4
+var tam, pos, prox, ant;
+tam = parseInt(prompt('Insira o tamanho da lista circular'));
+pos = parseInt(prompt('Insira a posição do elemento'));
+prox = (pos == tam-1) ? 0: pos+1;
+ant = (pos == 0) ? tam-1: pos-1;
+alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
+
+var tam, pos, prox, ant;
+tam = parseInt(prompt('Insira o tamanho da lista circular'));
+pos = parseInt(prompt('Insira a posição do elemento'));
+if (pos == tam-1) {
+  prox = 0;
+} else {
+  prox = pos+1;
+}
+if (pos == 0) {
+  ant = tam-1;
+} else {
+  ant = pos-1;
+}
+alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
