@@ -18,6 +18,15 @@ dH2 = H2*3600 + M2*60 + S2;
 dEv = (dH2 > dH1) ? parseInt((dH2-dH1)/60): parseInt((86400-dH1+dH2)/60);
 alert("O evento dem duração de "+ dEv +" minutos");
 
+//DISTÂNCIA
+var x1, y1, x2, y2, d;
+x1 = parseFloat(prompt("Insira x1"));
+y1 = parseFloat(prompt("Insira y1"));
+x2 = parseFloat(prompt("Insira x2"));
+y2 = parseFloat(prompt("Insira y2"));
+d = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
+alert("A distância é: " + d);
+
 //SALÁRIO
 var nome, qntCar, valVen, salar;
 nome = prompt("Insira o nome do vendedor");
