@@ -23,5 +23,3 @@ M = parseInt(interv/60);
 interv %= 60;
 S = interv;
 alert('A metade do intervalo é de '+ H +':'+ M +':'+ S);
-
-
