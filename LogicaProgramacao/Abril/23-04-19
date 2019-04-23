@@ -1,0 +1,46 @@
+R = 10
+R == 10
+5 == 10
+5 != 10
+"derick" > "thiago" false ordem alfabetica
+"a" < "A" false tabela ascii (A>a)
+"1" < "a" true
+"3" == 3 true
+"3" === 3 false 
+"3" !== "4"
+true
+"3" != "4"
+true
+
+caso o raio > 0
+
+var ar, ra;
+ra = parseFloat(prompt("Raio"));
+if !(ra < 0) {
+  ar = Math.PI*Math.pow(ra,2);
+  alert(ar.toFixed(2));
+}
+if (ra <= 0) {
+  alert(ra);
+}
+
+ar = (ra > 0) ? ar = Math.PI*Math.pow(ra,2): NaN;
+alert(ar);
+
+//? = operador ternario
+
+//Escreva um programa que leia 4 notas de um aluno e mostre se ele foi aprovado ou reprovado
+var n1, n2, n3, n4, med, freq, aulas dadas e aulas aparecidas;
+n1 = parseFloat(prompt("Nota1"));
+n2 = parseFloat(prompt("Nota2"));
+n3 = parseFloat(prompt("Nota3"));
+n4 = parseFloat(prompt("Nota4"));]
+fre = parseInt(prompt("Frequencia"));
+med = (n1+n2+n3+n4)/4;
+if (med >= 7 && fre >= 75) {
+  alert("Passou corno");
+}
+if (med < 7 || fre < 75) {
+  alert("Rodou corno");
+}
+console.log(med);
