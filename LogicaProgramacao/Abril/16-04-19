@@ -4,7 +4,6 @@ t = parseInt(prompt('Insira q quantidade de pessoas que clicaram no terceiro lin
 primL = 4*t;
 alert('Nessa busca, '+ primL +' pessoas clicaram no primeiro link');
 
-
 //Metade do Intervalo
 var H, H1, H2, M, M1, M2, S, S1, S2, hor1, hor2, interv;
 H1 = parseInt(prompt('Insira hora 1'));
