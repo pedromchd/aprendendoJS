@@ -11,3 +11,11 @@ pos = num-parseInt(num);
 pos *= 10;
   console.log(pos);
   console.log(parseInt(pos));
+
+var n, p;
+n = parseInt(prompt("Insira um número interno"));
+p = parseInt(prompt("Insira a posição"));
+n /= Math.pow(10,p);
+n -= parseInt(n);
+p = parseInt(n*10);
+console.log(p);
