@@ -1,0 +1,13 @@
+//POSIÇÃO
+var num, pos;
+num = parseInt(prompt("Insira um número interno"));
+pos = parseInt(prompt("Insira a posição"));
+  console.log(num);
+  console.log(pos);
+num = num/Math.pow(10,pos);
+  console.log(num);
+pos = num-parseInt(num);
+  console.log(pos);
+pos *= 10;
+  console.log(pos);
+  console.log(parseInt(pos));
