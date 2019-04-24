@@ -1,3 +1,6 @@
+
+
+
 //POSIÇÃO
 var num, pos;
 num = parseInt(prompt("Insira um número interno"));
