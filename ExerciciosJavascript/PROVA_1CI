@@ -21,7 +21,7 @@ pos *= 10;
   console.log(parseInt(pos));
 
 var n, p;
-n = parseInt(prompt("Insira um número interno"));
+n = parseInt(prompt("Insira um número inteiro"));
 p = parseInt(prompt("Insira a posição"));
 n /= Math.pow(10,p);
 n -= parseInt(n);
