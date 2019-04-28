@@ -18,16 +18,16 @@ R == 10 //true
 
 //TABELA_VERDADE
 A B A&&B
-V V
-V F
-F V
-F F
+V V   V
+V F   F
+F V   F
+F F   F
 
 A B A||B
-V V
-V F
-F V
-F F
+V V   V
+V F   V
+F V   V
+F F   F
 
 A !A
 V  F
