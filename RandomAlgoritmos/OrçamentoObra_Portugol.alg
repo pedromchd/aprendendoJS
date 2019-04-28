@@ -32,4 +32,6 @@ fimse
 cust_maoObra := dimPeca *val_maoObraM2
 cust_pisoAssent := qntPiso_assent *precoUnit_pisoRS
 cust_totalObra := cust_maoObra +cust_pisoAssent
-escreval("Mão de obra: ",cust_maoObra," reais. Custo do piso por assentamento: ",cust_pisoAssent," reais. Custo total da obra: ",cust_totalObra," reais.")
+escreval("Mão de obra: R$",cust_maoObra)
+escreval("Custo do piso por assentamento: R$",cust_pisoAssent)
+escreval("Custo total da obra: R$",cust_totalObra)
