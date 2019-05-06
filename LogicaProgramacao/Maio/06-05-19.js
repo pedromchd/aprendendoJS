@@ -9,3 +9,9 @@ e2 = parseInt(prompt('Insira o número de empates do time 2'));
 d2 = parseInt(prompt('Insira o número de derrotas do time 2'));
 pon1 = v1*3 + e1*1 + d1*0;
 pon2 = v2*3 + e2*1 + d2*0;
+if (pon1 > pon2) {
+  alert("O time "+ time1 +" ganhou!"); 
+}
+if (pon1 < pon2) {
+  alert("O time "+ time2 +" ganhou!"); 
+}
