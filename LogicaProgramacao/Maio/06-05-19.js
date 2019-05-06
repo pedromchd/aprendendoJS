@@ -1,3 +1,7 @@
+/* Faça um programa que leia o nome de dois times e o número de vitórias, empates e derrotas.
+Calcule e mostre o time ganhador e a quantidade de pontos que este teve
+*/
+
 var time1, time2, v1, v2, e1, e2, d1, d2, pon1, pon2;
 time1 = prompt('Insira o nome do time 1');
 time2 = prompt('Insira o nome do time 2');
