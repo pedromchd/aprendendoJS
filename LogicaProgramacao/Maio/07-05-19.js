@@ -58,7 +58,7 @@ if (N1 > N2) {
 //Fora da caixa
 var N;
 N = parseInt(prompt('Insira um número inteiro'));
-if (N => 1) && (N =< 9) {
+if (N => 1 && N =< 9) {
   alert('O valor está na faixa permitida');
 } else {
   alert('O valor está fora da faixa permitida');
