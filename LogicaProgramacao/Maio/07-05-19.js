@@ -45,7 +45,7 @@ if (N > 0) {
 EXERCÍCIOS
 *********/
 
-//Diferença
+//1// Diferença
 var N1, N2;
 N1 = parseInt(prompt('Insira um número'));
 N2 = parseInt(prompt('Insira outro número'));
@@ -55,7 +55,7 @@ if (N1 > N2) {
   alert(N2-N1);
 }
 
-//Fora da caixa
+//2// Fora da faixa
 var N;
 N = parseInt(prompt('Insira um número inteiro'));
 if (N >= 1 && N <= 9) {
@@ -63,3 +63,42 @@ if (N >= 1 && N <= 9) {
 } else {
   alert('O valor está fora da faixa permitida');
 }
+
+//3// 
+
+
+//4// 
+
+
+//5// 
+
+
+//6// 
+
+
+//7// 
+
+
+//8// 
+
+
+//9// 
+
+
+//10// 
+
+
+//11// 
+
+
+//12// 
+
+
+//13// 
+
+
+//14// 
+
+
+//15// 
+
