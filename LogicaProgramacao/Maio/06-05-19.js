@@ -15,10 +15,10 @@ D2 = parseInt(prompt('Insira o número de derrotas do '+ T2));
 P1 = V1*3 + E1;
 P2 = V2*3 + E2;
 if (P1 > P2) {
-  alert('O time '+ T1 +' ganhou!'); 
+  alert('O time '+ T1 +' ganhou com '+ P1 +' pontos'); 
 }
 if (P1 < P2) {
-  alert('O time '+ T2 +' ganhou!'); 
+  alert('O time '+ T2 +' ganhou com '+ P2 +' pontos'); 
 }
 if (P1 == P2) {
   alert(T1 +' e '+ T2 +' empataram com '+ P1 +' pontos');  
