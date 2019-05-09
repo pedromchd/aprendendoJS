@@ -6,7 +6,12 @@ PROF. RAQUEL BARBOSA
 ***********************/
 
 //1// LAJOTAS
-
+var L, C, laj1, laj2;
+L = parseInt(prompt('Insira a largura L da sala'));
+C = parseInt(prompt('Insira o comprimento C da sala'));
+laj1 = C*L + (L-1)*(C-1);
+laj2 = 2*(L-1) + 2*(C-1);
+alert('Serão necessárias:\n'+ laj1 +' lajotas do tipo 1\n'+ laj2 +' lajotas do tipo 2');
 
 //2// POSIÇÃO
 var n, p;
