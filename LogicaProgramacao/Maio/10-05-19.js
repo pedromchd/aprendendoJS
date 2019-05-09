@@ -1,1 +1,112 @@
+/*********
+EXERCÍCIOS
+*********/
 
+//3// 
+
+
+//4//
+var age;
+age = parseInt(prompt('Insira uma idade:'));
+if (age < 16) {
+  alert('Não eleitor');
+}
+if (age > 18 && age < 65) {
+  alert('Eleitor obrigatório');
+} else if (age >= 16 || age >= 65) {
+  alert('Eleitor facultativo');
+}
+
+//5// 
+
+
+//6//
+var n;
+n = parseInt(prompt('Insira um número'));
+if (n > 0) {
+  alert(n/2);
+} else {
+  alert(Math.pow(n,2));
+}
+
+//7//
+var N1, N2, N3, N4, N5;
+N1 = parseInt(prompt('N1'));
+N2 = parseInt(prompt('N2'));
+N3 = parseInt(prompt('N3'));
+N4 = parseInt(prompt('N4'));
+N5 = parseInt(prompt('N5'));
+alert('Menor número: '+ Math.min(N1,N2,N3,N4,N5) +'\nMaior número: '+ Math.max(N1,N2,N3,N4,N5));
+
+//8//
+var n;
+n = parseInt(prompt('Insira um número'));
+if (!(n > 3)) {
+  alert(n);
+}
+
+//9//
+
+
+//10//
+var preco, code;
+preco = parseFloat(prompt('Insira o preço do produto'));
+code = parseInt(prompt('Insira o código do produto'));
+if (code == 1) {
+  alert('norte');
+}
+if (code == [2,5,9]) {
+  alert('sul');
+}
+if (code == 3 || (code >= 10 && code <= 15)) {
+  alert('leste');
+}
+if (code == 7 || code == 20) {
+  alert('oeste');
+}
+if (code == [4,6,8,16,17,18,19] || code < 1 || code > 20) {
+  alert('importado'); 
+}
+
+//11//
+var n;
+n = parseInt(prompt('Insira um número'));
+if (n%3 == 0) {
+  alert(n +' é múltiplo de 3');
+} else {
+  alert(n +' não é múltiplo de 3');
+}
+
+//12//
+var n1, n2;
+n1 = parseInt(prompt('Insira n1'));
+n2 = parseInt(prompt('Insira n2'));
+if (n1%n2 ==0) {
+  alert('A divisão de '+ n1 +' por ' + n2 +' é exata');
+} else {
+  alert('A divisão de '+ n1 +' por ' + n2 +' não é exata');
+}
+
+//13//
+var produ, venda;
+produ = parseFloat(prompt('Insira o valor do produto'));
+if (produ < 20) {
+  venda = produ + produ*0.45;
+  alert('O valor de venda para este produto será de R$'+ venda);
+} else {
+  venda = produ + produ*0.3;
+  alert('O valor de venda para este produto será de R$'+ venda);
+}
+
+//14//
+
+
+//15//
+var bruto, prest;
+bruto = parseFloat(prompt('Insira o salário bruto'));
+prest = parseFloat(prompt('Insira o valor da prestação'));
+if (prest <= bruto*0.3) {
+  alert('Empréstimo pode ser concedido');
+} else {
+  alert('Empréstimo não pode ser concedido');
+}
