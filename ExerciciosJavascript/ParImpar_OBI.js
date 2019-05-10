@@ -1,4 +1,21 @@
+0 0 0
+1 0 1
+0 1 1
+1 1 0
 
+var P, D_1, D_2;
+P = parseInt(prompt());
+D_1 = parseInt(prompt());
+D_2 = parseInt(prompt());
+if (P == 0 && (D_1+D_2)%2 == 0) {
+    alert('0');
+} else if (P == 1 && (D_1+D_2)%2 == 0) {
+    alert('1');
+} else if (P == 0 && (D_1+D_2)%2 == 1) {
+    alert('1');
+} else if (P == 1 && (D_1+D_2)%2 == 1) {
+    alert('0');
+}
 
 /*
 var p, d_1, d_2, temp;
