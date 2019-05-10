@@ -23,7 +23,32 @@ if (N >= 1 && N <= 9) {
 
 //3// 
 var num;
-num = parseInt(prompt
+num = parseInt(prompt('Insira um número'));
+if (!(num >= 0 && num <= 10)) {
+  alert('O número não obedece à condição estabelecida');
+} else if (num == 0) {
+  alert('Zero');
+} else if (num == 1) {
+  alert('Um');
+} else if (num == 2) {
+  alert('Dois');
+} else if (num == 3) {
+  alert('Três');
+} else if (num == 4) {
+  alert('Quatro');
+} else if (num == 5) {
+  alert('Cinco');
+} else if (num == 6) {
+  alert('Seis');
+} else if (num == 7) {
+  alert('Sete');
+} else if (num == 8) {
+  alert('Oito');
+} else if (num == 9) {
+  alert('Nove');
+} else if (num == 10) {
+  alert('Dez');
+}
 
 //4//
 var age;
