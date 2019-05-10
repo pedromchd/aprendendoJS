@@ -221,7 +221,7 @@ if (sal > 1800 && sal <= 2500) {
   alert('O aumento será de 5%, o novo salário é de R$'+ aum);
 }
 if (sal > 2500) {
-  alert('O aumento naõ será feito, seu burguês');
+  alert('O aumento não será feito, seu burguês');
 }
 
 //15//
