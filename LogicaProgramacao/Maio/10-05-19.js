@@ -2,8 +2,28 @@
 EXERCÍCIOS
 *********/
 
-//3// 
+//1//
+var N1, N2;
+N1 = parseInt(prompt('Insira um número'));
+N2 = parseInt(prompt('Insira outro número'));
+if (N1 > N2) {
+  alert(N1-N2);
+} else {
+  alert(N2-N1);
+}
 
+//2//
+var N;
+N = parseInt(prompt('Insira um número inteiro'));
+if (N >= 1 && N <= 9) {
+  alert('O valor está na faixa permitida');
+} else {
+  alert('O valor está fora da faixa permitida');
+}
+
+//3// 
+var num;
+num = parseInt(prompt
 
 //4//
 var age;
