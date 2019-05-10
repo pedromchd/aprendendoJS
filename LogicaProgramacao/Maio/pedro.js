@@ -67,5 +67,5 @@ alert('X1: '+ x1.toFixed(2) +'\nX2: '+ x2.toFixed(2) +'\n*NaN = delta negativo, 
 var valor15Min, tempoUso, valorPagar;
 valor15Min = parseFloat(prompt('Insira o valor de cada 15min de uso'));
 tempoUso = parseInt(prompt('Insira o tempo de uso por um cliente, em min'));
-valorPagar = tempoUso /15 *valor15Min;
-alert('O valor a ser pago é de R$'+ parseInt(valorPagar).toFixed(2));
+valorPagar = Math.ceil(tempoUso /15) *valor15Min;
+alert('O valor a ser pago é de R$'+ valorPagar.toFixed(2));
