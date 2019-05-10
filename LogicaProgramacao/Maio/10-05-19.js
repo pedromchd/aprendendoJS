@@ -63,7 +63,29 @@ if (age > 18 && age < 65) {
 }
 
 //5// 
-
+var a, b, c, d, mul;
+a = parseInt(prompt('Insira um número a'));
+b = parseInt(prompt('Insira um número b'));
+c = parseInt(prompt('Insira um número c'));
+d = parseInt(prompt('Insira um número d'));
+mul = '';
+if (a%2 == 0 && a%3 == 0) {
+  mul += '\n'+a;
+}
+if (b%2 == 0 && b%3 == 0) {
+  mul += '\n'+b;
+}
+if (c%2 == 0 && c%3 == 0) {
+  mul += '\n'+c;
+}
+if (d%2 == 0 && d%3 == 0) {
+  mul += '\n'+d;
+}
+if (mul == '') {
+  alert('Não há valores múltiplos de 2 e 3');
+} else {
+  alert('Os múltiplos de 2 e 3 são: '+ mul);
+}
 
 //6//
 var n;
@@ -75,13 +97,20 @@ if (n > 0) {
 }
 
 //7//
-var N1, N2, N3, N4, N5;
+var N1, N2, N3, N4, N5, MAX, MIN;
 N1 = parseInt(prompt('N1'));
 N2 = parseInt(prompt('N2'));
 N3 = parseInt(prompt('N3'));
 N4 = parseInt(prompt('N4'));
 N5 = parseInt(prompt('N5'));
 alert('Menor número: '+ Math.min(N1,N2,N3,N4,N5) +'\nMaior número: '+ Math.max(N1,N2,N3,N4,N5));
+//N1
+if (N1 > N2 && N1 > N3 && N1 > N4 && N1 > N5) {
+  MAX = N1;
+} else if (N1 < N2 && N1 < N3 && N1 < N4 && N1 < N5) {
+  MIN = N1;
+}
+//
 
 //8//
 var n;
