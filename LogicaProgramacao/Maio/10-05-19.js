@@ -53,19 +53,15 @@ var preco, code;
 preco = parseFloat(prompt('Insira o preço do produto'));
 code = parseInt(prompt('Insira o código do produto'));
 if (code == 1) {
-  alert('norte');
-}
-if (code == [2,5,9]) {
-  alert('sul');
-}
-if (code == 3 || (code >= 10 && code <= 15)) {
-  alert('leste');
-}
-if (code == 7 || code == 20) {
-  alert('oeste');
-}
-if (code == [4,6,8,16,17,18,19] || code < 1 || code > 20) {
-  alert('importado'); 
+  alert('O produdo veio do norte, com o preço de R$'+ preco);
+} else if (code == 2 || code== 5 || code == 9) {
+  alert('O produdo veio do sul, com o preço de R$'+ preco);
+} else if (code == 3 || (code >= 10 && code <= 15)) {
+  alert('O produdo veio do leste, com o preço de R$'+ preco);
+} else if (code == 7 || code == 20) {
+  alert('O produdo veio do oeste, com o preço de R$'+ preco);
+} else {
+  alert('O produdo é importado, com o preço de R$'+ preco);
 }
 
 //11//
