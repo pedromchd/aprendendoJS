@@ -1,3 +1,6 @@
+
+
+/*
 var p, d_1, d_2, temp;
 p = parseInt(prompt("p"));
 d_1 = parseInt(prompt("d1"));
@@ -17,3 +20,4 @@ console.log(p);
 console.log(d_1);
 console.log(d_2);
 console.log(d_1+d_2);
+*/
