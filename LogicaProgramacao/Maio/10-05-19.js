@@ -103,14 +103,37 @@ N2 = parseInt(prompt('N2'));
 N3 = parseInt(prompt('N3'));
 N4 = parseInt(prompt('N4'));
 N5 = parseInt(prompt('N5'));
-alert('Menor número: '+ Math.min(N1,N2,N3,N4,N5) +'\nMaior número: '+ Math.max(N1,N2,N3,N4,N5));
 //N1
 if (N1 > N2 && N1 > N3 && N1 > N4 && N1 > N5) {
   MAX = N1;
 } else if (N1 < N2 && N1 < N3 && N1 < N4 && N1 < N5) {
   MIN = N1;
 }
-//
+//N2
+if (N2 > N1 && N2 > N3 && N2 > N4 && N2 > N5) {
+  MAX = N2;
+} else if (N2 < N1 && N2 < N3 && N2 < N4 && N2 < N5) {
+  MIN = N2;
+}
+//N3
+if (N3 > N2 && N3 > N1 && N3 > N4 && N3 > N5) {
+  MAX = N3;
+} else if (N3 < N2 && N3 < N1 && N3 < N4 && N3 < N5) {
+  MIN = N3;
+}
+//N4
+if (N4 > N2 && N4 > N3 && N4 > N1 && N4 > N5) {
+  MAX = N4;
+} else if (N4 < N2 && N4 < N3 && N4 < N1 && N4 < N5) {
+  MIN = N4;
+}
+//N5
+if (N5 > N2 && N5 > N3 && N5 > N4 && N5 > N1) {
+  MAX = N5;
+} else if (N5 < N2 && N5 < N3 && N5 < N4 && N5 < N1) {
+  MIN = N5;
+}
+alert('O maior número é : '+ MAX +'\nE o menor é '+ MIN);
 
 //8//
 var n;
@@ -120,7 +143,13 @@ if (!(n > 3)) {
 }
 
 //9//
-
+var ano;
+ano = parseInt(prompt('Insira um ano maior que 1584'));
+if (ano > 1584 && (ano%400 == 0 || (ano%4 == 0 && ano%100 != 0))) {
+  alert(ano +' é bissexto');
+} else {
+  alert(ano +' não é bissexto');
+}
 
 //10//
 var preco, code;
