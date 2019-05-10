@@ -198,7 +198,31 @@ if (produ < 20) {
 }
 
 //14//
-
+var sal, aum;
+sal = parseFloat(prompt('Insira o salário do funcionário'));
+if (sal >= 0 && sal <= 400) {
+  aum = sal + sal*0.15;
+  alert('O aumento será de 15%, o novo salário é de R$'+ aum);
+}
+if (sal > 400 && sal <= 700) {
+  aum = sal + sal*0.12;
+  alert('O aumento será de 12%, o novo salário é de R$'+ aum);
+}
+if (sal > 700 && sal <= 1000) {
+  aum = sal + sal*0.10;
+  alert('O aumento será de 10%, o novo salário é de R$'+ aum);
+}
+if (sal > 1000 && sal <= 1800) {
+  aum = sal + sal*0.07;
+  alert('O aumento será de 7%, o novo salário é de R$'+ aum);
+}
+if (sal > 1800 && sal <= 2500) {
+  aum = sal + sal*0.05;
+  alert('O aumento será de 5%, o novo salário é de R$'+ aum);
+}
+if (sal > 2500) {
+  alert('O aumento naõ será feito, seu burguês');
+}
 
 //15//
 var bruto, prest;
