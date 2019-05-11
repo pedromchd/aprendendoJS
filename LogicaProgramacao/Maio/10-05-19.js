@@ -180,7 +180,7 @@ if (n%3 == 0) {
 var n1, n2;
 n1 = parseInt(prompt('Insira n1'));
 n2 = parseInt(prompt('Insira n2'));
-if (n1%n2 ==0) {
+if (n1%n2 == 0) {
   alert('A divisão de '+ n1 +' por ' + n2 +' é exata');
 } else {
   alert('A divisão de '+ n1 +' por ' + n2 +' não é exata');
