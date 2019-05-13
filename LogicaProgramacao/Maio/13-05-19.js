@@ -70,7 +70,7 @@ if (n == s) {
 } else {
     alert('Você errou');
     if (s >= 0 && s <= 4) {
-        alert('O número está entre 0 e 4'):
+        alert('O número está entre 0 e 4')
     }
     if (s%5 == 0) {
         alert('O número é múltiplo de 5')
@@ -78,11 +78,11 @@ if (n == s) {
     if (s%2 == 1) {
         alert('O número é ímpar')
     }
-    if (s == 2 || s == 3 || s == 5 || s == 7)
+    if (s == 2 || s == 3 || s == 5 || s == 7) {
         alert('O número é primo')
     }
     if (s < 6 || s > 7 || s < 9) {
-        alert('O número é, ou menor que 6 e 9, ou maior que 7') {
+        alert('O número é, ou menor que 6 e 9, ou maior que 7')
     }
     n = parseInt(prompt('Segunda tentativa'));
     if (n == s) {
