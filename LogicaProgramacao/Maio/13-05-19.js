@@ -52,7 +52,7 @@ if (op == '%') {
 alert(res);
 
 
-//SORTEIO
+//SORTEIO v1
 var n, s;
 n = parseInt(prompt('Insira um número inteiro n'));
 s = Math.round(Math.random()*10);
@@ -62,7 +62,7 @@ if (n == s) {
     alert('Você perdeu, o número era '+ s);
 }
 
-//SORTEIO
+//SORTEIO v2
 var n, s;
 n = parseInt(prompt('Insira um número inteiro n'));
 s = Math.round(Math.random()*10);
@@ -85,7 +85,7 @@ if (n == s) {
 	}
 }
 
-//SORTEIO
+//SORTEIO v3
 var n, s;
 n = parseInt(prompt('Insira um número inteiro n'));
 l = parseInt(prompt('Insira um límite de números a serem sorteados'));
