@@ -20,33 +20,33 @@ if (oper == '/') {
 alert(resul);
 
 
-//CALCULADORA + - * / ** rt %
-var n, n1, n2, op, res;
+var n1, n2, op, res;
 n1 = parseFloat(prompt('Insira um número'));
-op = prompt('Insira a operação: + - * / ** rt %');
-if (op == '**') {
-    n = parseInt(prompt('Insira o expoente'));    
-    res = n1**n;
-} else if (op == 'rt') {
-    n = parseInt(prompt('Insira o índice'));
-    res = n1**(1/n)
+op = prompt('Insira a operação [+] [-] [*] [/] [**] [rt] [%]');
+if (op == '**' || op == 'rt') {
+	n2 = parseInt(prompt('Insira o expoente/índice'));
+	if (op == '**') {
+		res = n1**n2;
+	} else {
+		res = n1**(1/n2);
+	}
 } else {
-    n2 = parseFloat(prompt('Insira outro número'));
+	n2 = parseFloat(prompt('Insira outro número'));
 }
 if (op == '+') {
-    res = n1 + n2;
+	res = n1 + n2;
 }
 if (op == '-') {
-    res = n1 - n2;
+	res = n1 - n2;
 }
 if (op == '*') {
-    res = n1 * n2;
+	res = n1 * n2;
 }
 if (op == '/') {
-    res = n1 / n2;
+	res = n1 / n2;
 }
 if (op == '%') {
-    res = n1 % n2;
+	res = n1 % n2;
 }
 alert(res);
 
