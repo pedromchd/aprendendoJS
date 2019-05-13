@@ -20,14 +20,6 @@ if (oper == '/') {
 alert(resul);
 
 
-//CALCULADORA + - * /
-var n1, n2, op;
-n1 = parseFloat(prompt('Insira um número'));
-op = prompt('Insira a operação: + - * /');
-n2 = parseFloat(prompt('Insira outro número'));
-alert(eval(n1+op+n2));
-
-
 //CALCULADORA + - * / ** rt %
 var n, n1, n2, op, res;
 n1 = parseFloat(prompt('Insira um número'));
@@ -59,18 +51,12 @@ if (op == '%') {
 alert(res);
 
 
-//CALCULADORA + - * / ** rt %
-var n, n1, n2, op;
-n1 = parseFloat(prompt('Insira um número'));
-op = prompt('Insira a operação + - * / ** rt %');
-if (op == '**' || op == 'rt') {
-    n = parseInt(prompt('Insira o índice/expoente'));
-    if (op == '**') {
-        alert(n1**n);
-    } else {
-        alert(n1**(1/n));
-    }
+//SORTEIO
+var n, s;
+n = parseInt(prompt('Insira um número inteiro n'));
+s = Math.round(Math.random()*10);
+if (n == s) {
+    alert('Você ganhou');
 } else {
-    n2 = parseFloat(prompt('Insira outro número'));
-    alert(eval(n1+op+n2));
+    alert('Você perdeu');
 }
