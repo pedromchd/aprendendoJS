@@ -1,6 +1,6 @@
 //else if
 
-//CALCULADORA + - * /
+//CALCULADORA v1
 var n1, n2, op, res;
 n1 = parseFloat(prompt('Insira um número'));
 op = prompt('Insira a operação: + - * /');
@@ -20,6 +20,7 @@ if (oper == '/') {
 alert(resul);
 
 
+//CALCULADORA v2
 var n1, n2, op, res;
 n1 = parseFloat(prompt('Insira um número'));
 op = prompt('Insira a operação [+] [-] [*] [/] [**] [rt] [%]');
