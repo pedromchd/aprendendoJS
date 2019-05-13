@@ -1,4 +1,21 @@
-//ALGORITMO Fatorial
+/*****************
+ALGORITMO Fatorial
+*****************/
+
+//Maurício
+fator = prompt("Digite um número para descobri seu faorial");
+c = fator;
+resultado = 1;
+while (c>=1){
+    resultado*=c;
+    c--;
+}
+if (fator<=0){
+    alert("-1");
+}
+alert(resultado);
+
+//Pedro 1
 var num, fat;
 num = parseInt(prompt("Digite um número"));
 fat = 1;
@@ -13,7 +30,7 @@ if (num >= 1) {
     alert(fat);
 }
 
-
+//Pedro 2
 var n, f;
 n = parseInt(prompt('n'));
 f = (n >= 0) ? 1: 'NaN';
