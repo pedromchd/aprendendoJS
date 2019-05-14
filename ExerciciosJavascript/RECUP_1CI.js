@@ -30,7 +30,8 @@ alert(''+ AA + MM + DD);
 //4//
 var n, mul;
 n = parseInt(prompt('Insira um número inteiro n'));
-mul = Math.floor(n/5)*5+5;
+mul = n+(5-n%5);
+//mul = Math.floor(n/5)*5+5;
 alert(mul);
 
 //5//
