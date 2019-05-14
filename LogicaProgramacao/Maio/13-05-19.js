@@ -55,7 +55,7 @@ alert(res);
 //CALCULADORA v3
 var n1, n2, op, res;
 n1 = parseFloat(prompt('Insira um número'));
-op = prompt('Insira a operação [+] [-] [*] [/] [**] [rt] [%]');
+op = prompt('Insira a operação [+] [-] [*] [/] [**] [rt] [%] [trunc] [pos]');
 if (op == 'trunc' || op == 'pos') {
   n1 = parseInt(n1);
   n2 = parseInt(prompt('Insira as casas a truncar/a posição a se achar'));
@@ -63,8 +63,8 @@ if (op == 'trunc' || op == 'pos') {
     res = n1/(10**n2);
   } else {
     n1 /= Math.pow(10,n2);
-    n2 -= parseInt(n1);
-    res = parseInt(n2*10);
+    n1 -= parseInt(n1);
+    res = parseInt(n1*10);
   } 
 } else if (op == '**' || op == 'rt') {
   n2 = parseInt(prompt('Insira o expoente/índice'));
