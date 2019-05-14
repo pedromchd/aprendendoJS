@@ -72,6 +72,6 @@ alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
 //ANT E PROX %7==0
 var n, antM, proxM;
 n = parseInt(prompt('Insira um número inteiro n'));
-antM = (n-1)-((n-1)%7);
-proxM = n+(7-n%7);
-console.log(antM,proxM);
+a = n-1-(n-1)%7;
+p = n+(7-n%7);
+console.log(a,p);
