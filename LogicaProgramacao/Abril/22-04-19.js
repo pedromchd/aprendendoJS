@@ -23,14 +23,9 @@ n = parseInt(prompt("Insira um número inteiro"));
 m = n-n%5;
 alert("O múltiplo de 5 anterior a "+ n +" é "+ m);
 
-//Correção1
+//Correção
 var n, m;
 n = parseInt(prompt("Insira um número inteiro"));
 m = n-1-(n-1)%5;
-alert("O múltiplo de 5 anterior a "+ n +" é "+ m);
-
-//Correção2
-var n, m;
-n = parseInt(prompt("Insira um número inteiro"));
-m = Math.ceil(n/5)*5-5;
+//m = Math.ceil(n/5)*5-5;
 alert("O múltiplo de 5 anterior a "+ n +" é "+ m);
