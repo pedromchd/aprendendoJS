@@ -51,3 +51,23 @@ if (d > 800 && d <= 1400)
   alert('2 pontos');
 if (d > 1400 && d <= 2000)
   alert('3 pontos');
+
+
+//LISTA CIRCULAR
+var tam, pos, prox, ant;
+tam = parseInt(prompt('Insira o tamanho da lista circular'));
+pos = parseInt(prompt('Insira a posição do elemento'));
+if (pos == tam-1) {
+  prox = 0;
+} else {
+  prox = pos+1;
+}
+if (pos == 0) {
+  ant = tam-1;
+} else {
+  ant = pos-1;
+}
+alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
+
+//ANT E PROX %7==0
+var n = parseInt(prompt('Insira um número inteiro n'));
