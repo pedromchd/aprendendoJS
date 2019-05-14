@@ -89,34 +89,39 @@ if (n == s) {
 //SORTEIO
 var n, s;
 l = parseInt(prompt('Insira a quantidade de númeos a serem sorteados'));
-n = parseInt(prompt('Insira um número inteiro n'));
 s = Math.round(Math.random()*l);
+//TENTATIVA1
+n = parseInt(prompt('Insira um número inteiro n'));
 if (n == s) {
     alert('Você acertou');
 } else {
     alert('Você errou');
-	if (s%5 == 0) {
-		alert('O número é múltiplo de 5');
-	} else if (s%2 == 0) {
-		alert('O número é par');
-	} else {
-		alert('O número é ímpar');
-	}
-	n = parseInt(prompt('Segunda tentativa'));
-	if (n == s) {
-		alert('Você acertou');
-	} else {
-		alert('Você errou de novo');
-		if (parseInt(s**(1/2)) != (s**(1/2))) {
-			alert('A sua raiz quadrada não é exata');
-		} else {
-			alert('Sua raiz quadrada é exata');
-		}
-		n = parseInt(prompt('Terceira tentativa'));
+    //DICA1
+    if (s%5 == 0) {
+        alert('O número é múltiplo de 5');
+    } else if (s%2 == 0) {
+        alert('O número é par');
+    } else {
+        alert('O número é ímpar');
+    }
+    //TENTATIVA2
+    n = parseInt(prompt('Segunda tentativa'));
+    if (n == s) {
+        alert('Você acertou');
+    } else {
+        alert('Você errou de novo');
+	//DICA2
+        if (parseInt(s**(1/2)) != (s**(1/2))) {
+            alert('A sua raiz quadrada não é exata');
+        } else {
+            alert('Sua raiz quadrada é exata');
+        }
+	//TENTATIVA3
+        n = parseInt(prompt('Terceira tentativa'));
         if (n == s) {
             alert('Você acertou');
         } else {
             alert('Você errou, o número era '+ s);
         }
-	}
+    }
 }
