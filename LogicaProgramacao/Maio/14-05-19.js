@@ -29,9 +29,9 @@ if (imc > 40) {
 
 //BOB ALICE PARÍMPAR
 var P, D_1, D_2;
-P = parseInt(prompt());
-D_1 = parseInt(prompt());
-D_2 = parseInt(prompt());
+P = parseInt(prompt('Quem gritou par? [0]Alice, [1]Bob'));
+D_1 = parseInt(prompt('Dedos de Alice'));
+D_2 = parseInt(prompt('Dedos de Bob'));
 if (P == 0 && (D_1+D_2)%2 == 0) {
     alert('0');
 } else if (P == 1 && (D_1+D_2)%2 == 0) {
