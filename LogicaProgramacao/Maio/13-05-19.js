@@ -77,19 +77,19 @@ if (op == 'trunc' || op == 'pos') {
   n2 = parseFloat(prompt('Insira outro número'));
 }
 if (op == '+') {
-	res = n1 + n2;
+  res = n1 + n2;
 }
 if (op == '-') {
-	res = n1 - n2;
+  res = n1 - n2;
 }
 if (op == '*') {
-	res = n1 * n2;
+  res = n1 * n2;
 }
 if (op == '/') {
-	res = n1 / n2;
+  res = n1 / n2;
 }
 if (op == '%') {
-	res = n1 % n2;
+  res = n1 % n2;
 }
 alert(res);
 
@@ -99,9 +99,9 @@ var n, s;
 n = parseInt(prompt('Insira um número inteiro n'));
 s = Math.round(Math.random()*10);
 if (n == s) {
-    alert('Você ganhou');
+  alert('Você ganhou');
 } else {
-    alert('Você perdeu, o número era '+ s);
+  alert('Você perdeu, o número era '+ s);
 }
 
 
@@ -110,22 +110,22 @@ var n, s;
 n = parseInt(prompt('Insira um número inteiro n'));
 s = Math.round(Math.random()*10);
 if (n == s) {
-    alert('Você acertou');
+  alert('Você acertou');
 } else {
-    alert('Você errou');
-	if (s%5 == 0) {
-		alert('O número é múltiplo de 5');
-	} else if (s%2 == 0) {
-		alert('O número é par');
-	} else {
-		alert('O número é ímpar');
-	}
-	n = parseInt(prompt('Segunda tentativa'));
-	if (n == s) {
-		alert('Você acertou');
-	} else {
-		alert('Você errou, o número era '+ s);
-	}
+  alert('Você errou');
+  if (s%5 == 0) {
+    alert('O número é múltiplo de 5');
+  } else if (s%2 == 0) {
+    alert('O número é par');
+  } else {
+    alert('O número é ímpar');
+  }
+  n = parseInt(prompt('Segunda tentativa'));
+  if (n == s) {
+    alert('Você acertou');
+  } else {
+    alert('Você errou, o número era '+ s);
+  }
 }
 
 
@@ -136,35 +136,35 @@ s = Math.round(Math.random()*l);
 //TENTATIVA1
 n = parseInt(prompt('Insira um número inteiro n'));
 if (n == s) {
-    alert('Você acertou');
+  alert('Você acertou');
 } else {
-    alert('Você errou');
-    //DICA1
-    if (s%5 == 0) {
-        alert('O número é múltiplo de 5');
-    } else if (s%2 == 0) {
-        alert('O número é par');
+  alert('Você errou');
+  //DICA1
+  if (s%5 == 0) {
+    alert('O número é múltiplo de 5');
+  } else if (s%2 == 0) {
+    alert('O número é par');
+  } else {
+    alert('O número é ímpar');
+  }
+  //TENTATIVA2
+  n = parseInt(prompt('Segunda tentativa'));
+  if (n == s) {
+    alert('Você acertou');
+  } else {
+    alert('Você errou de novo');
+    //DICA2
+    if (parseInt(s**(1/2)) != (s**(1/2))) {
+      alert('A sua raiz quadrada não é exata');
     } else {
-        alert('O número é ímpar');
+      alert('Sua raiz quadrada é exata');
     }
-    //TENTATIVA2
-    n = parseInt(prompt('Segunda tentativa'));
+    //TENTATIVA3
+    n = parseInt(prompt('Terceira tentativa'));
     if (n == s) {
-        alert('Você acertou');
+      alert('Você acertou');
     } else {
-        alert('Você errou de novo');
-	//DICA2
-        if (parseInt(s**(1/2)) != (s**(1/2))) {
-            alert('A sua raiz quadrada não é exata');
-        } else {
-            alert('Sua raiz quadrada é exata');
-        }
-	//TENTATIVA3
-        n = parseInt(prompt('Terceira tentativa'));
-        if (n == s) {
-            alert('Você acertou');
-        } else {
-            alert('Você errou, o número era '+ s);
-        }
+      alert('Você errou, o número era '+ s);
     }
+  }
 }
