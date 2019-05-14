@@ -70,7 +70,7 @@ if (pos == 0) {
 alert('Posição anterior: '+ ant +'\nPróxima posição: '+ prox);
 
 //ANT E PROX %7==0
-var n, antM, proxM;
+var n, a, p;
 n = parseInt(prompt('Insira um número inteiro n'));
 a = n-1-(n-1)%7;
 p = n+(7-n%7);
