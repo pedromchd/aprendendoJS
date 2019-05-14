@@ -25,3 +25,19 @@ if (imc >= 30 && imc < 40) {
 if (imc > 40) {
   alert('OBESO MÓRBIDO, IMC '+ imc);
 }
+
+
+//BOB ALICE PARÍMPAR
+var P, D_1, D_2;
+P = parseInt(prompt());
+D_1 = parseInt(prompt());
+D_2 = parseInt(prompt());
+if (P == 0 && (D_1+D_2)%2 == 0) {
+    alert('0');
+} else if (P == 1 && (D_1+D_2)%2 == 0) {
+    alert('1');
+} else if (P == 0 && (D_1+D_2)%2 == 1) {
+    alert('1');
+} else if (P == 1 && (D_1+D_2)%2 == 1) {
+    alert('0');
+}
