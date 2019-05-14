@@ -9,7 +9,7 @@ e classifique-a conforme a tabela
 var h, kg, imc;
 kg = parseFloat(prompt('Insira o peso em kg'));
 h = parseFloat(prompt('Insira a altura em metros'));
-imc = (kg/h**2).toFixed(2);
+imc = (kg/h**2).toFixed(1);
 if (imc < 20) {
   alert('ABAIXO DO PESO, IMC '+ imc);
 }
