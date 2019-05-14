@@ -27,7 +27,7 @@ n1 = parseFloat(prompt('Insira um número'));
 op = prompt('Insira a operação [+] [-] [*] [/] [**] [rt] [%] [trunc] [pos]');
 if (op == 'trunc' || op == 'pos') {
     n1 = parseInt(n1);
-    n2 = parseInt(prompt('Insira as casas truncadas/a posição do número'));
+    n2 = parseInt(prompt('Insira as casas a truncar/a posição a se achar'));
     if (op == 'trunc') {
         alert(n1/(10**n2));
     } else {
