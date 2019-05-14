@@ -45,10 +45,9 @@ if (P == 0 && (D_1+D_2)%2 == 0) {
 
 //BASQUETE ROBÔS
 var d = parseInt(prompt('Insira a distância do início da quadra'));
-d = 2000-d;
-if (d < 800)
+if (d <= 800)
   alert('1 ponto');
-if (d >= 800 && d < 1400)
+if (d > 800 && d <= 1400)
   alert('2 pontos');
-if (d >= 1400 && d <= 2000)
+if (d > 1400 && d <= 2000)
   alert('3 pontos');
