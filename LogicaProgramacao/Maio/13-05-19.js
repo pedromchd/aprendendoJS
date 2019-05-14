@@ -86,7 +86,6 @@ if (n == s) {
 }
 
 //SORTEIO v3
-//SORTEIO
 var n, s;
 l = parseInt(prompt('Insira a quantidade de númeos a serem sorteados'));
 s = Math.round(Math.random()*l);
