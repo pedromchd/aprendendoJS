@@ -16,6 +16,10 @@ alert(res);
 
 //AnteriorPróximoMúltiplo
 
+//Sortear
+var n, l;
+l = parseInt(prompt('
+
 //Inversão
 var n, a, t, r;
 n = parseInt(prompt('Insira um número'));
