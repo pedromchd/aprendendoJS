@@ -28,3 +28,12 @@ while (a > 0) {
   res = t + res;
 }
 alert(res);
+
+//Fatorial
+var n, f;
+n = parseInt(prompt('Insira n'));
+f = (n >= 0) ? 1: 'NaN';
+for (n; n > 1; n--) {
+  f *= n;
+}
+alert(f);
