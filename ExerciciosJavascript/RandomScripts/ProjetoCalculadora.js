@@ -12,7 +12,6 @@ n2 = parseInt(prompt('Insira o expoente'));
 res = n1**n2;
 alert(res);
 
-
 //Raiz
 n1 = parseFloat(prompt('Insira n1'));
 n2 = parseInt(prompt('Insira o índice'));
