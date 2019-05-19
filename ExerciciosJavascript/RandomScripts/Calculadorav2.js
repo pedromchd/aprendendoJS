@@ -3,45 +3,38 @@ CALCULADORA v2
 *************/
 
 var n1, n2, op, res, a, p, t;
-n1 = parseFloat(prompt('Insira um número'));
+n1 = parseFloat(prompt('Primeiro termo'));
 op = prompt('Operação [+] [-] [*] [/] [%] [!] [**] [inv] [mul] [pos] [list] [raiz] [sort] [trunc]');
 
-function SoSuMuDiMo() {
-  n2 = parseFloat(prompt('Insira n2'));
+function SoSuMuDiMo(n2) {
   res = eval(n1 + op + n2);
 }
 
-function Po() {
-  n2 = parseInt(prompt('Insira o expoente'));
+function Po(n2) {
   res = n1**n2;
 }
 
-function raiz() {
-  n2 = parseInt(prompt('Insira o índice'));
+function raiz(n2) {
   res = n1**(1/n2);
 }
 
-function trunc() {
-  n2 = parseInt(prompt('Insira casas a truncar'));
+function trunc(n2) {
   res = n1/(10**n2);
 }
 
-function pos() {
-  n2 = parseInt(prompt('Insira a posição'));
+function pos(n2) {
   n1 /= 10**n2;
   n1 -= parseInt(n1);
   res = parseInt(n1*10);
 }
 
-function list() {
-  n2 = parseInt(prompt('Insira a posição'));
+function list(n2) {
   a = (n2-1+n1)%n1;
   p = (n2+1)%n1;
   res = a+' e '+p;
 }
 
-function mul() {
-  n2 = parseInt(prompt('Número de referência'));
+function mul(n2) {
   a = n1-1-(n1-1)%n2;
   p = n1+(n2-n1%n2);
   res = a+' e '+p;
@@ -51,8 +44,7 @@ function sort() {
   res = Math.round(Math.random()*n1);
 }
 
-function inv() {
-  n2 = parseInt(prompt(n1 +'\nQuantidade de algarismos'));
+function inv(n2) {
   res = '';
   while (n2 > 0) {
     n2--;
@@ -69,49 +61,52 @@ function fat() {
   }
 }
 
+n2 = parseFloat(prompt(n1 +'  '+ op +'\nSegundo termo'));
+
 switch (op) {
   case '+':
-    SoSuMuDiMo();
+    SoSuMuDiMo(n2);
     break;
   case '-':
-    SoSuMuDiMo();
+    SoSuMuDiMo(n2);
     break;
   case '*':
-    SoSuMuDiMo();
+    SoSuMuDiMo(n2);
     break;
   case '/':
-    SoSuMuDiMo();
+    SoSuMuDiMo(n2);
     break;
   case '%':
-    SoSuMuDiMo();
+    SoSuMuDiMo(n2);
     break;
   case '**':
-    Po();
+    Po(n2);
     break;
   case 'raiz':
-    raiz();
+    raiz(n2);
     break;
   case 'trunc':
-    trunc();
+    trunc(n2);
     break;
   case 'pos':
-    pos();
+    pos(n2);
     break;
   case 'list':
-    list();
+    list(n2);
     break;
   case 'mul':
-    mul();
+    mul(n2);
     break;
   case 'sort':
     sort();
     break;
   case 'inv':
-    inv();
+    inv(n2);
     break;
   case '!':
     fat();
     break;
 }
 
+alert(n1 +' '+ op +' '+ n2 +' = '+ res);
 console.log(n1, op, n2, res);
