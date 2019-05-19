@@ -72,34 +72,34 @@ function fat() {
 switch (op) {
   case '+', '-', '*', '/', '%':
     SoSuMuDiMo();
-	break;
+    break;
   case '**':
     Po();
-	break;
+    break;
   case 'raiz':
     raiz();
-	break;
+    break;
   case 'trunc':
     trunc();
-	break;
+    break;
   case 'pos':
     pos();
-	break;
+    break;
   case 'list':
     list();
-	break;
+    break;
   case 'mul':
     mul();
-	break;
+    break;
   case 'sort':
     sort();
-	break;
+    break;
   case 'inv':
     inv();
-	break;
+    break;
   case '!':
     fat();
-	break;
+    break;
 }
 
-alert(res);
+console.log(n1, op, n2, res);
