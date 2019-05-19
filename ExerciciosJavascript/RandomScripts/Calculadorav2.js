@@ -70,7 +70,19 @@ function fat() {
 }
 
 switch (op) {
-  case '+', '-', '*', '/', '%':
+  case '+':
+    SoSuMuDiMo();
+    break;
+  case '-':
+    SoSuMuDiMo();
+    break;
+  case '*':
+    SoSuMuDiMo();
+    break;
+  case '/':
+    SoSuMuDiMo();
+    break;
+  case '%':
     SoSuMuDiMo();
     break;
   case '**':
