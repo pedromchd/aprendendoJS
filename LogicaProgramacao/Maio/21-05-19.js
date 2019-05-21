@@ -60,4 +60,12 @@ console.log(P,S,B);
 /*************** *
 PAR ÍMPAR VC vs PC
 * ***************/
-var 
+var PI, VC, PC;
+PI = parseInt(prompt('Você escolhe: 0 para PAR, 1 para ÍMPAR'));
+VC = parseInt(prompt('Insira seus dedos estendidos'));
+PC = Math.round(Math.random()*10);
+if (PI == 0 && (VC+PC)%2 == 0) alert('Você ganhou!');
+if (PI == 1 && (VC+PC)%2 == 0) alert('O computador ganhou!');
+if (PI == 0 && (VC+PC)%2 == 1) alert('O computador ganhou!');
+if (PI == 1 && (VC+PC)%2 == 1) alert('Você ganhou!');
+console.log(PI,VC,PC,(VC+PC));
