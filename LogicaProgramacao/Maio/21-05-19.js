@@ -9,7 +9,6 @@ console.log('N:',N);
 Criar um programa que informe a quantidade total de calorias de uma refeição 
 a partir das informações do usuário sobre o prato, a sobremesa e a bebida
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
 /*
 //Prato//
 1 - Vegetariano 180
@@ -60,10 +59,17 @@ console.log(P,S,B);
 /*************** *
 PAR ÍMPAR VC vs PC
 * ***************/
+/*
+0 0 VC
+0 1 PC
+1 0 PC
+1 1 VC
+*/
 var PI, VC, PC;
 PI = parseInt(prompt('Você escolhe: 0 para PAR, 1 para ÍMPAR'));
-VC = parseInt(prompt('Insira seus dedos estendidos'));
+VC = parseInt(prompt('Escreva a quantidade de dedos estendidos por você'));
 PC = Math.round(Math.random()*10);
+alert('O computador escolheu ' + PC);
 if (PI == 0 && (VC+PC)%2 == 0) alert('Você ganhou!');
 if (PI == 1 && (VC+PC)%2 == 0) alert('O computador ganhou!');
 if (PI == 0 && (VC+PC)%2 == 1) alert('O computador ganhou!');
