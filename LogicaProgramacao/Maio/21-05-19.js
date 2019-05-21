@@ -66,12 +66,12 @@ PAR ÍMPAR VC vs PC
 1 1 VC
 */
 var PI, VC, PC;
-PI = parseInt(prompt('Você escolhe: 0 para PAR, 1 para ÍMPAR'));
+PI = parseInt(prompt('Você escolhe: p para PAR, i para ÍMPAR'));
 VC = parseInt(prompt('Escreva a quantidade de dedos estendidos por você'));
 PC = Math.round(Math.random()*10);
 alert('O computador escolheu ' + PC);
-if (PI == 0 && (VC+PC)%2 == 0) alert('Você ganhou!');
-if (PI == 1 && (VC+PC)%2 == 0) alert('O computador ganhou!');
-if (PI == 0 && (VC+PC)%2 == 1) alert('O computador ganhou!');
-if (PI == 1 && (VC+PC)%2 == 1) alert('Você ganhou!');
+if (PI == 'p' && (VC+PC)%2 == 0) alert('Você ganhou!');
+if (PI == 'i' && (VC+PC)%2 == 0) alert('O computador ganhou!');
+if (PI == 'p' && (VC+PC)%2 == 1) alert('O computador ganhou!');
+if (PI == 'i' && (VC+PC)%2 == 1) alert('Você ganhou!');
 console.log(PI,VC,PC,(VC+PC));
