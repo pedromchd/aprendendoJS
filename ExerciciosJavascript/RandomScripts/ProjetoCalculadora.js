@@ -59,8 +59,9 @@ alert(res);
 
 //Inversão
 var n1, n2, t, res;
-n1 = parseInt(prompt('Insira um número'));
-n2 = parseInt(prompt(n1 +'\nQuantidade de algarismos'));
+n1 = prompt('Insira um número');
+n2 = n1.length;
+n1 = parseInt(n1);
 res = '';
 while (n2 > 0) {
   n2--;
