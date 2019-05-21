@@ -55,3 +55,9 @@ if (B == 5) B = 295;
 //TOTAL
 alert('As calorias totais de sua refeição foram: \n' + (P + S + B) + ' calorias');
 console.log(P,S,B);
+
+
+/*************** *
+PAR ÍMPAR VC vs PC
+* ***************/
+var 
