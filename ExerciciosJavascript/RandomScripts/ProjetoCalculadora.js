@@ -7,75 +7,78 @@ res = eval(n1 + op + n2);
 alert(res);
 
 //[**]
-n1 = parseFloat(prompt('Insira n1'));
-n2 = parseInt(prompt('Insira o expoente'));
-res = n1**n2;
+var num, exp, res;
+num = parseFloat(prompt('Insira n1'));
+exp = parseInt(prompt('Insira o expoente'));
+res = num**exp;
 alert(res);
 
 //Raiz
-n1 = parseFloat(prompt('Insira n1'));
-n2 = parseInt(prompt('Insira o índice'));
-res = n1**(1/n2);
+var num, ind, res;
+num = parseFloat(prompt('Insira n1'));
+ind = parseInt(prompt('Insira o índice'));
+res = num**(1/ind);
 alert(res);
 
 //Truncar
-n1 = parseInt(prompt('Insira n1'));
-n2 = parseInt(prompt('Insira casas a truncar'));
-res = n1/(10**n2);
+var num, cas, res
+num = parseInt(prompt('Insira n1'));
+cas = parseInt(prompt('Insira casas a truncar'));
+res = num/(10**cas);
 alert(res);
 
 //Posição
-var n1, n2;
-n1 = parseInt(prompt('Insira um número'));
-n2 = parseInt(prompt('Insira a posição'));
-n1 /= 10**n2;
-n1 -= parseInt(n1);
-res = parseInt(n1*10);
+var num, pos, res;
+num = parseInt(prompt('Insira um número'));
+pos = parseInt(prompt('Insira a posição'));
+num /= 10**pos;
+num -= parseInt(num);
+res = parseInt(num*10);
 alert(res);
 
 //ListaCircular
-var n1, n2, a, p, res;
+var n1, n1, an, px, res;
 n1 = parseInt(prompt('Insira o tamanho da lista'));
 n2 = parseInt(prompt('Insira a posição'));
-a = (n2-1+n1)%n1;
-p = (n2+1)%n1;
-res = a+' e '+p;
+an = (n2-1+n1)%n1;
+px = (n2+1)%n1;
+res = an +' e '+ px;
 alert(res);
 
 //AnteriorPróximoMúltiplo
-var n1, n2, a, p, res;
-n1 = parseInt(prompt('Insira n1'));
-n2 = parseInt(prompt('Número de referência'));
-a = n1-1-(n1-1)%n2;
-p = n1+(n2-n1%n2);
-res = a+' e '+p;
+var num, ref, an, px, res;
+num = parseInt(prompt('Insira n1'));
+ref = parseInt(prompt('Número de referência'));
+an = num - 1 - (num - 1)%ref;
+px = num + (ref - num%ref);
+res = an +' e '+ px;
 alert(res);
 
 //Sortear
-var n1, res;
-n1 = parseInt(prompt('Números sorteados'));
-res = Math.round(Math.random()*n1);
+var num, res;
+num = parseInt(prompt('Números sorteados'));
+res = Math.round(Math.random()*num);
 alert(res);
 
 //Inversão
-var n1, n2, t, res;
+var n1, al, t, res;
 n1 = prompt('Insira um número');
-n2 = n1.length;
+al = n1.length;
 n1 = parseInt(n1);
 res = '';
-while (n2 > 0) {
-  n2--;
-  t = parseInt(n1 / 10**n2);
-  n1 -= t * 10**n2;
+while (al > 0) {
+  al--;
+  t = parseInt(n1 / 10**al);
+  n1 -= t * 10**al;
   res = t + res;
 }
 alert(res);
 
 //Fatorial
-var n1, res;
-n1 = parseInt(prompt('Insira n1'));
-res = (n1 >= 0) ? 1: 'NaN';
-for (n1; n1>1; n1--) {
-  res *= n1;
+var num, res;
+num = parseInt(prompt('Insira n1'));
+res = (num >= 0) ? 1: 'NaN';
+for (num; num>1; num--) {
+  res *= num;
 }
 alert(res);
