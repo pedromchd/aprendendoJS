@@ -12,6 +12,12 @@ if (fator<=0){
 }
 alert(resultado);
 
+var n, f;
+n = parseInt(prompt('Insira um número'));
+f = (n >= 0) ? 1: 'NaN';
+for (n; n>1; n--) f *= n;
+alert(f);
+
 //ALGORITMO ParImpar
 var n1, n2, re, ip;
 n1 = parseInt(prompt("Pacela 1"));
@@ -24,7 +30,24 @@ if (ip == 0) {
     alert(re + ", impar");
 }
 
+var n1, n2;
+n1 = parseInt(prompt('Insira n1'));
+n2 = parseInt(prompt('Insira n2'));
+if ((n1 + n2)%2 == 0) alert('Par');
+else alert('Ímpar');
+
 //1_MaiorMenor
+var n, t, m;
+t = 0;
+m = 0;
+while (n != '' || n == '') {
+	n =prompt('Insira números');
+	if (n == '') break;
+	t += parseInt(n);
+	m++;
+	console.log(n, t, m);
+}
+alert(t/m);
 
 //2_QuadradoSoma
 var n1, n2, n3, n4, n5, somaq;
@@ -36,7 +59,7 @@ n5 = Math.pow(parseFloat(prompt("Insira n5")),2);
 somaq = Math.pow(n1+n2+n3+n4+n5,2);
 alert("Resultado é: " + somaq);
 
-//3_Média
+//3_Maior
 var n1, n2, n3, n4, n5, maior;
 n1 = parseFloat(prompt("Insira n1"));
 n2 = parseFloat(prompt("Insira n2"));
@@ -47,3 +70,13 @@ maior = Math.max(n1,n2,n3,n4,n5);
 alert("O maior número é: " + maior);
 
 //4_MaiorIdade
+var idade, maior18;
+idade = 0;
+maior18 = '';
+while (idade >= 0) {
+	idade = prompt('Insira idades');
+	if (idade == '') break;
+	if (parseInt(idade) <= 18) idade = '';
+	maior18 += idade +' ';
+}
+alert(maior18);
