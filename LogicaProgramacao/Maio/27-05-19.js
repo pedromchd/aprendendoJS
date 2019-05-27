@@ -43,7 +43,7 @@ switch (variavel) {
 //default == else
 */
 
-var dia;
+var dia = '';
 var n = parseInt(prompt('Digite um número de 0 a 6'));
 switch (n) {
   case 0:
