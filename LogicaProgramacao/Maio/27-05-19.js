@@ -43,6 +43,7 @@ switch (variavel) {
 //default == else
 */
 
+//DIAS DA SEMANA
 var dia = '';
 var n = parseInt(prompt('Digite um número de 0 a 6'));
 switch (n) {
@@ -69,3 +70,60 @@ switch (n) {
     break;
 }
 alert(dia);
+
+//FIM DE SEMANA
+var n, text;
+text = '';
+n = parseInt(prompt('Número de 0 a 6'));
+switch (n) {
+  case 0:
+    text = 'Hoje é sábado!';
+    break;
+  case 6:
+    text = 'Hoje é domingo!';
+    break;
+  default:
+    text = 'Não é fim de semana!';
+}
+alert(text);
+
+//CALCULADORA
+var n1, n2, op, res;
+n1 = parseInt(prompt('Insira o primeiro número'));
+op = prompt('Insira a operação [+] [-] [*] [/]');
+n2 = parseInt(prompt('Insira o segundo número'))
+switch (op) {
+  case '+':
+    res = n1 + n2;
+    break;
+  case '-':
+    res = n1 - n2;
+    break;
+  case '*':
+    res = n1 * n2;
+    break;
+  case '/':
+    res = n1 / n2;
+    break;
+}
+alert(res);
+
+//FIM DE SEMANA
+var text = '';
+var d = parseInt(prompt('Digite um número:'));
+switch (n) {
+  case 1:
+  case 2:
+  case 3:
+  default:
+    text = 'Não é fim de semana!';
+    break;
+  case 4:
+  case 5:
+    text = 'Perto do fim de semana!';
+    break;
+  case 0:
+  case 6:
+    text = 'Fim de semana!';
+}
+alert(text);
