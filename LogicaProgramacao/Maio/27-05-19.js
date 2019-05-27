@@ -127,3 +127,56 @@ switch (n) {
     text = 'Fim de semana!';
 }
 alert(text);
+
+//INCREMENTO
+/*
+var x = 10;
+x++;
+x;
+
+var x = 10;
+++x;
+*/
+
+//TERNÁRIO
+// condição ? 'Valor, se True' : 'VAlor, se False'
+var categ, idade;
+idade = parseInt(prompt('Insira uam idade'));
+categ = (idade >= 18) ? 'Adulto' : 'Juvenil';
+alert(categ);
+
+var x = 10;
+(x%2 == 0) ? alert('Par') : alert('Ímpar');
+
+//PEDRA PAPEL TESOURA
+var VC, PC, PPT;
+VC = parseInt(prompt('1 - PEDRA \n2 - PAPEL \n3 - TESOURA'));
+PC = Math.ceil(Math.random()*3);
+if (VC != PC) {
+  PPT = '' + VC + PC;
+  switch (PPT) {
+    case '12':
+    case '31':
+    case '23':
+      alert('Perdestes, chorastes??');
+      break;
+    case '21':
+    case '12':
+    case '32':
+      alert('Ganhastes o jogo');
+  }
+} else {
+  alert('Empatouou')
+}
+
+/*
+1 1 EM
+2 2 EM
+3 3 EM
+1 2 PC
+2 1 VC
+1 3 VC
+3 1 PC
+2 3 PC
+3 2 VC
+*/
