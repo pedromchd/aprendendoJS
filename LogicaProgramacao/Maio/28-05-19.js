@@ -42,3 +42,24 @@ if (B == C) {
     } else alert('Não');
   } else alert('Não');
 } else alert('Não');
+
+//ZIP
+var CL, CC, C1, C2;
+//LIA
+C1 = parseInt(prompt('Primeria carta de Lia'));
+C2 = parseInt(prompt('Segunda carta de Lia'));
+if (C1 == C2) CL = 2*(C1 + C2);
+else if (Math.abs(C1 - C2) == 1) CL = 3*(C1 + C2);
+else CL = C1 + C2;
+console.log(CL)
+//CAROLINA
+C1 = parseInt(prompt('Primeira carta de Carolina'));
+C2 = parseInt(prompt('Segunda carta de Carolina'));
+if (C1 == C2) CC = 2*(C1 + C2);
+else if (Math.abs(C1 - C2) == 1) CC = 3*(C1 + C2);
+else CC = C1 + C2;
+console.log(CC)
+//JOGO
+if (CL > CC) alert('Lia');
+else if (CC > CL) alert('Carolina');
+else alert('Empate');
