@@ -15,11 +15,8 @@ alert('Serão necessárias no mínimo ' + Math.ceil(++A/C));
 var L, C;
 L = parseInt(prompt('Número de linhas'));
 C = parseInt(prompt('Número de colunas'));
-if (L%2 == C%2) {
-  alert('Branco');
-} else {
-  alert('Preto');
-}
+if (L%2 == C%2) alert('Branco');
+else alert('Preto');
 
 //PLANTAÇÃO DE MORANGOS
 var C1, L1, C2, L2;
@@ -61,5 +58,24 @@ else CC = C1 + C2;
 console.log(CC)
 //JOGO
 if (CL > CC) alert('Lia');
-else if (CC > CL) alert('Carolina');
+else if (CL < CC) alert('Carolina');
 else alert('Empate');
+
+//MEDALHAS
+var T1, T2, T3, MED;
+T1 = parseInt(prompt('Tempo do primeiro nadador'));
+T2 = parseInt(prompt('Tempo do segundo nadador'));
+T3 = parseInt(prompt('Tempo do terceiro nadador'));
+if (T1 < T2 && T2 < T3) alert('1 2 3');
+else if (T3 < T1 && T1 < T2) alert('3 1 2');
+else if (T2 < T3 && T3 < T1) alert('2 3 1');
+else if (T3 < T2 && T2 < T1) alert('3 2 1');
+else if (T1 < T3 && T3 < T2) alert('1 3 2');
+else if (T2 < T1 && T1 < T3) alert('2 1 3');
+
+//CALCULADORA
+var V1, V2, V3, V4;
+V1 = parseInt(prompt('Insira o tamanho davareta 1'));
+V2 = parseInt(prompt('Insira o tamanho davareta 2'));
+V3 = parseInt(prompt('Insira o tamanho davareta 3'));
+V4 = parseInt(prompt('Insira o tamanho davareta 4'));
