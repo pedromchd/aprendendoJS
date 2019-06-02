@@ -73,9 +73,30 @@ else if (T3 < T2 && T2 < T1) alert('3 2 1');
 else if (T1 < T3 && T3 < T2) alert('1 3 2');
 else if (T2 < T1 && T1 < T3) alert('2 1 3');
 
-//CALCULADORA
+//TRIÂNGULO
 var V1, V2, V3, V4;
-V1 = parseInt(prompt('Insira o tamanho davareta 1'));
-V2 = parseInt(prompt('Insira o tamanho davareta 2'));
-V3 = parseInt(prompt('Insira o tamanho davareta 3'));
-V4 = parseInt(prompt('Insira o tamanho davareta 4'));
+V1 = parseInt(prompt('Insira o tamanho da vareta 1'));
+V2 = parseInt(prompt('Insira o tamanho da vareta 2'));
+V3 = parseInt(prompt('Insira o tamanho da vareta 3'));
+V4 = parseInt(prompt('Insira o tamanho da vareta 4'));
+
+//CALCULADORA
+var P, N, Nt;
+N = 1;
+P = parseInt(prompt('Casos de teste'));
+Nt = prompt('Caso de teste ' + P--);
+N += Nt.split('').reverse().join('');
+//Nt.split('').reverse().join('');
+for (; P > 0; --P) {
+	Nt = prompt('Caso de teste ' + P);
+	N += Nt.split('').reverse().join('');
+}
+alert(eval(N));
+
+//AVIÕES DE PAPEL
+var C, P, F;
+C = parseInt(prompt('Número de competidores'));
+P = parseInt(prompt('Número de folhas de papel compradas'));
+F = parseInt(prompt('Número de folhas para cada competidor'));
+if (C <= Math.ceil(P/F) ) alert('Sim'); 
+else alert('Não');
