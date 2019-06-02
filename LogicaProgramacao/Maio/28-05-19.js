@@ -100,3 +100,13 @@ P = parseInt(prompt('Número de folhas de papel compradas'));
 F = parseInt(prompt('Número de folhas para cada competidor'));
 if ( C <= (P/F) ) alert('Sim'); 
 else alert('Não');
+
+/***************************
+var C,P,F;
+scanf("%d%d%d","C","P","F");
+if (C <= (P/F)) {
+	printf("S");
+} else {
+	printf("N");
+}
+***************************/
