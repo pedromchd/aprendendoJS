@@ -2,7 +2,7 @@
 var C,A;
 scanf("%d%d","C","A");  
 A = Math.ceil((A+1)/C);
-printf("%d",A);
+printf(A);
 * ********************/
 
 //TELEFÉRICO
