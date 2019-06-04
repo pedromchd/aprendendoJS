@@ -5,7 +5,7 @@ Profa. Raquel Barbosa
 ***********************/
 
 //1//
-var x, y, qx, qy;
+var x, y;
 x = parseInt(prompt('Insira o valor x'));
 y = parseInt(prompt('Insira o valor y'));
 if (x == 0 && y == 0) alert('O ponto está na origem');
@@ -69,7 +69,7 @@ var A1, A2, A3, MG;
 A1 = parseInt(prompt('Pessoas que trabalham no andar 1'));
 A2 = parseInt(prompt('Pessoas que trabalham no andar 2'));
 A3 = parseInt(prompt('Pessoas que trabalham no andar 3'));
-if (A1 == A3 && A1 == A3) MG = A1*4;
+if (A1 == A2 && A1 == A3) MG = A1*4;
 else if (Math.max(A1,A2,A3) == A1) MG = A2*2 + A3*4;
 else if (Math.max(A1,A2,A3) == A2) MG = A1*2 + A3*2;
 else if (Math.max(A1,A2,A3) == A3) MG = A1*4 + A2*2; 
