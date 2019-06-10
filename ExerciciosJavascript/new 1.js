@@ -17,10 +17,10 @@ switch(MEN) {
 	default:	
 	//JOGADORES
 	var J1, J2;
-	J1 = prompt('JOGADOR 1: X ou O?');
-	(J1 == 'X') ? J2 = 'o' : J2 = 'x';
+	J1 = Math.ceil(Math.random()*2);
+	(J1 == 1) ? J2 = 'o' : J2 = 'x';
 	(J2 == 'x') ? J1 = 'o' : J1 = 'x';
-	alert('JOGADOR 1 será ' + J1 + '\nJOGADOR 2 será ' + J2);
+	alert('Por sorteio \nJOGADOR 1 será ' + J1 + '\nJOGADOR 2 será ' + J2);
 	console.log(J1,J2);
 	
 	//TABULEIRO
@@ -312,10 +312,10 @@ switch(MEN) {
 	case 'N': break;
 	case 'S':
 	//JOGADORES
-	J1 = prompt('JOGADOR 1: X ou O?');
-	(J1 == 'X') ? J2 = 'o' : J2 = 'x';
+	J1 = Math.ceil(Math.random()*2);
+	(J1 == 1) ? J2 = 'o' : J2 = 'x';
 	(J2 == 'x') ? J1 = 'o' : J1 = 'x';
-	alert('JOGADOR 1 será ' + J1 + '\nJOGADOR 2 será ' + J2);
+	alert('Por sorteio \nJOGADOR 1 será ' + J1 + '\nJOGADOR 2 será ' + J2);
 	console.log(J1,J2);
 	
 	//TABULEIRO
