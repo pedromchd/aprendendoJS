@@ -597,4 +597,4 @@ switch(MEN) {
 	alert(TAB + '\nDEU VELHA!!');
 }
 //FIM DO JOGO
-alert('FIM DO JOGO! \nObrigado por jogar!!\n\nJOGO DA VELHA\nDesenvolvido por: Pedro Garcia Machado\nVersão: v1.190605');
+alert('FIM DO JOGO! \nObrigado por jogar!!\n\nJOGO DA VELHA\nDesenvolvido por: Pedro Garcia Machado\nVersão: v1.1961 de 10 jun. 2019.');
