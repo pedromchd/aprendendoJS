@@ -32,7 +32,19 @@ S = '';
 N = parseInt(prompt('Número de N\'s a ser inserida'));
 while (N > 0 || isNaN(N)) {
   S = N--**2 + '\n' + S;
-  //S += N--**2 + '\n';
 }
 alert(S);
-//alert(S.split('').reverse().join(''));
+
+var N, mN, C;
+do {
+  N = parseInt(prompt('Insira um número'));
+} while (N == 0 || isNaN(N));
+mN = N; C = 9;
+while (C > 0) {
+  C--;
+  do {
+    N = parseInt(prompt('Inria um número'));
+    if (N < mN) mN = N;
+  } while (N == 0 || isNaN(N));
+}
+alert(mN);
