@@ -24,7 +24,9 @@ while (C > 0) {
 }
 alert(MN);
 
-//Seja a seguinte série 1, 4, 9, 16, 25, 36, 49... escreva um programa que gere essa série, até o enésimo termo, sendo N definido pelo usuário e N > 0
+/* Seja a seguinte série 1, 4, 9, 16, 25, 36, 49... 
+escreva um programa que gere essa série, até o enésimo termo, 
+sendo N definido pelo usuário e N > 0 */
 var N, S;
 S = '';
 N = parseInt(prompt('Número de N\'s a ser inserida'));
