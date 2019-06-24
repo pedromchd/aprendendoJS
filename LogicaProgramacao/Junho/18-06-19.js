@@ -99,8 +99,8 @@ while (P <= 15) {
 //11//
 var N, F;
 N = parseInt(prompt('Digite um número'));
-F = (N >= 0) ? 1: 'NaN';
-while (N > 1) F *= N--;
+F = (N >= 0) ? 1: 'invalid';
+while (N > 0) F *= N--;
 alert(F);
 
 //12//
