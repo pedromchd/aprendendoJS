@@ -29,6 +29,8 @@ var N, S;
 S = '';
 N = parseInt(prompt('Número de N\'s a ser inserida'));
 while (N > 0 || isNaN(N)) {
-  S += N--**2 + '\n';
+  S = N--**2 + '\n' + S;
+  //S += N--**2 + '\n';
 }
-alert(S.split('').reverse().join(''));
+alert(S);
+//alert(S.split('').reverse().join(''));
