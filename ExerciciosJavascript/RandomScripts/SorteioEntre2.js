@@ -1,3 +1,5 @@
-var x = Math.round(Math.random()*(10-5)+5); 
-var y = 5 + Math.round(Math.random()*5); 
-console.log(x,y);
+var M, m, S;
+m = parseInt(prompt('Insira o menor número do sorteio'));
+M = parseInt(prompt('Insira o maior número do sorteio'));
+S = Math.round(Math.random()*(M - m) + m);
+console.log(S);
