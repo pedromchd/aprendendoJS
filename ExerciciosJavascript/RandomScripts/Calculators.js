@@ -110,3 +110,10 @@ x2 = (-b - Math.sqrt(dt))/(2*a);
 alert("x1 = " + x1.toFixed(2) + " e " + "x2 = " + x2.toFixed(2));
 }
 console.log(a, b, c, dt, x1, x2);
+
+//SorteioEntre2
+var M, m, S;
+m = parseInt(prompt('Insira o menor número do sorteio'));
+M = parseInt(prompt('Insira o maior número do sorteio'));
+S = Math.round(Math.random()*(M - m) + m);
+console.log(S);
