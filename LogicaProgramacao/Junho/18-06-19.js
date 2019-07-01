@@ -68,7 +68,7 @@ var N, C, T;
 N = parseInt(prompt('Número a ser multiplicado'));
 C = 1;
 while (C <= 10) {
-  alert(N + ' x ' + C + ' = ' + N*C++);
+  console.log(N + ' x ' + C + ' = ' + N*C++);
 }
 
 //8//
