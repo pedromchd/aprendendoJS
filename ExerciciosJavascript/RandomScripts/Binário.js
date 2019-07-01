@@ -1,23 +1,25 @@
-//CONVERTER INTEIRO EM BINÁRIO
-var N, B, M;
+//Informe um número inteiro e transforme em binário
+var N, B;
 B = '';
-N = parseInt(prompt('Número para converter em binário:'));
 do {
-  M = N%2;
+  N = parseInt(prompt('Insira um número e este será convertido em binário'));
+} while (N < 0 || isNaN(N));
+while (N != 0) {
+  B = N%2 + B;
   N = parseInt(N/2);
-  B = M + B;
-} while (N != 0);
+}
 alert(B);
 
-/*CONVERTER BINÁRIO EM INTEIRO
-var N, L, B, I;
-N = prompt('Número para converter em binário');
-L = N.length;
-I = 0;
-while (L > 0) {
-  B = parseInt(N/10**--L);
-  I += B*2**L;
-  N -= B*10**L--;
+/*
+Informe um número binário e transforme em inteiro
+var B, N, E;
+N = 0; E = 0;
+do {
+  B = parseInt(prompt('Insira um número e este será convertido em binário'));
+} while (B < 0 || isNaN(B));
+while (parseInt(B) != 0) {
+  B /= 10;
+  N += parseInt((B - parseInt(B))*10)*2**E++;
 }
-alert(I);
+alert(N);
 */
