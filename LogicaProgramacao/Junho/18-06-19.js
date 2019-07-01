@@ -64,7 +64,7 @@ while (C <= 200) {
 }
 
 //7//
-var N, C, T;
+var N, C;
 N = parseInt(prompt('Número a ser multiplicado'));
 C = 1;
 while (C <= 10) {
