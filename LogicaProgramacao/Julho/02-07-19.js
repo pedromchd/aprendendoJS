@@ -53,10 +53,16 @@ for (C = 1; C <= 10; C++) {
 }
 
 //FAZER A TABUADA COMPELTA COM for
-
+var N, M;
+for (N = 1; N <= 10; N++) {
+  for (M = 1; M <= 10; M++) {
+    console.log(N + ' x ' + M + ' = ' + N*M);
+  }
+}
 
 //1//
-/* Elaborar um programa que leia um número e exiba asteriscos na página, em linhas diferentes. A cada nova linha o número de asteriscos deverá ser icrementado. */
+/* Elaborar um programa que leia um número e exiba asteriscos na página, em linhas diferentes. 
+A cada nova linha o número de asteriscos deverá ser icrementado. */
 var N = parseInt(prompt('Insira um número'));
 for (A = ''; N > 0; N--) {
   A += '*';
@@ -64,7 +70,9 @@ for (A = ''; N > 0; N--) {
 }
 
 //2//
-/* Digamos que o número de chincilas de uma fazenda triplica a cada ano, após o primeiro ano. Elaborar um programa que leia o número inicial de chincilas e anos e informe ano a ano o número médio previsto de chinchilas na fazenda. Validar a entrada para que o número inical de chincilas seja maior ou igual a 2 (um casal). */
+/* Digamos que o número de chincilas de uma fazenda triplica a cada ano, após o primeiro ano. 
+Elaborar um programa que leia o número inicial de chincilas e anos e informe ano a ano o número médio previsto de chinchilas na fazenda. 
+Validar a entrada para que o número inical de chincilas seja maior ou igual a 2 (um casal). */
 var C, A, Y;
 do {
   C = parseInt(prompt('Número de chinchilas no primeiro ano'));
