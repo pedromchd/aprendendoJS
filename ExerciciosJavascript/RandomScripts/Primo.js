@@ -26,3 +26,18 @@ for (P = '', N = 1; Q > 0; N++) {
 	} 
 }
 alert(P);
+
+
+var M, N, P, C, D;
+M = parseInt(prompt('Mostrar números primos até...'));
+for (P = '', N = 1; N <= M; N++) {
+    for (D = 0, C = N; C > 0; C--) {
+        if (N/C == parseInt(N/C)) {
+            D += N/C;
+        }
+    }
+    if (D == N+1) {
+        P += N + ' ';
+    }
+}
+alert(P);
