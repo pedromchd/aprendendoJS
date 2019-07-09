@@ -29,7 +29,7 @@ for (D = N; D > 0; D--) {
     if (D**2 <= N) {
       PRQ = D;
       break;  
-	}
+    }
   }
 }
 alert('A PRQ de ' + N + ' é:\n' + PRQ);
