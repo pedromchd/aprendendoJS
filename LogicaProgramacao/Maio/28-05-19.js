@@ -79,6 +79,34 @@ V1 = parseInt(prompt('Insira o tamanho da vareta 1'));
 V2 = parseInt(prompt('Insira o tamanho da vareta 2'));
 V3 = parseInt(prompt('Insira o tamanho da vareta 3'));
 V4 = parseInt(prompt('Insira o tamanho da vareta 4'));
+if (V1 > V2 && V1 > V3 && V1 > V4) {
+	if (V2 < V3+V4 && V3 < V2+V4 && V4 < V2+V3) {
+		alert('S');
+	} else {
+		alert('N');
+	}
+}
+if (V2 > V1 && V2 > V3 && V2 > V4) {
+	if (V1 < V3+V4 && V3 < V1+V4 && V4 < V1+V3) {
+		alert('S');
+	} else {
+		alert('N');
+	}
+}
+if (V3 > V1 && V3 > V2 && V1 > V4) {
+	if (V1 < V2+V4 && V2 < V1+V4 && V4 < V1+V2) {
+		alert('S');
+	} else {
+		alert('N');
+	}
+}
+if (V4 > V1 && V4 > V2 && V4 > V3) {
+	if (V1 < V2+V3 && V2 < V1+V3 && V3 < V1+V2) {
+		alert('S');
+	} else {
+		alert('N');
+	}
+}
 
 //CALCULADORA
 var P, N, Nt;
