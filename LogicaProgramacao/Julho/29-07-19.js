@@ -24,10 +24,8 @@ alert(Q + ' copos foram quebrados');
 var N, T, A, C;
 C = 10;
 N = parseInt(prompt('Número de pessoas detectadas pelo sensor:'));
-do {
-  T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
-  A = T;
-} while (isNaN(T)); 
+T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
+A = T;
 N--;
 while (N > 0) {
   T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
