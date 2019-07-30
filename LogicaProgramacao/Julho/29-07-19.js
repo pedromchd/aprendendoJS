@@ -27,12 +27,12 @@ N = parseInt(prompt('Número de pessoas detectadas pelo sensor:'));
 do {
   T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
   A = T;
-  N--;
-} while (isNaN(T));
+} while (isNaN(T)); 
+N--;
 while (N > 0) {
   T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
   C += T - A;
   A = T;
   N--;
 }
-alert(C);
+alert(C + 'segundos');
