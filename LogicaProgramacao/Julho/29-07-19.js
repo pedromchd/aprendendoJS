@@ -33,4 +33,4 @@ while (N > 0) {
   A = T;
   N--;
 }
-alert(C + 'segundos');
+alert(C + ' segundos');
