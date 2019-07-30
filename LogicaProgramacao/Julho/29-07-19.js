@@ -1,12 +1,17 @@
 //PJ 2018 F1 ALBUM
-var N, M, X;
+var N, M, X, E;
 N = parseInt(prompt('Número de espaços no álbum:'));
 M = parseInt(prompt('Número de figuras compradas:'));
-/*for ( ; M > 0 ; M--) {
+X = prompt('Figura comprada:');
+M--; N--;
+for (E = X ; M > 0 ; M--) {
   X = parseInt(prompt('Figura comprada:'));
-  N--;
-}*/
-alert(N-M);
+  if (E.indexOf(Number(X)) == -1) {
+    E += X;
+    N--;
+  }
+}
+alert(N);
 
 //PJ 2010 F1 GARÇOM
 var N, L, C, Q;
@@ -31,7 +36,7 @@ while (N > 0) {
   T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
   T -= A;
   if (T > 10) {
-    T -= T%10;
+    T = 10;
   }
   C += T;
   A = T;
