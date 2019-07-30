@@ -59,7 +59,7 @@ alert(String.fromCharCode(72, 69, 76, 76, 79)); //"HELLO"
 var y = String.fromCharCode("abc".charCodeAt(0) - 32) + String.fromCharCode("abc".charCodeAt(1) - 32) + String.fromCharCode("abc".charCodeAt(2) - 32); //"ABC"
 
 var y = "" + 123; //"123"
-var y = 123.toString(); //"123"
+var y = (123).toString(); //"123"
 
 //Ler uma palavra e retorná-la invertida, em letras maiúsculas
 var P, L, I;
