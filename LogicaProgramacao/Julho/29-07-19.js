@@ -29,7 +29,11 @@ A = T;
 N--;
 while (N > 0) {
   T = parseInt(prompt('Instante que esta pessoa passou pelo sensor:'));
-  C += T - A;
+  T -= A;
+  if (T > 10) {
+    T -= T%10;
+  }
+  C += T;
   A = T;
   N--;
 }
