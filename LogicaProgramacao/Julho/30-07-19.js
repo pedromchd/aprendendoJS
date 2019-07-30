@@ -9,7 +9,7 @@
 var b = true;
 var x = 12.345;
 var s = "chocolate";
-//{ 'c', 'h', 'o', 'c', 'o', 'l', 'a', 't', 'e' }
+//[ 'c', 'h', 'o', 'c', 'o', 'l', 'a', 't', 'e' ]
 //   0    1    2    3    4    5    6    7    8
 
 var t = "raciocínio";
@@ -68,8 +68,7 @@ for (I = '', L = 0; L < P.length; L++) {
   I = P[L] + I;
 }
 alert(I.toUpperCase());
-//alert((P.split('').reverse().join('')).toUpperCase());
-//alert(prompt('').split('').reverse().join('').toUpperCase())
+//alert(prompt().split('').reverse().join('').toUpperCase())
 
 var y = "abc";
 y.repeat(2); //"abcabc";
@@ -88,3 +87,5 @@ var p2 = a.indexOf("banana",p1+1); //7
 alert(a.indexOF("abacaxi")); //-1
 
 //TAREFA - FAZER UMA FORCA E TERMINAR O EXERCÍCIO DA OBI ÁLBUM DA COPA
+
+//FORCA
