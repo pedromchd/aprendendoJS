@@ -86,6 +86,11 @@ var p2 = a.indexOf("banana",p1+1); //7
 
 alert(a.indexOF("abacaxi")); //-1
 
+T = "Pedro";
+T.replace("o","a"); //"Pedra"
+
 //TAREFA - FAZER UMA FORCA E TERMINAR O EXERCÍCIO DA OBI ÁLBUM DA COPA
+
+
 
 //FORCA
