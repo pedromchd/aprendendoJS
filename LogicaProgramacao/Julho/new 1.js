@@ -11,10 +11,18 @@ while (E < 6) {
 	for (T = '', C = 0; C < P.length; C++) {
 		if (P.indexOf(L) != -1) {
 			Le += L;
-			if (P[C] != L) {
-				T += '_ ';
-			} else {
+			if (Le.indexOf(P[C]) != -1) {
 				T += P[C] + ' ';
+			} else if (P[C] != L) {
+				if (P[C] == ' ') {
+					T += '  ';
+				} else {
+					T += '_ ';
+				}
+			} else {
+				if (P[C] == L) {
+					T += P[C] + ' ';
+				}
 			} 
 		} else {
 			alert('A letra ' + L + ' não foi encontrada na palavra!');
@@ -25,7 +33,9 @@ while (E < 6) {
 	}
 	console.log(T);
 	if (T == Pt) {
-		alert('Parabéns, você ganhou!');
+		alert(T + '\nParabéns, você ganhou!');
 		break;
+	} else if (E == 6) {
+		alert('Você perdeu! \nA palavra era ' + P);
 	}
 }
