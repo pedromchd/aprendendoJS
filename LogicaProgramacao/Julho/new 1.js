@@ -23,10 +23,8 @@ while (E < 6) {
         } else {
           T += '_ ';
         }
-      } else {
-        if (P[C] == L) {
-          T += P[C] + ' ';
-        }
+      } else if (P[C] == L) {
+        T += P[C] + ' ';
       } 
     } else {
       alert('A letra ' + L + ' não foi encontrada na palavra!');
