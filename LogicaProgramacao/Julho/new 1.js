@@ -3,7 +3,7 @@ P = prompt('Palavra:').toUpperCase();
 E = 0; Le = ''; Li = '';
 for (Pt = '', C = 0; C < P.length; C++) {
   if (P[C] == ' ') {
-    Pt += ' '; 
+    Pt += '  '; 
   } else {
     Pt += P[C] + ' ';
   }
