@@ -1,6 +1,7 @@
-var P, Pt, L, T, C, Le, Li, E;
+var P, Pt, L, T, C, Le, Li, E, Tr;
 P = prompt('Palavra:').toUpperCase();
 E = 0; Le = ''; Li = '';
+Tr = '_ '.repeat(P.length);
 for (Pt = '', C = 0; C < P.length; C++) {
   if (P[C] == ' ') {
     Pt += '  '; 
@@ -10,7 +11,7 @@ for (Pt = '', C = 0; C < P.length; C++) {
 }
 while (E < 6) {
   do {
-    L = prompt('Letra:').toUpperCase();
+    L = prompt(Tr + '\nLetra:\n' + Li).toUpperCase();
   } while (Le.indexOf(L) != -1 || Li.indexOf(L) != -1);
   for (T = '', C = 0; C < P.length; C++) {
     if (P.indexOf(L) != -1) {
@@ -25,7 +26,8 @@ while (E < 6) {
         }
       } else if (P[C] == L) {
         T += P[C] + ' ';
-      } 
+      }
+      Tr = T;
     } else {
       alert('A letra ' + L + ' não foi encontrada na palavra!');
       E++;
