@@ -90,5 +90,5 @@ alert(S);
 
 //5//
 var T, D, N;
-T = prompt('Telefone:');
-D = T.trim().slice(0,T.trim().lastIndexOf(')')+1);
+T = prompt('Telefone');
+D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim();
