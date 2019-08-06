@@ -90,7 +90,4 @@ T = "Pedro";
 T.replace("o","a"); //"Pedra"
 
 //TAREFA - FAZER UMA FORCA E TERMINAR O EXERCÍCIO DA OBI ÁLBUM DA COPA
-
-
-
 //FORCA
