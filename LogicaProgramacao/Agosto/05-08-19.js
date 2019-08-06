@@ -42,6 +42,22 @@ while (N1 >= 1 && N2 >= 1) {
 }
 alert('O M.M.C. entre ' + n1 + ' e ' + n2 + ' é ' + Dt);
 
+//*************************************
+var N1, N2, MMC;
+N1 = parseInt(prompt('Número'));
+N2 = parseInt(prompt('Outro número'));
+MMC = 2;
+while (true) {
+  if (MMC%N1 == 0) {
+    if (MMC%N2 == 0) {
+      break;
+    }
+  }
+  MMC++;
+}
+alert(MMC);
+//*************************************
+
 //2//
 var G, C, N, V, L;
 C = 0; G = 0;
