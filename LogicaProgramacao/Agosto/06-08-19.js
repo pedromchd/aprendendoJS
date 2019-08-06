@@ -89,6 +89,9 @@ S = '(' + D + ') ' + N.slice(0,4) + '-' + N.slice(4);
 alert(S);
 
 //5//
-var T, D, N;
+var T, D, N, C, Tc;
 T = prompt('Telefone');
+for (C = 0; C < T.length; C++) {
+  Tc = T.charCodeAt(C);
+}
 D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim();
