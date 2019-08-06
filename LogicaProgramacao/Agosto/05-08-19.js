@@ -64,8 +64,7 @@ var V, R, N, M;
 V = parseInt(prompt('Valor inicial aplicado na poupança:'));
 R = parseInt(prompt('Rendimento mensal da poupança em %:'));
 N = parseInt(prompt('Número de meses a serem simulados:'));
-R = R/100 * V;
 for (M = N; M > 0; M--) {
-  V += R;
+  V += R/100 * V;
 }
-alert('Após ' + N + ' meses, o valor final na poupança será de R$' + V);
+alert('Após ' + N + ' meses, o valor final na poupança será de R$' + V.toFixed(2));
