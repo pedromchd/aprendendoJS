@@ -89,8 +89,27 @@ S = '(' + D + ') ' + N.slice(0,4) + '-' + N.slice(4);
 alert(S);
 
 //5//
-var T, D, N;
-T = prompt('Telefone');
+var T, D, N, V, Tc, C;
+do {
+  T = prompt('Telefone');
+  for (V = false, C = 0; C < T.length; C++) {
+    Tc = T.charCodeAt(C);
+	if (Tc > 64 && Tc < 91 || Tc > 96 && Tc < 123) {
+	  V = true;
+      break;
+	}
+  }
+  if (V == true) {
+	continue;
+  } else {
+	V = false;
+  }
+} while (V == true);
 D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim();
 N = T.slice(T.indexOf(')')+1).trim().replace('-','');
+if (N.length == 9 && N[0] == 9) {
+  N = N.replace(9,'');
+}
 console.log(D,N);
+
+//6//
