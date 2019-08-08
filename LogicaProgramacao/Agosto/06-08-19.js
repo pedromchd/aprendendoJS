@@ -178,3 +178,127 @@ switch (N) {
     N = D.replace('/12/',' de dezembro de ');
 }
 alert(N);
+
+//8//
+var D, C, DC, d, m, a;
+D = prompt('Insira uma data');
+/* 
+   D D / M M / A A A A 
+   0 1 2 3 4 5 6 7 8 9 
+*/
+if (D.length == 10) {
+  for (C = 0; C < D.length; C++) {
+    DC = D.charCodeAt(C);
+	if (DC < 45 || DC > 57) {
+	  alert(D + '\nA data é inválida');
+	  break;
+	} else {
+	  d = parseInt(D.substr(0,2));
+	  m = parseInt(D.substring(3,5));
+	  a = parseInt(D.slice(6));
+	  if (a > 1584 || (a%400 == 0 || (a%4 == 0 && a%100 != 0))) {
+	    if (m == 1 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 2 && d >= 1 && d <= 29) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 3 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 4 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 5 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 6 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 7 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 8 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 9 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 10 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 11 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 12 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else {
+		  alert(D + '\nA data é inválida');
+		}
+	  } else 
+	  if (m >= 1 && m <= 12) {
+	    if (m == 1 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 2 && d >= 1 && d <= 28) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 3 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 4 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 5 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 6 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 7 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 8 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 9 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 10 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 11 && d >= 1 && d <= 30) {
+		  alert(D + '\nA data é válida');
+		} else 
+	    if (m == 12 && d >= 1 && d <= 31) {
+		  alert(D + '\nA data é válida');
+		} else {
+		  alert(D + '\nA data é inválida');
+		}
+	  } else {
+		alert(D + '\nA data é inválida');
+	  }
+	}
+  }
+} else {
+  alert(D + '\nA data é inválida');
+}
+
+//9//
+/* 1 0 . 0 0 0 , 0 0 
+   0 1 2 3 4 5 6 7 8
+*/
+var Q, C;
+Q = prompt('Quantia');
+if (Q.indexOf(',') == -1) {
+  Q += ',00';
+}
+if (Q.length >= 7) {
+  Q = Q.replace(Q[Q.lastIndexOf(',')-4],Q[Q.lastIndexOf(',')-4]+'.');
+}
+if (Q.length < 9) {
+  for (C = Q.length; C < 9; C++) {
+    Q = '*' + Q;
+  }
+}
+alert(Q);
