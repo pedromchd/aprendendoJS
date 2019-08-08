@@ -39,12 +39,12 @@ alert(b.slice(11,14)); //"log"
 alert(b.slice(7)); //"nio logico"
 
 S = "arara";
-S.replace(/a/g,'e');
+S.replace(/a/g,'e'); //"erere"
 // /a - string a substituir
 // /g - global (todas as ocorrências)
 S = "Papagaio";
-S.replace(/p/g,'x');
-S.replace(/p/gi,'x');
+S.replace(/p/g,'x'); //"Paxagaio"
+S.replace(/p/gi,'x'); //"xaxagaio"
 // /i - case insensitive
 
 S = "ararararaAarararara";
@@ -113,3 +113,68 @@ if (N.length == 9 && N[0] == 9) {
 console.log(D,N);
 
 //6//
+var P, Y;
+P = prompt('Palavra em inglês').toLowerCase();
+switch (P[P.length -1]) {
+  case 'y':
+    Y = P[P.lastIndexOf('y') -1]
+	if ('aeiou'.indexOf(Y) != -1) {
+      P += 's'
+	} else {
+	  P = P.slice(0,P.length -1) + 'ies';
+	}
+  break;
+  case 'o': case 'x': case 'z':
+    P += 'es';
+  break;
+  default:
+    if (P.endsWith('ch') == true || P.endsWith('sh') == true || P.endsWith ('ss') == true ) {
+	  P += 'es';
+	} else {
+	  P += 's';
+	}
+}
+console.log(P);
+
+//7//
+var D, N;
+D = prompt('Insira a data no formato DD/MM/AAAA');
+N = D.slice(D.indexOf('/')+1,D.lastIndexOf('/'));
+switch (N) {
+  case '01':
+    N = D.replace('/01/',' de janeiro de ');
+  break;
+  case '02':
+    N = D.replace('/02/',' de fevereiro de ');
+  break;
+  case '03':
+    N = D.replace('/03/',' de março de ');
+  break;
+  case '04':
+    N = D.replace('/04/',' de abril de ');
+  break;
+  case '05':
+    N = D.replace('/05/',' de maio de ');
+  break;
+  case '06':
+    N = D.replace('/06/',' de junho de ');
+  break;
+  case '07':
+    N = D.replace('/07/',' de julho de ');
+  break;
+  case '08':
+    N = D.replace('/08/',' de agosto de ');
+  break;
+  case '09':
+    N = D.replace('/09/',' de setembro de ');
+  break;
+  case '10':
+    N = D.replace('/10/',' de outubro de ');
+  break;
+  case '11':
+    N = D.replace('/11/',' de novembro de ');
+  break;
+  case '12':
+    N = D.replace('/12/',' de dezembro de ');
+}
+alert(N);
