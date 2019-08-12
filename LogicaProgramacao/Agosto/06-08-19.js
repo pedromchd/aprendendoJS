@@ -94,15 +94,15 @@ do {
   T = prompt('Telefone');
   for (V = false, C = 0; C < T.length; C++) {
     Tc = T.charCodeAt(C);
-	if (Tc > 64 && Tc < 91 || Tc > 96 && Tc < 123) {
-	  V = true;
+    if (Tc > 64 && Tc < 91 || Tc > 96 && Tc < 123) {
+      V = true;
       break;
-	}
+    }
   }
   if (V == true) {
-	continue;
+    continue;
   } else {
-	V = false;
+    V = false;
   }
 } while (V == true);
 D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim();
@@ -117,22 +117,22 @@ var P, Y;
 P = prompt('Palavra em inglês').toLowerCase();
 switch (P[P.length -1]) {
   case 'y':
-    Y = P[P.lastIndexOf('y') -1]
-	if ('aeiou'.indexOf(Y) != -1) {
-      P += 's'
-	} else {
-	  P = P.slice(0,P.length -1) + 'ies';
-	}
+  Y = P[P.lastIndexOf('y') -1]
+  if ('aeiou'.indexOf(Y) != -1) {
+    P += 's'
+  } else {
+    P = P.slice(0,P.length -1) + 'ies';
+  }
   break;
   case 'o': case 'x': case 'z':
     P += 'es';
   break;
   default:
     if (P.endsWith('ch') == true || P.endsWith('sh') == true || P.endsWith ('ss') == true ) {
-	  P += 'es';
-	} else {
-	  P += 's';
-	}
+    P += 'es';
+  } else {
+    P += 's';
+  }
 }
 console.log(P);
 
