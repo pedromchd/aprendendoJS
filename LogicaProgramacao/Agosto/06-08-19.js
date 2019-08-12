@@ -197,87 +197,87 @@ for (C = 0; C < D.length; C++) {
     m = parseInt(D.substring(3,5));
     a = parseInt(D.slice(6));
     if (a > 1584 || (a%400 == 0 || (a%4 == 0 && a%100 != 0))) {
-    if (m == 1 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 2 && d >= 1 && d <= 29) {
-    alert(D + '\nA data é válida');
-  } else 
-	if (m == 3 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 4 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 5 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 6 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 7 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 8 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 9 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 10 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 11 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 12 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else {
-    alert(D + '\nA data é inválida');
-  }
-} else 
-if (m >= 1 && m <= 12) {
-  if (m == 1 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 2 && d >= 1 && d <= 28) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 3 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 4 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 5 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 6 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 7 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 8 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-	} else 
-  if (m == 9 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 10 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 11 && d >= 1 && d <= 30) {
-    alert(D + '\nA data é válida');
-  } else 
-  if (m == 12 && d >= 1 && d <= 31) {
-    alert(D + '\nA data é válida');
-  } else {
-    alert(D + '\nA data é inválida');
-  }
-} else {
-  alert(D + '\nA data é inválida');
-}
+      if (m == 1 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 2 && d >= 1 && d <= 29) {
+        alert(D + '\nA data é válida');
+      } else 
+	    if (m == 3 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 4 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 5 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 6 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 7 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 8 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 9 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 10 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 11 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 12 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else {
+        alert(D + '\nA data é inválida');
+      }
+    } else 
+    if (m >= 1 && m <= 12) {
+      if (m == 1 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 2 && d >= 1 && d <= 28) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 3 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 4 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 5 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 6 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 7 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 8 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+	    } else 
+      if (m == 9 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 10 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 11 && d >= 1 && d <= 30) {
+        alert(D + '\nA data é válida');
+      } else 
+      if (m == 12 && d >= 1 && d <= 31) {
+        alert(D + '\nA data é válida');
+      } else {
+        alert(D + '\nA data é inválida');
+      }
+    } else {
+      alert(D + '\nA data é inválida');
+    }
 	}
   }
 } else {
