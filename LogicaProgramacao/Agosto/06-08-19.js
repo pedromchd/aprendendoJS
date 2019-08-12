@@ -203,7 +203,7 @@ for (C = 0; C < D.length; C++) {
       if (m == 2 && d >= 1 && d <= 29) {
         alert(D + '\nA data é válida');
       } else 
-	    if (m == 3 && d >= 1 && d <= 31) {
+      if (m == 3 && d >= 1 && d <= 31) {
         alert(D + '\nA data é válida');
       } else 
       if (m == 4 && d >= 1 && d <= 30) {
@@ -279,9 +279,6 @@ for (C = 0; C < D.length; C++) {
       alert(D + '\nA data é inválida');
     }
 	}
-  }
-} else {
-  alert(D + '\nA data é inválida');
 }
 
 //9//
