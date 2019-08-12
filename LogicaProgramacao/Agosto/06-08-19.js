@@ -105,8 +105,8 @@ do {
     V = false;
   }
 } while (V == true);
-D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim();
-N = T.slice(T.indexOf(')')+1).trim().replace('-','');
+D = T.slice(T.indexOf('(')+1,T.lastIndexOf(')')).trim().replace(/ /g,'');
+N = T.slice(T.indexOf(')')+1).trim().replace('-','').replace(/ /g,'');
 if (N.length == 9 && N[0] == 9) {
   N = N.replace(9,'');
 }
