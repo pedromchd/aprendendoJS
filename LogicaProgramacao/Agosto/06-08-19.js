@@ -278,7 +278,7 @@ for (C = 0; C < D.length; C++) {
     } else {
       alert(D + '\nA data é inválida');
     }
-	}
+  }
 }
 
 //9//
