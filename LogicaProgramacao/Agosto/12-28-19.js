@@ -1,22 +1,18 @@
 //PJ 2018 F3 PULO
-var N, C, L, H, P;
+var N, C, J, H, B;
 N = parseInt(prompt('Número de lajotas:'));
-for (C = N, L = ''; C > 0; C--) {
-  L += prompt('1 para preto, 0 para branco \n' + L);
+for (C = ''; N > 0; N--) {
+  C += prompt('Cor da lajota:');
 }
-for (H = 0, P = 0; H < L.length; ) {
-  if (L[H] == '0') {
-    if (L[H+1] == '0') {
-      alert(-1);
+for (H = 0, B = 0; H < N; H++) {
+  if (C[H] == 0) {
+    if (B == 2) {
+      alert('-1');
       break;
     }
+    B++;
+  } else {
+    P++;
   }
-  H++;
-  if (L[H] == '1') {
-    if (L[H+1] == '0') {
-      P++;
-    } else {
-      H++; P++;
-    }
-  } else
 }
+alert(J);
