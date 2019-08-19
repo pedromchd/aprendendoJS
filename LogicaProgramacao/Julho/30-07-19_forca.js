@@ -3,10 +3,10 @@ P = prompt('Palavra:').toUpperCase(); //DEFINE A PALAVRA
 E = 0; Le = ''; Li = ''; //DEFINE OS ERROS, LETRAS EXISTENTES E INEXISTENTES
 Tr = '_ '.repeat(P.length); //CRIA O TRACEJADO INICIAL
 for (Pt = '', C = 0; C < P.length; C++) { //SEPARA AS LETRAS DA PALAVRA
-  if (P[C] == ' ') {
-    Pt += '  '; 
-  } else {
-    Pt += P[C] + ' ';
+  if (P[C] == ' ') { //SE FOR ESPAÇO
+    Pt += '  '; //SUBSTITUIR POR UM ESPAÇO MAIOR
+  } else { //SE FOR LETRA
+    Pt += P[C] + ' '; //ADICIONAR UM ESPAÇO A ELA
   }
 }
 while (E < 6) { //EXECUTA O CÓDIGO ENQUANTO HOUVEREM TENTATIVAS DISPONÍVEIS
