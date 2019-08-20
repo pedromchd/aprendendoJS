@@ -21,62 +21,107 @@ Entrega terça que vem
 
 //DESCUBRA A PALAVRA
 
-var TP, P4, P5, P6, P7, CO, NP, PA, PE, TR, TE, CH, PO, LE
-TP = parseInt(prompt('Tamanho da palavra:'));
+/*
+TP - TAMANHO DA PALAVRA
+P4 P5 P6 P7 - PALAVRAS COM 4,5,6 OU 7 LETRAS
+SO - SORTEIA O HÍFEM
+PH - POSIÇÃO DO HÍFEM
+PS - PALAVRA SORTEADA
+PE - PALAVRA ESCOLHIDA
+TT - TRACEJADO TEMPORÁRIO
+NT - NÚMERO DE TENTATIVAS
+TE - TENTATIVA
+CH - CARACTÉR DA PALAVRA
+OC - OCORRÊNCIAS DA LETRA
+LE - LETRAS ERRADAS
+TR - TRACEJADO
+TA - TENTATIVA ANTERIOR
+  LC - LETRAS CERTAS
+  PO - POSIÇÃO DA OCORRÊNCIA
+  OS - OCORRÊNCIAS NA SORTEADA
+  OE - OCORRÊNCIAS NA ESCOLHIDA
+  CO - CONTADOR
+*/
+var TP, P4, P5, P6, P7, SO, PH, PS, PE, TT, NT, TE, CH, OC, LE, TA, TR,   LC, PO, OS, OE, CO
+//alert('Bem vindo ao jogo "DESCUBRA A PALAVRA", este é um jogo de lógica que consiste 
+do { //Menu
+  do {
+    NT = parseInt(prompt('DESCUBRA A PALAVRA... \nEscolha a dificuldade: \n1 - FÁCIL (15 TENTATIVAS) \n2 - MÉDIO (10 TENTATIVAS) \n3 - DIFÍCIL (8 TENTATIVAS) \nENTER - SAIR DO JOGO')); //Dificuldade
+    if (isNaN(NT)) { //Se for ENTER
+      NT = '';
+    }
+  } while (NT != 1 && NT != 2 && NT != 3 && NT != ''); //Repete enquanto a opção certa não for escolhida
+  switch (NT) { //Define as tentativas de acordo com a opção
+    case 1: NT = 15; break;
+    case 2: NT = 10; break;
+    case 3: NT = 8; break;
+    default: //Define o comando de saída do jogo
+      NT = prompt('DESEJA SAIR DE "DESCUBRA A PALAVRA"? S/N').toUpperCase();
+  }
+  if (NT == 'S') { //Sai do jogo
+    NT = 0; break;
+  } else { //Repete o menu
+    continue;
+  }
+} while (NT != 15 && NT != 10 && NT != 8); //Repete enquanto uma das opções não for selecionada
+
+//SORTEADOR ****************
+if (NT != 0) {
+  do {
+    TP = parseInt(prompt('Tamanho da palavra:')); //Pede o length da palavra
+  } while (TP != 4 && TP != 5 && TP != 6 && TP != 7);
+}
 P4 = '-amor-arco-bala-bote-casa-cola';
 P5 = '-ajuda-anexo-barco-beijo-carne-cisne';
 P6 = '-acento-anciao-banana-batata-cheiro-contra';
 P7 = '-alegria-atitude-bolacha-bussola-capital-chacota' //ADICIONAR MAIS 24 PALAVRAS
-CO = Math.ceil(Math.random()*6); //ATENÇÃO MUDAR PARA 30
-for (NP = - ++TP; CO > 0; CO--) {
-  NP += TP;
+SO = Math.ceil(Math.random()*6); //Sorteia qual hífem pegar //ATENÇÃO MUDAR PARA 30
+for (PH = - ++TP; SO > 0; SO--) { //Acha a posição do hífem sorteado
+  PH += TP;
 }
 TP--;
+
+//Corta a palavra com relação ao tamanho
 if (TP == 4) {
-  PA = P4.substr(++NP,TP);
+  PS = P4.substr(++PH,TP);
 } else if (TP == 5) {
-  PA = P5.substr(++NP,TP);
+  PS = P5.substr(++PH,TP);
 } else if (TP == 6) {
-  PA = P6.substr(++NP,TP);
+  PS = P6.substr(++PH,TP);
 } else if (TP == 7) {
-  PA = P7.substr(++NP,TP);
+  PS = P7.substr(++PH,TP);
 }
-console.log(PA);
-TR = '_ '.repeat(TP);
-console.log(TR);
-do {
+console.log(PS);
+TT = '_ '.repeat(TP); //Define o tracejado temporário
+console.log(TT);
+//JOGO ******************
+for (TA = '', TE = 1; TE <= NT; TE++) { //JOGO DEFINITIVO
   do {
-    TE = parseInt(prompt('Escolha a dificuldade: \n1 - FÁCIL (15 TENTATIVAS) \n2 - MÉDIO (10 TENTATIVAS) \n3 - DIFÍCIL (8 TENTATIVAS) \nENTER - SAIR DO JOGO'));
-    if (isNaN(TE)) {
-      TE = '';
-    }
-  } while (TE != 1 && TE != 2 && TE != 3 && TE != '');
-  switch (TE) {
-    case 1: TE = 15; break;
-    case 2: TE = 10; break;
-    case 3: TE = 8; break;
-    default: 
-      TE = prompt('DESEJA SAIR DE "DESCUBRA A PALAVRA"? S/N').toUpperCase();
-  }
-  if (TE == 'S') {
-    break;
-  } else {
-    continue;
-  }
-} while (TE != 15 && TE != 10 && TE != 8);
-while (TE > 0) {
-  do {
-    PE = prompt('Escolha uma palavra:').toLowerCase();
-  } while (PE.length != TP);
-  for (CH = 0, LE = 0; CH < TP; CH++) {
-    PO = PE.indexOf(PA[CH]);
-    if (PO == -1) {
+    PE = prompt('Escolha uma palavra:\n' + TA).toLowerCase(); //Pede a letra e deixa minúscula
+  } while (PE.length != TP); //Enquanto o tamanho dela não for do tamanho escolhido
+  for (LE = 0, CH = 0; CH < TP; CH++) { //Verificador das letras da palavra
+    OC = PE.indexOf(PS[CH]);
+    if (OC == -1) {
       LE++;
     } else {
-      if (PO == CH-1) {
-        PE.replace(PE[PO],PE[PO].toUpperCase());
+      if (OC == CH) {
+        PE = PE.replace(PS[CH],PE[OC].toUpperCase());
       }
     }
   }
-  TE--;
+  TA += TE + ') ' + PE + ' ' + LE + '\n';
 }
+
+
+for (TR = '', CH = 0; CH < TP; CH++) {
+	if (CH == OC) {
+		TR += PS[CH].toUpperCase()+' ';
+  } else {
+		TR += '_ ';
+  }
+}
+
+/*
+ o
+/|\
+ |\
