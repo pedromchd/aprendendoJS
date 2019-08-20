@@ -21,7 +21,7 @@ Entrega terça que vem
 
 //DESCUBRA A PALAVRA
 
-var TP, P4, P5, P6, P7, CO, NP, PA, PE, TR, TE
+var TP, P4, P5, P6, P7, CO, NP, PA, PE, TR, TE, CH, PO, LE
 TP = parseInt(prompt('Tamanho da palavra:'));
 P4 = '-amor-arco-bala-bote-casa-cola';
 P5 = '-ajuda-anexo-barco-beijo-carne-cisne';
@@ -68,4 +68,15 @@ while (TE > 0) {
   do {
     PE = prompt('Escolha uma palavra:').toLowerCase();
   } while (PE.length != TP);
+  for (CH = 0, LE = 0; CH < TP; CH++) {
+    PO = PE.indexOf(PA[CH]);
+    if (PO == -1) {
+      LE++;
+    } else {
+      if (PO == CH-1) {
+        PE.replace(PE[PO],PE[PO].toUpperCase());
+      }
+    }
+  }
+  TE--;
 }
