@@ -1,5 +1,15 @@
+//MELHORAR O ALERT
+//APRIMORAR O MENU COM JOGAR E REGRAS
+//ADICONAR MAIS PALAVRAS
+//RESOLVER O ERRO ENTRE INDEXS
+//APRIMORAR O CORE
+//COMENTAR AS FUNÇÕES DE CADA LINHA PARA A APRESENTAÇÃO
+//ADICIONAR A DICA
+//ADICIONAR O DIFERENCIAL
+//ADICONAR A VITORIA PERCA E CREDITOS
+
 var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI;
-alert('Bem vindo ao jogo DESCUBRA A PALAVRA, nele, você escolhe a dificuldade de fácil à difícil, e depois o tamanho das palavras com que deseja jogar. \nVocê deve inserir palavras do mesmo número de letras até descobrir a palavra escondida ou esgotar suas tentativas. \nA cada palavra inserida, o jogo mostra em qual tentativa você está, a palavra que você escolheu e um número representando a quantidade de letras ERRADAS na palavra, se houver uma letra certa na posição certa, esta será destacada em MAÍUSCULA. \nPalavras com acento e c-cedilha não são aceitas.');
+alert('Bem vindo ao jogo DESCUBRA A PALAVRA, nele, você escolhe a dificuldade de fácil à difícil, e depois o tamanho das palavras com que deseja jogar. \nVocê deve inserir palavras do mesmo número de letras até descobrir a palavra escondida ou esgotar suas tentativas. \nA cada palavra inserida, o jogo mostra em qual tentativa você está, a palavra que você escolheu e um número representando a quantidade de letras ERRADAS na palavra. \nSe houver uma letra certa na posição certa, esta será destacada em MAÍUSCULA. \nPalavras com acento e c-cedilha não são aceitas.');
 do {
   do {
     DF = parseInt(prompt('DESCUBRA A PALAVRA... \nEscolha a dificuldade: \n1 - FÁCIL (15 TENTATIVAS) \n2 - MÉDIO (10 TENTATIVAS) \n3 - DIFÍCIL (8 TENTATIVAS) \nENTER - SAIR DO JOGO'));
@@ -70,16 +80,14 @@ for (TA = '', TE = 1; TE <= DF; TE++) {
     }
     if (FI == -1 && LI == -1) {
       LE++;
-    } else {
-      if (FI == CH) {
-        PE = PE.replace(PE[CH],PE[CH].toUpperCase());
-      } else if (LI == CH) {
-        PE = PE.slice(0,CH) + PE.slice(CH).replace(PE[CH],PE[CH].toUpperCase());
-      }
+    } else if (FI == CH) {
+      PE = PE.replace(PE[CH],PE[CH].toUpperCase());
+    } else if (LI == CH) {
+      PE = PE.slice(0,CH) + PE.slice(CH).replace(PE[CH],PE[CH].toUpperCase());
     }
   }
   (CE > LE) ? LE = CE: LE = LE;
-  TA += TE + ') ' + PE + '. ' + LE + ' letra(s) errada(s) \n';
+  TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
 }
 
 /*
