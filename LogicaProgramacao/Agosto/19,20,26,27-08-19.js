@@ -1,127 +1,140 @@
-/*_ _ _ _
-1. bola 2 letras erradas
-2. kAua 3 letras erradas
-3. gATO 1 letra errada
-4. PATO
+/***********************
+Pedro Machado - 11030373
+Logica de Program 3o Bim
+Profa. Raquel M. Barbosa
+***********************/
 
-Pedir para a pessoa escolher uma palvaras com 4,5,6 ou mais letras
-
-EScolha dificuldade fácil (15 tentativas), médio (10 tentativas) e difícil (8 tentivas)
-
-Dica a partir da 5 tentativa
-
-Sorteia as palavras (pelo menos 90)
-
-Número da tentativa o que a pessoa escreveu e quantas Letras erradas que não tem 
-
-2.0 pontos + diferencial (extra)
-
-Entrega terça que vem
-*/
-
-//DESCUBRA A PALAVRA
-
-/*
-TP - TAMANHO DA PALAVRA
-P4 P5 P6 P7 - PALAVRAS COM 4,5,6 OU 7 LETRAS
-SO - SORTEIA O HÍFEM
-PH - POSIÇÃO DO HÍFEM
-PS - PALAVRA SORTEADA
-PE - PALAVRA ESCOLHIDA
-TT - TRACEJADO TEMPORÁRIO
-NT - NÚMERO DE TENTATIVAS
-TE - TENTATIVA
-CH - CARACTÉR DA PALAVRA
-OC - OCORRÊNCIAS DA LETRA
-LE - LETRAS ERRADAS
-TR - TRACEJADO
-TA - TENTATIVA ANTERIOR
-  LC - LETRAS CERTAS
-  PO - POSIÇÃO DA OCORRÊNCIA
-  OS - OCORRÊNCIAS NA SORTEADA
-  OE - OCORRÊNCIAS NA ESCOLHIDA
-  CO - CONTADOR
-*/
-var TP, P4, P5, P6, P7, SO, PH, PS, PE, TT, NT, TE, CH, OC, LE, TA, TR,   LC, PO, OS, OE, CO
-//alert('Bem vindo ao jogo "DESCUBRA A PALAVRA", este é um jogo de lógica que consiste 
-do { //Menu
+var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC;
+do {
   do {
-    NT = parseInt(prompt('DESCUBRA A PALAVRA... \nEscolha a dificuldade: \n1 - FÁCIL (15 TENTATIVAS) \n2 - MÉDIO (10 TENTATIVAS) \n3 - DIFÍCIL (8 TENTATIVAS) \nENTER - SAIR DO JOGO')); //Dificuldade
-    if (isNaN(NT)) { //Se for ENTER
-      NT = '';
+    DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nClique em CANCELAR para sair do jogo');
+    if (DF == null) {
+      break;
     }
-  } while (NT != 1 && NT != 2 && NT != 3 && NT != ''); //Repete enquanto a opção certa não for escolhida
-  switch (NT) { //Define as tentativas de acordo com a opção
-    case 1: NT = 15; break;
-    case 2: NT = 10; break;
-    case 3: NT = 8; break;
-    default: //Define o comando de saída do jogo
-      NT = prompt('DESEJA SAIR DE "DESCUBRA A PALAVRA"? S/N').toUpperCase();
+    if (DF.toUpperCase() == 'R') {
+      alert('REGRAS: \nNo jogo Descubra a Palavra, você escolhe a quantidade de letras com que deseja jogar e a quantidade de tentativas relativa à dificuldade. \nDepois, deve adivinhar a palavra sorteada pelo computador, seguindo as orientações dadas.');
+    }
+  } while (DF != '');
+  if (DF == null) {
+    do {
+      DF = prompt('Deseja sair do jogo? S/N').toUpperCase();
+    } while (DF != 'S' && DF != 'N');
   }
-  if (NT == 'S') { //Sai do jogo
-    NT = 0; break;
-  } else { //Repete o menu
+  if (DF == 'S') {
+    break;
+  } else if (DF == 'N') {
+    DF = 'S';
     continue;
   }
-} while (NT != 15 && NT != 10 && NT != 8); //Repete enquanto uma das opções não for selecionada
-
-//SORTEADOR ****************
-if (NT != 0) {
   do {
-    TP = parseInt(prompt('Tamanho da palavra:')); //Pede o length da palavra
-  } while (TP != 4 && TP != 5 && TP != 6 && TP != 7);
-}
-P4 = '-amor-arco-bala-bote-casa-cola';
-P5 = '-ajuda-anexo-barco-beijo-carne-cisne';
-P6 = '-acento-anciao-banana-batata-cheiro-contra';
-P7 = '-alegria-atitude-bolacha-bussola-capital-chacota' //ADICIONAR MAIS 24 PALAVRAS
-SO = Math.ceil(Math.random()*6); //Sorteia qual hífem pegar //ATENÇÃO MUDAR PARA 30
-for (PH = - ++TP; SO > 0; SO--) { //Acha a posição do hífem sorteado
-  PH += TP;
-}
-TP--;
-
-//Corta a palavra com relação ao tamanho
-if (TP == 4) {
-  PS = P4.substr(++PH,TP);
-} else if (TP == 5) {
-  PS = P5.substr(++PH,TP);
-} else if (TP == 6) {
-  PS = P6.substr(++PH,TP);
-} else if (TP == 7) {
-  PS = P7.substr(++PH,TP);
-}
-console.log(PS);
-TT = '_ '.repeat(TP); //Define o tracejado temporário
-console.log(TT);
-//JOGO ******************
-for (TA = '', TE = 1; TE <= NT; TE++) { //JOGO DEFINITIVO
+    NL = parseInt(prompt('Escolha o número de letras com que deseja jogar: 4, 5, 6 ou 7 letras.'));
+  } while (NL != 4 && NL != 5 && NL != 6 && NL != 7);
   do {
-    PE = prompt('Escolha uma palavra:\n' + TA).toLowerCase(); //Pede a letra e deixa minúscula
-  } while (PE.length != TP); //Enquanto o tamanho dela não for do tamanho escolhido
-  for (LE = 0, CH = 0; CH < TP; CH++) { //Verificador das letras da palavra
-    OC = PE.indexOf(PS[CH]);
-    if (OC == -1) {
-      LE++;
-    } else {
-      if (OC == CH) {
-        PE = PE.replace(PS[CH],PE[OC].toUpperCase());
+    do {
+      DF = parseInt(prompt('DIFICULDADE: \n1 - FÁCIL (15 tentativas) \n2 - MÉDIO (10 tentativas) \n3 - DIFÍCIL (8 tentativas)'));
+    } while (DF != 1 && DF != 2 && DF != 3);
+    switch (DF) {
+      case 1:
+      DF = 15;
+      break;
+      case 2:
+      DF = 10;
+      break;
+      case 3:
+      DF = 8;
+    }
+  } while (DF != 15 && DF != 10 && DF != 8);
+  alert('LETRAS COM ACENTO E C-CEDILHA NÃO SÃO PERMITIDAS');
+  P4 = '-agua-arco-bala-bote-casa-cola-dado-dote-eixo-erro-faca-frio-gado-grau-halo-hoje-ilha-item-jaca-jogo-lago-lobo-mole-mofo-neto-nove-oleo-olho-pato-peru';
+  P5 = '-ajuda-anexo-barco-beijo-carne-cisne-diabo-doido-esqui-etnia-forca-fruta-golpe-grama-honra-hotel-icone-ideia-jaula-jovem-leite-limbo-magia-motim-navio-nivel-ontem-opera-poder-prato';
+  P6 = '-amanha-anciao-banana-batata-cheiro-contra-destro-digito-escopo-enxame-fossil-fresta-gloria-grande-habito-hafnio-imagem-insumo-jacare-jiboia-laguna-leitor-macula-motriz-nectar-nucleo-objeto-origem-plebeu-prisma';
+  P7 = '-alegria-atitude-bolacha-bussola-capital-chacota-deboche-deserto-empatia-exotico-familia-fissura-gingado-governo-heresia-hortela-iconico-iguaria-jangada-jornada-lampejo-luxuria-maquina-mosaico-natural-nobreza-obliquo-ousadia-planeta-precoce';
+  SO = Math.ceil(Math.random()*30);
+  for (HA = -(++NL); SO > 0; SO--) {
+    HA += NL;
+  }
+  NL--;
+  switch (NL) {
+    case 4:
+    PS = P4.substr(++HA,NL);
+    break;
+    case 5:
+    PS = P5.substr(++HA,NL);
+    break;
+    case 6:
+    PS = P6.substr(++HA,NL);
+    break;
+    case 7:
+    PS = P7.substr(++HA,NL);
+  }
+  console.log(PS);
+  for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1; TE <= DF; TE++) {
+    do {
+      PE = prompt(TR + '\nChute uma palavra de ' + NL + ' letras: \n' + TA).toLowerCase();
+    } while (PE.length != NL);
+    if (PE == PS) {
+      VD = true;
+    }
+    for (LE = 0, CE = 0, CH = 0; CH < NL; CH++) {
+      OC = PS.indexOf(PE.toLowerCase().charAt(CH));
+      FI = PE.indexOf(PS[CH]);
+      LI = PE.lastIndexOf(PS[CH]);
+      if (OC == -1) {
+        CE++;
+      }
+      if (FI == -1 && LI == -1) {
+        LE++;
+      } else if (FI == CH) {
+        PE = PE.replace(PE[CH],PE[CH].toUpperCase());
+        UP = UP.replace(UP[CH],UP[CH].toUpperCase());
+      } else if (LI == CH) {
+        PE = PE.slice(0,CH) + PE.slice(CH).replace(PE[CH],PE[CH].toUpperCase());
+        UP = UP.slice(0,CH) + UP.slice(CH).replace(UP[CH],UP[CH].toUpperCase());
       }
     }
+    (CE > LE) ? LE = CE: LE = LE;
+    for (TR = '', PC = 0; PC < NL; PC++) {
+      if (UP.charCodeAt(PC) >= 65 && UP.charCodeAt(PC) <= 90) {
+        TR += UP[PC] + ' ';
+      } else {
+        TR += '_ ';
+      }
+    }
+    TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
+    if (VD == true) {
+      alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
+      break;
+    }
   }
-  TA += TE + ') ' + PE + ' ' + LE + '\n';
-}
-
-
-for (TR = '', CH = 0; CH < TP; CH++) {
-	if (CH == OC) {
-		TR += PS[CH].toUpperCase()+' ';
-  } else {
-		TR += '_ ';
+  if (VD == false || TE > DF) {
+    alert('VOCÊ PERDEU! A palavra correta era: ' + PS.toUpperCase());
   }
-}
+  do {
+    DF = prompt('Deseja jogar novamente? S/N').toUpperCase();
+  } while (DF != 'S' && DF != 'N');
+} while (DF != 'N');
 
 /*
- o
-/|\
- |\
+DF - Dificuldade
+NL - Número de letras
+P4 - Palavras de 4 letras
+P5 - Palavras de 5 letras
+P6 - Palavras de 6 letras
+P7 - Palavras de 7 letras
+SO - Sorteador
+HA - Hífem at
+PS - Palavra sorteada
+TA - Tentativa anterior
+TE - Tentativa
+PE - Palavra escolhida
+LE - Letras erradas
+CE - Characteres errados
+CH - Character At
+OC - Ocorrências do character
+FI - First index of
+LI - Last index of
+VD - Vitória ou derrota
+TR - Tracejado
+UP - Upper case
+PC - Percorredor de character
+*/
