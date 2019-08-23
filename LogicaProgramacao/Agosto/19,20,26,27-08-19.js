@@ -4,7 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
-var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC;
+var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC;
 do {
   do {
     DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nClique em CANCELAR para sair do jogo');
@@ -93,14 +93,20 @@ do {
       }
     }
     (CE > LE) ? LE = CE: LE = LE;
-    for (TR = '', PC = 0; PC < NL; PC++) {
+    for (LC = '', TR = '', PC = 0; PC < NL; PC++) {
       if (UP.charCodeAt(PC) >= 65 && UP.charCodeAt(PC) <= 90) {
         TR += UP[PC] + ' ';
       } else {
         TR += '_ ';
+        LC += UP[PC];
       }
     }
     TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
+    if (TE%4 == 0) {
+      DC = Math.ceil(Math.random()*LC.length);
+      UP = UP.replace(LC[DC],LC[DC].toUpperCase());
+      TA += 'DICA: A palavra possui a letra ' + LC[DC].toUpperCase() + '\n';
+    }
     if (VD == true) {
       alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
       break;
@@ -137,4 +143,13 @@ VD - Vitória ou derrota
 TR - Tracejado
 UP - Upper case
 PC - Percorredor de character
+LC - Lower case
+DC - Dica
 */
+
+//MAIS PALAVRAS
+//MELHORAR O DIFERENCIAL
+//COMENTAR
+//ADICIONAR A DICA
+//CRÉDITOS
+//REMOVER BATATA E ICONICO
