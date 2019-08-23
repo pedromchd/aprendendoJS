@@ -4,7 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
-var DF, NL, P4, P5, P6, P7, SO, EE, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES;
+var DF, NL, P4, P5, P6, P7, SO, EE, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO;
 do {
   do {
     DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nC - Créditos \nClique em CANCELAR para sair do jogo');
@@ -46,11 +46,11 @@ do {
       DF = 8;
     }
   } while (DF != 15 && DF != 10 && DF != 8);
-  alert('LETRAS COM ACENTO E C-CEDILHA NÃO SÃO PERMITIDAS \n\nDigite S para sugestão de palavra \n\nA cada 7 jogadas o jogo mostra uma letra');
+  alert('LETRAS COM ACENTO E C-CEDILHA NÃO SÃO PERMITIDAS \n\nA cada 5 jogadas o jogo mostra uma letra');
   P4 = ' agua alvo arco auge aula bala bola bolo bota bote caos casa cedo cena cola dado dica dona dote duna eixo egua elmo erro erva faca fato flor frio fuga gado gato gelo grau gula halo hexa hino hoje humo iate iglu ilha irma item jaca jazz jogo joia juri lago laje leve lobo luxo mana meta mito mole mofo nata neto nojo nome nove ogro oleo olho onda ouro pata pato pena peru povo';
-  P5 = ' ajuda anexo barco beijo carne cisne diabo doido esqui etnia forca fruta golpe grama honra hotel icone ideia jaula jovem leite limbo magia motim navio nivel ontem opera poder prato';
+  P5 = ' acaso afeto ajuda anexo apice barco beijo carne cisne diabo doido esqui etnia forca fruta golpe grama honra hotel icone ideia jaula jovem leite limbo magia motim navio nivel ontem opera poder prato';
   P6 = ' amanha anciao baleia beleza cheiro contra destro digito escopo enxame fossil fresta gloria grande habito hafnio imagem insumo jacare jiboia laguna leitor macula motriz nectar nucleo objeto origem plebeu prisma';
-  P7 = ' alegria atitude bolacha bussola capital chacota deboche deserto empatia exotico familia fissura gingado governo heresia hortela iguaria ilhota jangada jornada lampejo luxuria maquina mosaico natural nobreza obliquo ousadia planeta precoce';
+  P7 = ' alegria atitude bolacha bussola capital chacota deboche deserto empatia exotico familia fissura gingado governo heresia hortela iguaria inimigo jangada jornada lampejo luxuria maquina mosaico natural nobreza obliquo ousadia planeta precoce';
   switch (NL) {
     case 4:
     PI = P4;
@@ -89,9 +89,19 @@ do {
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
   }
-  for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1; TE <= DF; TE++) {
+  for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1, LO = 2; TE <= DF; TE++) {
+    SU = '';
     do {
-      PE = prompt(TR + '\nChute uma palavra de ' + NL + ' letras: \n' + TA).toLowerCase();
+      PE = prompt(TR + SU + '\nChute uma palavra de ' + NL + ' letras: digite S para sugestão.\n' + TA).toLowerCase();
+      if (PE == 's') {
+        do {
+          SO = Math.ceil(Math.random()*ES);
+          for (EE = -(1 + NL); SO > 0; SO--) {
+            EE += (1 + NL);
+          }
+          SU = ' Sugestão: ' + PI.substr(++EE,NL);
+        } while (SU.substring(SU.lastIndexOf(' ')+1) == PS);
+      }
     } while (PE.length != NL);
     if (PE == PS) {
       VD = true;
@@ -114,7 +124,11 @@ do {
       }
     }
     TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
-    if ((TE+1)%7 == 0) {
+    if (TE > 5) {
+      TA = TA.slice(TA.indexOf(LO + ')'));
+      LO++;
+    } 
+    if ((TE+1)%5 == 0) {
       DC = Math.floor(Math.random()*LC.length);
       UP = UP.replace(LC[DC],LC[DC].toUpperCase());
       TA += 'DICA: A palavra possui a letra ' + LC[DC].toUpperCase() + '\n';
@@ -129,7 +143,7 @@ do {
       }
     }
     if (TV == TR) {
-      VD = true;
+      TR = 'A palavra é ' + TV.replace(/ /g,'');
     }
     if (VD == true) {
       alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
@@ -173,9 +187,6 @@ DC - Dica
 TV - Traçejado verificador
 PI - Palavra isolada
 ES - Espaços
+SU - Sugestão
+LO - Log
 */
-
-//MAIS PALAVRAS
-//COMENTAR
-//CRÉDITOS
-//FALAR SOBRE A DICA NA 7 PALAVRA
