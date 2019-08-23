@@ -111,7 +111,7 @@ do {
       }
     }
     if (TV == TR) {
-      VD == true;
+      VD = true;
     }
     if (VD == true) {
       alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
