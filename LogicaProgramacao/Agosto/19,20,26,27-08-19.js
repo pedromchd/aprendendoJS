@@ -4,7 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
-var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC;
+var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV;
 do {
   do {
     DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nClique em CANCELAR para sair do jogo');
@@ -68,6 +68,9 @@ do {
     PS = P7.substr(++HA,NL);
   }
   console.log(PS);
+  for (TV = '', PC = 0; PC < NL; PC++) {
+    TV += PS[PC].toUpperCase() + ' ';
+  }
   for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1; TE <= DF; TE++) {
     do {
       PE = prompt(TR + '\nChute uma palavra de ' + NL + ' letras: \n' + TA).toLowerCase();
@@ -84,13 +87,19 @@ do {
       }
       if (FI == -1 && LI == -1) {
         LE++;
-      } else if (FI == CH) {
-        PE = PE.replace(PE[CH],PE[CH].toUpperCase());
-        UP = UP.replace(UP[CH],UP[CH].toUpperCase());
       } else if (LI == CH) {
         PE = PE.slice(0,CH) + PE.slice(CH).replace(PE[CH],PE[CH].toUpperCase());
         UP = UP.slice(0,CH) + UP.slice(CH).replace(UP[CH],UP[CH].toUpperCase());
+      } else if (FI == CH) {
+        PE = PE.replace(PE[CH],PE[CH].toUpperCase());
+        UP = UP.replace(UP[CH],UP[CH].toUpperCase());
       }
+    }
+    TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
+    if (TE%5 == 0) {
+      DC = Math.floor(Math.random()*LC.length);
+      UP = UP.replace(LC[DC],LC[DC].toUpperCase());
+      TA += 'DICA: A palavra possui a letra ' + LC[DC].toUpperCase() + '\n';
     }
     (CE > LE) ? LE = CE: LE = LE;
     for (LC = '', TR = '', PC = 0; PC < NL; PC++) {
@@ -101,11 +110,8 @@ do {
         LC += UP[PC];
       }
     }
-    TA += TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s) \n';
-    if (TE%4 == 0) {
-      DC = Math.ceil(Math.random()*LC.length);
-      UP = UP.replace(LC[DC],LC[DC].toUpperCase());
-      TA += 'DICA: A palavra possui a letra ' + LC[DC].toUpperCase() + '\n';
+    if (TV == TR) {
+      VD == true;
     }
     if (VD == true) {
       alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
@@ -145,6 +151,7 @@ UP - Upper case
 PC - Percorredor de character
 LC - Lower case
 DC - Dica
+TV - Traçejado verificador
 */
 
 //MAIS PALAVRAS
