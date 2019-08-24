@@ -136,7 +136,7 @@ do {
       TR = 'A palavra é ' + TV.replace(/ /g,'');
     }
     if (VD == true) {
-      alert(TA.slice(TA.indexOf(')')).replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
+      alert(TA.slice(TA.indexOf(')')-1).replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
       break;
     }
   }
