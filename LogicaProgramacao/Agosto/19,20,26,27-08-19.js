@@ -85,7 +85,7 @@ do {
     case 7:
     PS = P7.substr(++EE,NL);
   }
-  console.log(PS);
+  //console.log(PS);
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
   }
