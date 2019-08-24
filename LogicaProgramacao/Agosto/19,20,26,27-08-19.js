@@ -32,20 +32,18 @@ do {
     NL = parseInt(prompt('Escolha o número de letras com que deseja jogar: 4, 5, 6 ou 7 letras.'));
   } while (NL != 4 && NL != 5 && NL != 6 && NL != 7);
   do {
-    do {
-      DF = parseInt(prompt('DIFICULDADE: \n1 - Fácil (15 tentativas) \n2 - Médio (10 tentativas) \n3 - Difícil (8 tentativas)'));
-    } while (DF != 1 && DF != 2 && DF != 3);
-    switch (DF) {
-      case 1:
-      DF = 15;
-      break;
-      case 2:
-      DF = 10;
-      break;
-      case 3:
-      DF = 8;
-    }
-  } while (DF != 15 && DF != 10 && DF != 8);
+    DF = parseInt(prompt('DIFICULDADE: \n1 - Fácil (15 tentativas) \n2 - Médio (10 tentativas) \n3 - Difícil (8 tentativas)'));
+  } while (DF != 1 && DF != 2 && DF != 3);
+  switch (DF) {
+    case 1:
+    DF = 15;
+    break;
+    case 2:
+    DF = 10;
+    break;
+    case 3:
+    DF = 8;
+  }
   alert('LETRAS COM ACENTO E C-CEDILHA NÃO SÃO PERMITIDAS \n\nA cada 5 jogadas o jogo mostra uma letra');
   P4 = ' agua alvo arco auge aula bala bola bolo bota bote caos casa cedo cena cola dado dica dona dote duna eixo egua elmo erro erva faca fato flor frio fuga gado gato gelo grau gula halo hexa hino hoje humo iate iglu ilha irma item jaca jazz jogo joia juri lago laje leve lobo luxo mana meta mito mole mofo nata neto nojo nome nove ogro oleo olho onda ouro pata pato pena peru povo';
   P5 = ' acaso afeto ajuda anexo apice barco beijo bicho bolsa burro carne casal cisne coisa crise deixa diabo dogma doido ducto esqui etica etnia exito extra feliz forca fruta fusao fuzil germe gemeo golpe grama grupo hiato honra homem hotel humor icone ideia idoso ileso irmao jaula janta jarra jovem justo leite lenda limbo livro louca magia massa molho morro motim nariz navio nivel norma nuvem oasis ontem opaco opera orgao plebe poder posto prato prova';
