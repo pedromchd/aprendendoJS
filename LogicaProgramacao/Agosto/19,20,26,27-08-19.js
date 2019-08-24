@@ -142,7 +142,7 @@ do {
         LC += UP[PC];
       }
     }
-    if (TV == TR) {
+    if (TV == TR && VD != true) {
       TR = 'A palavra é ' + TV.replace(/ /g,'');
     }
     if (VD == true) {
