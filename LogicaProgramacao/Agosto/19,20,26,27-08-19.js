@@ -4,7 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
-var DF, NL, P4, P5, P6, P7, SO, EE, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO;
+var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO;
 do {
   do {
     DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nC - Créditos \nClique em CANCELAR para sair do jogo');
@@ -66,11 +66,11 @@ do {
     PI = PI.replace(' ','-');
   }
   SO = Math.ceil(Math.random()*ES);
-  for (EE = -(++NL); SO > 0; SO--) {
-    EE += NL;
+  for (HA = -(++NL); SO > 0; SO--) {
+    HA += NL;
   }
   NL--;
-  PS = PI.substr(++EE,NL);
+  PS = PI.substr(++HA,NL);
   //console.log(PS);
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
@@ -82,10 +82,10 @@ do {
       if (PE == 's') {
         do {
           SO = Math.ceil(Math.random()*ES);
-          for (EE = -(1 + NL); SO > 0; SO--) {
-            EE += (1 + NL);
+          for (HA = -(1 + NL); SO > 0; SO--) {
+            HA += (1 + NL);
           }
-          SU = ' Sugestão: ' + PI.substr(++EE,NL);
+          SU = ' Sugestão: ' + PI.substr(++HA,NL);
         } while (SU.substring(SU.lastIndexOf(' ')+1) == PS);
       }
     } while (PE.length != NL);
@@ -153,7 +153,7 @@ P5 - Palavras de 5 letras
 P6 - Palavras de 6 letras
 P7 - Palavras de 7 letras
 SO - Sorteador
-EE - Espaço em
+HA - Hífem at
 PS - Palavra sorteada
 TA - Tentativa anterior
 TE - Tentativa
