@@ -70,19 +70,7 @@ do {
     EE += NL;
   }
   NL--;
-  switch (NL) {
-    case 4:
-    PS = P4.substr(++EE,NL);
-    break;
-    case 5:
-    PS = P5.substr(++EE,NL);
-    break;
-    case 6:
-    PS = P6.substr(++EE,NL);
-    break;
-    case 7:
-    PS = P7.substr(++EE,NL);
-  }
+  PS = PI.substr(++EE,NL);
   //console.log(PS);
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
