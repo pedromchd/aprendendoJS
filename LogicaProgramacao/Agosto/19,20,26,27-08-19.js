@@ -78,7 +78,7 @@ do {
   for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1, LO = 2, AL = '', UT = 3; TE <= DF; TE++) {
     SU = '';
     if ((DF - TE) < 3) {
-      AL = '\n' + UT + ' TENTATIVA(S) RESTANTE(S)!!';
+      AL = '\n**********' + UT + ' TENTATIVA(S) RESTANTE(S)!!**********';
       UT--;
     }
     do {
