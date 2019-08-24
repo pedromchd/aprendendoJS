@@ -77,8 +77,8 @@ do {
   }
   for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1, LO = 2, AL = '', UT = 3; TE <= DF; TE++) {
     SU = '';
-    if ((DF - TE) == 3) {
-      AL = '\nRestam ' + UT + ' tentativas!!\n';
+    if ((DF - TE) < 3) {
+      AL = '\n' + UT + ' TENTATIVA(S) RESTANTE(S)!!';
       UT--;
     }
     do {
@@ -115,7 +115,7 @@ do {
     }
     TA += '\n' + TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s)';
     if (TE > 5) {
-      TA = TA.slice(TA.indexOf(LO + ')'));
+      TA = '\n' + TA.slice(TA.indexOf(LO + ')'));
       LO++;
     } 
     if ((TE+1)%5 == 0) {
@@ -136,7 +136,7 @@ do {
       TR = 'A palavra é ' + TV.replace(/ /g,'');
     }
     if (VD == true) {
-      alert(TA.replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
+      alert(TA.slice(TA.indexOf(')')).replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
       break;
     }
   }
