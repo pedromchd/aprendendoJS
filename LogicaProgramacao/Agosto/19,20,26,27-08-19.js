@@ -4,7 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
-var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO, UT;
+var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO, UT, AL;
 do {
   do {
     DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nC - Créditos \nESC - Sair do jogo');
@@ -75,14 +75,14 @@ do {
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
   }
-  for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1, LO = 2, UT = ''; TE <= DF; TE++) {
+  for (VD = false, TR = '_ '.repeat(NL), UP = PS, TA = '', TE = 1, LO = 2, AL = '', UT = 3; TE <= DF; TE++) {
     SU = '';
     if ((DF - TE) == 3) {
-      UT = '\nRestam 3 tentativas!!';
-      LO++;
+      AL = '\nRestam ' + UT + ' tentativas!!\n';
+      UT--;
     }
     do {
-      PE = prompt(TR + SU + '\nChute uma palavra de ' + NL + ' letras: digite S para sugestão.' + UT + TA).toLowerCase();
+      PE = prompt(TR + SU + '\nChute uma palavra de ' + NL + ' letras: digite S para sugestão.' + AL + TA).toLowerCase();
       if (PE == 's') {
         do {
           SO = Math.ceil(Math.random()*ES);
@@ -180,4 +180,5 @@ ES - Espaços
 SU - Sugestão
 LO - Log
 UT - Últimas tentativas
+AL - Alerta de tentativas
 */
