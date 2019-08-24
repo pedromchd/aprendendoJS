@@ -7,7 +7,7 @@ Profa. Raquel M. Barbosa
 var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO;
 do {
   do {
-    DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nC - Créditos \nClique em CANCELAR para sair do jogo');
+    DF = prompt('DESCUBRA A PALAVRA... \nENTER - Jogar \nR - Regras \nC - Créditos \nESC - Sair do jogo');
     if (DF == null) {
       break;
     }
