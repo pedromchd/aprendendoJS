@@ -115,14 +115,16 @@ do {
     (CE > LE) ? LE = CE: LE = LE; 
     TA += '\n' + TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s)';
     if (TE > 5) {
-      console.log(TA.slice(1,TA.indexOf(LO)-1));
+      console.log(TA.slice(1,TA.indexOf(LO + ')')-1));
       TA = '\n' + TA.slice(TA.indexOf(LO + ')'));
       LO++;
     } 
-    if ((TE+1)%5 == 0) {
+    if ((TE+1)%5 == 0 && VD != true) {
       DC = Math.floor(Math.random()*LC.length);
-      UP = UP.replace(LC[DC],LC[DC].toUpperCase());
-      TA += '\nDICA: A palavra possui a letra ' + LC[DC].toUpperCase();
+      if (LC[DC] != undefined) {
+        UP = UP.replace(LC[DC],LC[DC].toUpperCase());
+        TA += '\nDICA: A palavra possui a letra ' + LC[DC].toUpperCase();
+      }
     }
     for (LC = '', TR = '', PC = 0; PC < NL; PC++) {
       if (UP.charCodeAt(PC) >= 65 && UP.charCodeAt(PC) <= 90) {
