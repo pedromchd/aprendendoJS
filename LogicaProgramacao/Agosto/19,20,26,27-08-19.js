@@ -112,6 +112,7 @@ do {
         UP = UP.replace(UP[CH],UP[CH].toUpperCase());
       }
     }
+    (CE > LE) ? LE = CE: LE = LE; 
     TA += '\n' + TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s)';
     if (TE > 5) {
       TA = '\n' + TA.slice(TA.indexOf(LO + ')'));
@@ -122,7 +123,6 @@ do {
       UP = UP.replace(LC[DC],LC[DC].toUpperCase());
       TA += '\nDICA: A palavra possui a letra ' + LC[DC].toUpperCase();
     }
-    (CE > LE) ? LE = CE: LE = LE;
     for (LC = '', TR = '', PC = 0; PC < NL; PC++) {
       if (UP.charCodeAt(PC) >= 65 && UP.charCodeAt(PC) <= 90) {
         TR += UP[PC] + ' ';
