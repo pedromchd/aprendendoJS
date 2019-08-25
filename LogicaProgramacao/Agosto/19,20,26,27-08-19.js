@@ -70,7 +70,7 @@ do {
     HA += (1 + NL);
   }
   PS = PI.substr(++HA,NL);
-  //console.log(PS);
+  console.log(PS);
   for (TV = '', PC = 0; PC < NL; PC++) {
     TV += PS[PC].toUpperCase() + ' ';
   }
@@ -115,6 +115,7 @@ do {
     (CE > LE) ? LE = CE: LE = LE; 
     TA += '\n' + TE + ') ' + PE + ' - ' + LE + ' letra(s) errada(s)';
     if (TE > 5) {
+      console.log(TA.slice(1,TA.indexOf(LO)-1));
       TA = '\n' + TA.slice(TA.indexOf(LO + ')'));
       LO++;
     } 
@@ -136,11 +137,13 @@ do {
     }
     if (VD == true) {
       alert(TA.slice(TA.indexOf(')')-1).replace(PE.toUpperCase() + ' - 0 letra(s) errada(s)',TR) + '\nPARABÉNS, você descobriu a palavra!!');
+      console.log(TA.slice(TA.indexOf('\n')+1));
       break;
     }
   }
   if (VD == false || TE > DF) {
     alert('VOCÊ PERDEU! A palavra correta era: ' + PS.toUpperCase());
+    console.log(TA.slice(TA.indexOf('\n')+1));
   }
   do {
     DF = prompt('Deseja jogar novamente? S/N').toUpperCase();
