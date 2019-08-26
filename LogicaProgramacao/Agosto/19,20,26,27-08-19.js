@@ -4,6 +4,7 @@ Logica de Program 3o Bim
 Profa. Raquel M. Barbosa
 ***********************/
 
+//DESCUBRA A PALAVRA...
 var DF, NL, P4, P5, P6, P7, SO, HA, PS, TA, TE, PE, LE, CE, CH, OC, FI, LI, VD, TR, UP, PC, LC, DC, TV, PI, ES, SU, LO, UT, AL;
 do {
   do {
