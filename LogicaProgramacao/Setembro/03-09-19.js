@@ -86,3 +86,46 @@ while (v == true) {
   P = P.slice(P.replace(' ','-').indexOf('-')+1);
 }
 alert('As palavras que não aparecem no texto são: \n' + R);
+
+//CORREÇÃO
+//1//
+var S, P, I, C;
+S = prompt('Insira uma palavra ou frase:').toUpperCase().trim();
+for (C = 0, P = '', I = ''; C < S.length; C++) {
+  if (S[C] >= 'A' && S[C] <= 'Z') {
+    P += S[C];
+    I = S[C] + I;
+  }
+}
+console.log(S);
+(P == I) ? console.log('É palíndromo!') : console.log('Não é palíndromo!');
+
+//2//
+var S, R, L, C;
+S = prompt('Insira uma palavra ou texto').toUpperCase().trim();
+for (R = '', C = 0; C < S.length; C++) {
+  if (S[C] >= 'A' && S[C] <= 'Z') {
+    (S[C] >= 'X') ? L = S.charCodeAt(C) + 3 - 26 : L = S.charCodeAt(C) + 3;
+    L = String.fromCharCode(L);
+  } else if (S[C] == ' ') {
+    L = ' ';
+  }
+  R += L;
+}
+console.log(R);
+
+//3//
+var T, P, R, C, S;
+T = prompt('Insira um texto qualquer:').toLowerCase().trim();
+P = prompt('Insira palavras:').toLowerCase().trim();
+for (R = '', S = '', C = 0; C <= P.length; C++) {
+  if (P[C] == ' ' || P[C] == undefined) {
+    if (T.indexOf(r) == -1) {
+      R += S + ' ';
+    }
+    S = '';
+    C++;
+  }
+  r += P[C];
+}
+console.log(R);
