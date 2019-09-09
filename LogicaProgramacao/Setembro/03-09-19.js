@@ -112,6 +112,7 @@ for (R = '', C = 0; C < S.length; C++) {
   }
   R += L;
 }
+console.log(S);
 console.log(R);
 
 //3//
@@ -128,4 +129,6 @@ for (R = '', S = '', C = 0; C <= P.length; C++) {
   }
   r += P[C];
 }
+console.log(T);
+console.log(P);
 console.log(R);
