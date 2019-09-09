@@ -122,13 +122,13 @@ T = prompt('Insira um texto qualquer:').toLowerCase().trim();
 P = prompt('Insira palavras:').toLowerCase().trim();
 for (R = '', S = '', C = 0; C <= P.length; C++) {
   if (P[C] == ' ' || P[C] == undefined) {
-    if (T.indexOf(r) == -1) {
+    if (T.indexOf(S) == -1) {
       R += S + ' ';
     }
     S = '';
     C++;
   }
-  r += P[C];
+  S += P[C];
 }
 console.log(T);
 console.log(P);
