@@ -87,7 +87,8 @@ while (v == true) {
 }
 alert('As palavras que não aparecem no texto são: \n' + R);
 
-//CORREÇÃO
+
+//CORREÇÃO******************************************************
 //1//
 var S, P, I, C;
 S = prompt('Insira uma palavra ou frase:').toUpperCase().trim();
