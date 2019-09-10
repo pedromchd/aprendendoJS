@@ -92,7 +92,7 @@ for (C = 0, A = 0, a = 0; C < Q; C++) {
   }
 }
 for (C = m, O = ''; C <= M; C++) {
-  if (String(S).indexOf(C) != -1) {
+  if (String(S + ',').indexOf(C + ',') != -1) {
     O += C + ' ';
   }
 }
