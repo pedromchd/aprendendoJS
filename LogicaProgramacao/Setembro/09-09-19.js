@@ -70,8 +70,11 @@ ORDEM CRESCENTE
 */
 var Q, N, S, C, P, I, M, m, Me, A, a, O;
 Q = parseInt(prompt('Quantidade de números a inserir:'));
-for (S = [], C = 0, P = 0, I = 0, M = 0, m = undefined, Me = 0; C < Q; C++) {
+for (S = [], C = 0, P = 0, I = 0, M = undefined, m = undefined, Me = 0; C < Q; C++) {
   N = parseInt(prompt('Insira um número:'));
+  if (M == undefined) {
+    M = N;
+  }
   if (m == undefined) {
     m = N;
   }
