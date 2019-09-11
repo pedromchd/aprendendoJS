@@ -229,7 +229,8 @@ for (C = 0, V = [], m = undefined, M = undefined; C < Q; C++) {
     M = N;
   } else if (N < m) {
     m = N;
-  } else if (N > M) {
+  }
+  if (N > M) {
     M = N;
   }
   V[C] = N;
