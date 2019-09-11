@@ -227,10 +227,10 @@ for (C = 0, V = [], m = undefined, M = undefined; C < Q; C++) {
   if (m == undefined && M == undefined) {
     m = N;
     M = N;
-  } else if (N < m) {
-    m = N;
   }
-  if (N > M) {
+  if (N < m) {
+    m = N;
+  } else if (N > M) {
     M = N;
   }
   V[C] = N;
