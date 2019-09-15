@@ -246,3 +246,22 @@ for (C = m, O = [], P = 0; C <= M; C++) {
 console.log(V);
 console.log(m,M);
 console.log(O);
+
+//BUBBLE SORT
+var C, Q, V, N, B, T;
+Q = parseInt(prompt('Quantidade de números a inserir:'));
+for (C = 0, V = []; C < Q; C++) {
+  N = parseFloat(prompt('Insira um número'));
+  V[C] = N;
+}
+do {
+  for (C = 0, P = 1, B = false; P < Q; C++, P++) {
+    if (V[C] > V[P]) {
+      T = V[C];
+      V[C] = V[P];
+      V[P] = T;
+      B = true;
+    }
+  }
+} while (B == true);
+console.log(V);
