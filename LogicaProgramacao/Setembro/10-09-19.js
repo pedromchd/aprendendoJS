@@ -265,3 +265,26 @@ do {
   }
 } while (B == true);
 console.log(V);
+
+//SELECTIVE SORT
+var C, Q, V, N, M, P, T;
+Q = parseInt(prompt('Quantidade de números a inserir:'));
+for (C = 0, V = []; C < Q; C++) {
+  N = parseInt(prompt('Insira um número'));
+  V[C] = N;
+}
+do {
+  for (P = 0, M = undefined; P < Q; P++) {
+    if (M == undefined) {
+      M = V[P];
+    }
+    if (V[P] > M) {
+      M = V[P];
+      T = P;
+    }
+  }
+  V[T] = V[--P];
+  V[P] = M;
+  Q--;
+} while (Q > 0);
+console.log(V);
