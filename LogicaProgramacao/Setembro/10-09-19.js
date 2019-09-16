@@ -162,13 +162,13 @@ for (C = 0, p = 0, i = 0, P = [], I = []; C < V.length; C++) {
     i++;
   }
 }
+console.log(V);
 if (P.length == 15) {
   console.log('O vetor PARES está cheio!');
 }
 if (I.length == 15) {
   console.log('O vetor ÍMPARES está cheio!');
 }
-console.log(V);
 console.log(P);
 console.log(I);
 
