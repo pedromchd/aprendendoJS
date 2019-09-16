@@ -179,13 +179,10 @@ for (C = 0, V = []; C < 20; C++) {
   V[C] = N;
 }
 console.log(V);
-for (C = 0, c = V.length-1; C < V.length, c >= 0; C++, c--) {
+for (C = 0, c = V.length-1; C <= 9; C++, c--) {
   T = V[C]
   V[C] = V[c];
   V[c] = T;
-  if (C == 9) {
-    break;
-  }
 }
 console.log(V);
 
