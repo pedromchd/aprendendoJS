@@ -97,7 +97,7 @@ do {
   } while (ME != 'S' && ME != 'N');
   (ME == 'N') ? ME = null : ME = undefined;
 } while (ME !== null);
-alert('SCRAMBLE! \nCriado por PEDRO MACHADO \nVersão 1 de outubro de 2019');
+alert('SCRAMBLE! \nCriado por PEDRO MACHADO \nVersão 24 de setembro de 2019');
 
 /****************************
  * ME - Menu
