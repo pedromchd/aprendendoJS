@@ -115,7 +115,7 @@ var r2 = s.split(); //['teste de split']
 
 "fim de vetores".split("").reverse().join(""); //"serotev ed mif"
 
-//LER DUAS STRINGS E MSOTRAR AS PALAVRAS
+//LER DUAS STRINGS E MOSTRAR AS PALAVRAS
 var S, T, R, C;
 S = prompt('Insira um texto').toLowerCase().split(" ");
 T = prompt('Insira o texto 2').toLowerCase().split(" ");
