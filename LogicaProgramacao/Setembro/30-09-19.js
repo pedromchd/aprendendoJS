@@ -117,10 +117,8 @@ var r2 = s.split(); //['teste de split']
 
 //LER DUAS STRINGS E MSOTRAR AS PALAVRAS
 var S, T, R, C;
-S = prompt('Insira um texto').toLowerCase();
-T = prompt('Insira o texto 2').toLowerCase();
-S = S.split(" ");
-T = T.split(" ");
+S = prompt('Insira um texto').toLowerCase().split(" ");
+T = prompt('Insira o texto 2').toLowerCase().split(" ");
 for (R = [], C = 0; C < T.length; C++) {
   if (S.indexOf(T[C]) == -1) {
     R.push(T[C]);
