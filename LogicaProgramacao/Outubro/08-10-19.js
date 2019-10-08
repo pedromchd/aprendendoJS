@@ -18,15 +18,41 @@ do {
   switch (M) {
     case 1:
     do {
-      M = prompt('Paciente para lista de espera:').trim();
-    } while (M == '');
+      M = prompt('Paciente para lista de espera:').trim().toLowerCase();
+      for (I = 0; I < M.length; I++) {
+        if (M[I] < 'a' || M[I] > 'z') {
+          M = true;
+          break;
+        }
+      }
+      if (M == true) {
+        continue;
+      } else {
+        M = M.split('');
+        M[0] = M[0].toUpperCase();
+        M = M.join('');
+      }
+    } while (M == true);
     V[0].push(M);
     L[0].push(N++ + '. ' + M + '\n');
     break;
     case 2:
     do {
-      M = prompt('Paciente para urgência:').trim();
-    } while (M == '');
+      M = prompt('Paciente para urgência:').trim().toLowerCase();
+      for (I = 0; I < M.length; I++) {
+        if (M[I] < 'a' || M[I] > 'z') {
+          M = true;
+          break;
+        }
+      }
+      if (M == true) {
+        continue;
+      } else {
+        M = M.split('');
+        M[0] = M[0].toUpperCase();
+        M = M.join('');
+      }
+    } while (M == true);
     V[1].push('[U] ' + M);
     for (L = [[],[]], N = 1, I = 1; I >= 0; I--) {
       for (J = 0; J < V[I].length; J++) {
