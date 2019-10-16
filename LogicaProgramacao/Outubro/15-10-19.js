@@ -121,10 +121,10 @@ function limitaPosicao(posicao) {
 function corrigePosicao(posicao,limite) {
   if (limite == true) {
     if (posicao < 0) {
-      var posicao = Math.abs(posicao);
+      posicao = Math.abs(posicao);
     }
-    if (posição > 100) {
-      var posicao -= 100;
+    if (posicao > 100) {
+      posicao -= 100;
     }
   }
   return posicao;
