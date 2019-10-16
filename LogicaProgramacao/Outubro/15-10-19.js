@@ -114,14 +114,22 @@ for (I = [], J = 0; J < 5; J++) {
 console.log(temChave(I));
 
 //6//
-var
+var P;
 function limitaPosicao(posicao) {
-  return posicao < 0 && posicao > 100;
+  return posicao < 0 || posicao > 100;
 }
 function corrigePosicao(posicao,limite) {
   if (limite == true) {
     if (posicao < 0) {
-      posicao = Math.abs(posicao);
+      var posicao = Math.abs(posicao);
+    }
+    if (posição > 100) {
+      var posicao -= 100;
     }
   }
+  return posicao;
 }
+do {
+  P = parseInt(prompt('Insira a posição do herói:'));
+} while (isNaN(P));
+console.log(corrigePosicao(P,limitaPosicao(P)));
