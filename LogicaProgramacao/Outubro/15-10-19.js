@@ -114,3 +114,14 @@ for (I = [], J = 0; J < 5; J++) {
 console.log(temChave(I));
 
 //6//
+var
+function limitaPosicao(posicao) {
+  return posicao < 0 && posicao > 100;
+}
+function corrigePosicao(posicao,limite) {
+  if (limite == true) {
+    if (posicao < 0) {
+      posicao = Math.abs(posicao);
+    }
+  }
+}
