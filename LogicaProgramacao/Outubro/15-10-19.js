@@ -122,7 +122,7 @@ function limitaPosicao(posicao) {
       posicao -= 100;
     }
   }
-  return posicao
+  return posicao;
 }
 do {
   P = parseInt(prompt('Insira a posição do herói:'));
