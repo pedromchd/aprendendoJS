@@ -11,7 +11,11 @@ function sortNum() {
   return sort;
 }
 function mostraTab(tabu) {
-  return tabu.join('\n');
+  var tabu_aux = [];
+  for (var L = 0; L < 4; L++) {
+    tabu_aux[L] = tabu[L].join(' ');
+  }
+  return tabu_aux.join('\n');
 }
 function swapTab(tabu,tabu_aux) {
   for (var L = 0; L < 4; L++) {
