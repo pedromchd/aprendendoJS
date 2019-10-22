@@ -48,7 +48,7 @@ function moveCima(tabu) {
   swapTab(tabu,tabu_aux);
   for (var I = 0; I < 4; I++) {
     for (var J = 3; J >= 0; J--) {
-      if (tabu[I][J] == '_') {
+      if (tabu_aux[I][J] == '_') {
         tabu_aux[I].splice(J,1);
         tabu_aux[I].push('_');
       }
@@ -61,7 +61,7 @@ function moveBaixo(tabu) {
   swapTab(tabu,tabu_aux);
   for (var I = 0; I < 4; I++) {
     for (var J = 0; J < 4; J++) {
-      if (tabu[I][J] == '_') {
+      if (tabu_aux[I][J] == '_') {
         tabu_aux[I].splice(J,1);
         tabu_aux[I].unshift('_');
       }
