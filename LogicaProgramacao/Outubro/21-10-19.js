@@ -7,13 +7,16 @@ function mostraTab(tabu) {
   return tabu.join('\n');
 }
 function swapTab(tabu,tabu_aux) {
-  for (var I = 0; I < 4; I++) {
-    for (var J = 0; J < 4; J++) {
-      tabu_aux[J][I] = tabu[I][J];
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      tabu_aux[C][L] = tabu[L][C];
     }
   }
 }
-function renovaBloco(tabu) {
+function reverseTab(tabu) {
+  
+}
+function renovaTab(tabu) {
   if (tabu.join().indexOf('_') != -1) {
     var sort = [2,2,2,4][sortNum()];
     do {
@@ -24,21 +27,21 @@ function renovaBloco(tabu) {
   }
 }
 function moveDir(tabu) {
-  for (var I = 0; I < 4; I++) {
-    for (var J = 0; J < 4; J++) {
-      if (tabu[I][J] == '_') {
-        tabu[I].splice(J,1);
-        tabu[I].unshift('_');
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      if (tabu[L][C] == '_') {
+        tabu[L].splice(C,1);
+        tabu[L].unshift('_');
       }
     }
   }
 }
 function moveEsq(tabu) {
-  for (var I = 0; I < 4; I++) {
-    for (var J = 3; J >= 0; J--) {
-      if (tabu[I][J] == '_') {
-        tabu[I].splice(J,1);
-        tabu[I].push('_');
+  for (var L = 0; L < 4; L++) {
+    for (var C = 3; C >= 0; C--) {
+      if (tabu[L][C] == '_') {
+        tabu[L].splice(C,1);
+        tabu[L].push('_');
       }
     }
   }
@@ -46,11 +49,11 @@ function moveEsq(tabu) {
 function moveCima(tabu) {
   var tabu_aux = [[],[],[],[]];
   swapTab(tabu,tabu_aux);
-  for (var I = 0; I < 4; I++) {
-    for (var J = 3; J >= 0; J--) {
-      if (tabu_aux[I][J] == '_') {
-        tabu_aux[I].splice(J,1);
-        tabu_aux[I].push('_');
+  for (var L = 0; L < 4; L++) {
+    for (var C = 3; C >= 0; C--) {
+      if (tabu_aux[L][C] == '_') {
+        tabu_aux[L].splice(C,1);
+        tabu_aux[L].push('_');
       }
     }
   }
@@ -59,19 +62,34 @@ function moveCima(tabu) {
 function moveBaixo(tabu) {
   var tabu_aux = [[],[],[],[]];
   swapTab(tabu,tabu_aux);
-  for (var I = 0; I < 4; I++) {
-    for (var J = 0; J < 4; J++) {
-      if (tabu_aux[I][J] == '_') {
-        tabu_aux[I].splice(J,1);
-        tabu_aux[I].unshift('_');
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      if (tabu_aux[L][C] == '_') {
+        tabu_aux[L].splice(C,1);
+        tabu_aux[L].unshift('_');
       }
     }
   }
   swapTab(tabu_aux,tabu);
 }
+function somaTab(tabu) {
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      if (tabu[L][C] == tabu[L][C + 1] && tabu[L][C] != '_') {
+        tabu[L].splice(C, 1);
+        tabu[L][C] *= 2;
+        tabu[L].unshift('_');
+      }
+    }
+  }
+}
 var T;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
-//T = [[2,'_','_','_'],['_',4,'_','_'],['_','_',8,'_'],['_','_','_',16]];
 
-renovaBloco(T);
+renovaTab(T);
+//moveDir(T);
+//moveEsq(T);
+//moveCima(T);
+//moveBaixo(T);
+//somaTab(T);
 mostraTab(T);
