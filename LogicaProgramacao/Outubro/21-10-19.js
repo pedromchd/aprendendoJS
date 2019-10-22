@@ -124,4 +124,5 @@ Pontuação (mostrar ela);
 Opção resetar o jogo;
 Não precisa mexer em mais nada nas functions, agora é so montar o jogo em siblingAbove
 Falta ainda uma function, vitória ou derrota, vitória se chegar em 2048 derrota se tiver tudo cheio e n ter como somar mais nada
+O TABULEIRO TEM QUE INICALIZAR COM DOIS VALORES
 */
