@@ -1,3 +1,10 @@
+/*******************
+Antonella M. Cuello
+Pedro Garcia Machado
+Logica Prog. - 4oBim
+Profa Raquel Barbosa
+********************/
+
 //2048
 function sortNum() {
   var sort = Math.floor(Math.random() * 4);
@@ -14,7 +21,21 @@ function swapTab(tabu,tabu_aux) {
   }
 }
 function reverseTab(tabu) {
-  
+  for (var L = 0; L < 4; L++) {
+    tabu[L].reverse();
+  }
+}
+function somaTab(tabu) {
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      if (tabu[L][C] == tabu[L][C + 1] && tabu[L][C] != '_') {
+        tabu[L].splice(C, 1);
+        tabu[L][C] *= 2;
+        P += tabu[L][C];
+        tabu[L].unshift('_');
+      }
+    }
+  }
 }
 function renovaTab(tabu) {
   if (tabu.join().indexOf('_') != -1) {
@@ -35,6 +56,7 @@ function moveDir(tabu) {
       }
     }
   }
+  somaTab(tabu);
 }
 function moveEsq(tabu) {
   for (var L = 0; L < 4; L++) {
@@ -45,6 +67,9 @@ function moveEsq(tabu) {
       }
     }
   }
+  reverseTab(tabu);
+  somaTab(tabu);
+  reverseTab(tabu);
 }
 function moveCima(tabu) {
   var tabu_aux = [[],[],[],[]];
@@ -57,6 +82,9 @@ function moveCima(tabu) {
       }
     }
   }
+  reverseTab(tabu_aux);
+  somaTab(tabu_aux);
+  reverseTab(tabu_aux);
   swapTab(tabu_aux,tabu);
 }
 function moveBaixo(tabu) {
@@ -70,26 +98,26 @@ function moveBaixo(tabu) {
       }
     }
   }
+  somaTab(tabu_aux);
   swapTab(tabu_aux,tabu);
 }
-function somaTab(tabu) {
-  for (var L = 0; L < 4; L++) {
-    for (var C = 0; C < 4; C++) {
-      if (tabu[L][C] == tabu[L][C + 1] && tabu[L][C] != '_') {
-        tabu[L].splice(C, 1);
-        tabu[L][C] *= 2;
-        tabu[L].unshift('_');
-      }
-    }
-  }
-}
-var T;
+var T, P;
+P = 0;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
+//agora é tudo por ti
 
-renovaTab(T);
 //moveDir(T);
 //moveEsq(T);
 //moveCima(T);
 //moveBaixo(T);
-//somaTab(T);
-mostraTab(T);
+renovaTab(T);
+console.log(mostraTab(T),P);
+
+/* O QUE FALTA
+Interface para jogar, utilizando ou WASD ou 8426 (tu que sabe);
+Validação no prompt pra não ser nada além do WASD/8426;
+Pontuação (mostrar ela);
+Opção resetar o jogo;
+Não precisa mexer em mais nada nas functions, agora é so montar o jogo em siblingAbove
+Falta ainda uma function, vitória ou derrota, vitória se chegar em 2048 derrota se tiver tudo cheio e n ter como somar mais nada
+*/
