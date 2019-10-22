@@ -13,7 +13,7 @@ function sortNum() {
 function mostraTab(tabu) {
   var tabu_aux = [];
   for (var L = 0; L < 4; L++) {
-    tabu_aux[L] = tabu[L].join(' ');
+    tabu_aux[L] = tabu[L].join('  ');
   }
   return tabu_aux.join('\n');
 }
