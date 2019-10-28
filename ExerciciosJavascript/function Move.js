@@ -74,3 +74,55 @@ function movimBaixo(tabuleiro) {
     }
   }
 }
+
+/*
+var T, P, J;
+alert('Mova e some os números iguais até chegar em 2048! \nDigite W,A,S,D para mover os números para cima, esquerda, baixo e direita, respectivamente. \nDigite R para resetar o jogo.');
+J = undefined;
+do {
+  if (J == 'R' || J == undefined) {
+    P = 0;
+    T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
+    renovaTab(T);
+    renovaTab(T);
+  }
+  do {
+    J = prompt('Pontuação: ' + P + '\n' + mostraTab(T) + '\nDigite as letras respectivos aos movimentos').trim().toUpperCase();
+  } while (['W','A','S','D','R'].indexOf(J) == -1);
+  switch(J) {
+    case 'W':
+      moveCima(T);
+      renovaTab(T);
+      break;
+    case 'A':
+      moveEsq(T)
+      renovaTab(T);
+      break;
+    case 'S':
+      moveBaixo(T)
+      renovaTab(T);
+      break;
+    case 'D':
+      moveDir(T)
+      renovaTab(T);
+  }
+} while (J != 'N');
+*/
+
+/*
+function mostraTab(tabu) {
+  var tabu_aux = [];
+  for (var L = 0; L < 4; L++) {
+    tabu_aux[L] = tabu[L].join('  ');
+  }
+  return tabu_aux.join('\n');
+}
+for (L = 0; L < 4; L++) {
+  for (C = 0; C < 4; C++) {
+    var len = tabu_aux[L][C].length;
+    if (len < M) {
+      tabu_aux[L][C] = ' '.repeat(M - len) + tabu_aux[L][C];
+    }
+  }
+}
+*/
