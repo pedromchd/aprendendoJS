@@ -161,8 +161,8 @@ function WinOrLose (tabu) {
   var tab2_aux = tabu.join('').replace(/,/g,'').split('');
   var tab3_aux = tabu.join(',').split(',');
   for (C = 0; C < tab2_aux.length; C++) {
-  	if (tab2_aux[C] == '_') {
-	  	tab2_aux.splice(C,1);
+    if (tab2_aux[C] == '_') {
+	    tab2_aux.splice(C,1);
 		  tab2_aux.unshift('_');
     }
   }
