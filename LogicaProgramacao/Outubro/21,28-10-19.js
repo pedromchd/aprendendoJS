@@ -136,7 +136,7 @@ function mostraTab(tabu) {
 }
 function switchTab() {
   var config;
-  switch (O) {
+  switch (V) {
     case 0:
     config = ' ';
     break;
@@ -151,7 +151,47 @@ function switchTab() {
   }
   return config;
 }
-var T, P;
-P = 0;
+function WinOrLose (tabu) {
+  for (var L = 0; L < 4; L++) {
+    if (tabu[L].indexOf(2048) != -1) {
+      return true;
+    }
+  }
+}
+var T, P, V;
+P = 0; 
+V = 0;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
-O = 0;
+alert('Para se movimentar no jogo você irá usar as teclas: ' + '\nW ou 8 - ↑ (para CIMA);' + '\nA ou 4 - ← (para a ESQUERDA);' + '\nS ou 2 - ↓ (para BAIXO);' + '\nD ou 6 - → (para a DIREITA).' + '\nDigite R ou 0 para resetar o jogo. \nDigite V ou 5 para mudar a visualização do tabuleiro');
+renovaTab(T);
+renovaTab(T);
+do {		
+	do {
+		var moves = prompt('PONTUAÇÃO: ' + P + '\n' + mostraTab(T) + '\n' + '\Digite os números ou letras dos  respectivos movimentos: ').trim().toUpperCase();
+    if (!isNaN(moves)) {
+      moves = parseInt(moves);
+    }
+    if (moves == 'V' || moves == 5) {
+      V = ++V%4;
+    }
+	} while (['W','A','S','D','R','V',8,4,2,6,0,5].indexOf(moves) == -1);
+  switch (moves) {
+    case 'W': case 8: 
+      moveCima(T);
+      break;
+    case 'A': case 4:
+      moveEsq(T);
+      break;
+    case 'S': case 2:
+      moveBaixo(T);
+      break;
+    case 'D': case 6: 
+      moveDir(T);
+      break;
+    case 'R': case 0:
+      P = 0;
+      T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
+      renovaTab(T);
+  }
+  renovaTab(T);
+} while (moves != 'N');
