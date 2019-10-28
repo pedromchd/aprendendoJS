@@ -76,9 +76,10 @@ function movimBaixo(tabuleiro) {
 }
 
 /*
-var T, P, J;
-alert('Mova e some os números iguais até chegar em 2048! \nDigite W,A,S,D para mover os números para cima, esquerda, baixo e direita, respectivamente. \nDigite R para resetar o jogo.');
+var T, P, J, O;
 J = undefined;
+O = 0;
+alert('Mova e some os números iguais até chegar em 2048! \nDigite W,A,S,D para mover os números para cima, esquerda, baixo e direita, respectivamente. \nDigite R para resetar o jogo.');
 do {
   if (J == 'R' || J == undefined) {
     P = 0;
