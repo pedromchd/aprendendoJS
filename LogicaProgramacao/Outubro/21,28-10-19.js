@@ -157,12 +157,45 @@ function WinOrLose (tabu) {
       return true;
     }
   }
+  var tab1_aux = tabu.join('').replace(/,/g,'').split('');
+  var tab2_aux = tabu.join('').replace(/,/g,'').split('');
+  var tab3_aux = tabu.join(',').split(',');
+  for (C = 0; C < tab2_aux.length; C++) {
+  	if (tab2_aux[C] == '_') {
+	  	tab2_aux.splice(C,1);
+		  tab2_aux.unshift('_');
+    }
+  }
+  if (tab1_aux.join('') == tab2_aux.join('')) {
+    moveCima(tabu);
+    moveEsq(tabu);
+    moveBaixo(tabu);
+    moveDir(tabu);
+    var tab1_aux = tabu.join('').replace(/,/g,'').split('');
+    var tab2_aux = tabu.join('').replace(/,/g,'').split('');
+    for (C = 0; C < tab2_aux.length; C++) {
+    	if (tab2_aux[C] == '_') {
+	    	tab2_aux.splice(C,1);
+		    tab2_aux.unshift('_');
+      }
+    }
+    if (tab1_aux.join('') == tab2_aux.join('')) {
+      return false;
+    }
+  }
+  for (var I = 0, L = 0; L < 4; L++) {
+  	for (var C = 0; C < 4; C++, I++) {
+	  	tabu[L][C] = tab3_aux[I];
+    }
+  }
 }
 var T, P, V;
 P = 0; 
 V = 0;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
-alert('Para se movimentar no jogo você irá usar as teclas: ' + '\nW ou 8 - ↑ (para CIMA);' + '\nA ou 4 - ← (para a ESQUERDA);' + '\nS ou 2 - ↓ (para BAIXO);' + '\nD ou 6 - → (para a DIREITA).' + '\nDigite R ou 0 para resetar o jogo. \nDigite V ou 5 para mudar a visualização do tabuleiro');
+var menu = parseInt(prompt('𝑩𝒆𝒎-𝒗𝒊𝒏𝒅𝒐 𝒂𝒐 𝟐𝟎𝟒𝟖!   (◡‿◡✿)' + '\n▸ Digite 1 para ver as regras;' + '\n▸ Digite 2 para ver os controles;' + '\n▸ Digite 3 para jogar.'));
+switch (menu) {
+  Como jogar?' + '\n▸ Quando dois blocos de números iguais se chocam, eles viram um só com valor igual a soma dos dois;' + '\n▸ A cada movimento é acrescentado um bloco com valor 2 ou com valor 4 (menor probabilidade);' + '\n▸ Você ganha quando conseguir um bloco no valor de 2048 (por isso o nome).' + '\nE os controles?' + '\n▹ W ou 8 : ↑ (para CIMA);' + '\n▹ A ou 4 : ← (para a ESQUERDA);' + '\n▹ S ou 2 : ↓ (para BAIXO);' + '\n▹ D ou 6 : → (para a DIREITA).' + '\n▹ Digite R ou 0 para resetar o jogo.' + '\n▹ Digite V ou 5 para mudar a visualização do tabuleiro.'); // hmm, eu posso diminuir, é q eu gostei do fromato com as perguntas mas ae acho que teria que por num menu pra poder fazer isso, posso fazer
 renovaTab(T);
 renovaTab(T);
 do {		
@@ -194,4 +227,10 @@ do {
       renovaTab(T);
   }
   renovaTab(T);
-} while (moves != 'N');
+} while (WinOrLose(T) == undefined);
+if (WinOrLose(T) == true) {
+	alert(mostraTab(T) + '\nVocê ganhou!');
+} 
+if (WinOrLose(T) == false) {
+	alert(mostraTab(T) + '\nVocê perdeu!');
+}
