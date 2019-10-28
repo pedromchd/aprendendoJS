@@ -10,13 +10,6 @@ function sortNum() {
   var sort = Math.floor(Math.random() * 4);
   return sort;
 }
-function mostraTab(tabu) {
-  var tabu_aux = [];
-  for (var L = 0; L < 4; L++) {
-    tabu_aux[L] = tabu[L].join('  ');
-  }
-  return tabu_aux.join('\n');
-}
 function swapTab(tabu,tabu_aux) {
   for (var L = 0; L < 4; L++) {
     for (var C = 0; C < 4; C++) {
@@ -31,10 +24,10 @@ function reverseTab(tabu) {
 }
 function somaTab(tabu) {
   for (var L = 0; L < 4; L++) {
-    for (var C = 0; C < 4; C++) {
+    for (var C = 3; C >= 0; C--) {
       if (tabu[L][C] == tabu[L][C + 1] && tabu[L][C] != '_') {
-        tabu[L].splice(C, 1);
         tabu[L][C] *= 2;
+        tabu[L].splice(C + 1, 1);
         P += tabu[L][C];
         tabu[L].unshift('_');
       }
@@ -105,24 +98,45 @@ function moveBaixo(tabu) {
   somaTab(tabu_aux);
   swapTab(tabu_aux,tabu);
 }
+function mostraTab(tabu) {
+  var tabu_aux = [[],[],[],[]];
+  var tab_aux = [[],[],[],[]];
+  swapTab(tabu,tabu_aux);
+  for (var L = 0; L < 4; L++) {
+    for (var C = 0; C < 4; C++) {
+      tabu_aux[L][C] = tabu_aux[L][C].toString();
+    }
+  }
+  for (var M = undefined, L = 0; L < 4; L++) {
+    for (C = 0; C < 4; C++) {
+      if (M == undefined) {
+        M = tabu_aux[L][C].length;
+      } else if (tabu_aux[L][C].length > M) {
+        M = tabu_aux[L][C].length;
+      }
+    }
+  }
+  for (L = 0; L < 4; L++) {
+    var mud = false;
+    for (C = 0; C < 4; C++) {
+      var len = tabu_aux[L][C].length;
+      if (len == M) {
+        mud = true;
+      }
+    }
+    if (mud == true) {
+      for (C = 0; C < 4; C++) {
+        len = tabu_aux[L][C].length;
+        tabu_aux[L][C] = ' '.repeat(M - len) + tabu_aux[L][C];
+      }
+    }
+  }
+  swapTab(tabu_aux,tab_aux);
+  for (L = 0; L < 4; L++) {
+    tab_aux[L] = tab_aux[L].join('  ');
+  }
+  return tab_aux.join('\n');
+}
 var T, P;
 P = 0;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
-//agora é tudo por ti
-
-//moveDir(T);
-//moveEsq(T);
-//moveCima(T);
-//moveBaixo(T);
-renovaTab(T);
-console.log(mostraTab(T),P);
-
-/* O QUE FALTA
-Interface para jogar, utilizando ou WASD ou 8426 (tu que sabe);
-Validação no prompt pra não ser nada além do WASD/8426;
-Pontuação (mostrar ela);
-Opção resetar o jogo;
-Não precisa mexer em mais nada nas functions, agora é so montar o jogo em siblingAbove
-Falta ainda uma function, vitória ou derrota, vitória se chegar em 2048 derrota se tiver tudo cheio e n ter como somar mais nada
-O TABULEIRO TEM QUE INICALIZAR COM DOIS VALORES
-*/
