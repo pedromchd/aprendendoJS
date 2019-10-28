@@ -88,7 +88,7 @@ do {
   }
   do {
     J = prompt('Pontuação: ' + P + '\n' + mostraTab(T) + '\nDigite as letras respectivos aos movimentos').trim().toUpperCase();
-  } while (['W','A','S','D','R'].indexOf(J) == -1);
+  } while (['W','A','S','D','R','O'].indexOf(J) == -1);
   switch(J) {
     case 'W':
       moveCima(T);
@@ -105,6 +105,9 @@ do {
     case 'D':
       moveDir(T)
       renovaTab(T);
+      break;
+    case 'O':
+      O = ++O%4;
   }
 } while (J != 'N');
 */
@@ -118,9 +121,16 @@ function mostraTab(tabu) {
   return tabu_aux.join('\n');
 }
 for (L = 0; L < 4; L++) {
+  var mud = false;
   for (C = 0; C < 4; C++) {
     var len = tabu_aux[L][C].length;
-    if (len < M) {
+    if (len == M) {
+      mud = true;
+    }
+  }
+  if (mud == true) {
+    for (C = 0; C < 4; C++) {
+      len = tabu_aux[L][C].length;
       tabu_aux[L][C] = ' '.repeat(M - len) + tabu_aux[L][C];
     }
   }

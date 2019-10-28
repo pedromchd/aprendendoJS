@@ -117,17 +117,14 @@ function mostraTab(tabu) {
     }
   }
   for (L = 0; L < 4; L++) {
-    var mud = false;
     for (C = 0; C < 4; C++) {
       var len = tabu_aux[L][C].length;
-      if (len == M) {
-        mud = true;
-      }
-    }
-    if (mud == true) {
-      for (C = 0; C < 4; C++) {
-        len = tabu_aux[L][C].length;
-        tabu_aux[L][C] = ' '.repeat(M - len) + tabu_aux[L][C];
+      if (len < M) {
+        if (tabu_aux[L][C] == '_') {
+          tabu_aux[L][C] = '_'.repeat(M - len) + tabu_aux[L][C];
+        } else {
+          tabu_aux[L][C] = switchTab().repeat(M - len) + tabu_aux[L][C];
+        }
       }
     }
   }
@@ -137,6 +134,24 @@ function mostraTab(tabu) {
   }
   return tab_aux.join('\n');
 }
+function switchTab() {
+  var config;
+  switch (O) {
+    case 0:
+    config = ' ';
+    break;
+    case 1:
+    config = '  ';
+    break;
+    case 2:
+    config = '0';
+    break;
+    case 3:
+    config = '_';
+  }
+  return config;
+}
 var T, P;
 P = 0;
 T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
+O = 0;
