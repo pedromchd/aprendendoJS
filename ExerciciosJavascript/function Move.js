@@ -78,7 +78,7 @@ function movimBaixo(tabuleiro) {
 /*
 var T, P, J, O;
 J = undefined;
-O = 0;
+V = 0;
 alert('Mova e some os números iguais até chegar em 2048! \nDigite W,A,S,D para mover os números para cima, esquerda, baixo e direita, respectivamente. \nDigite R para resetar o jogo.');
 do {
   if (J == 'R' || J == undefined) {
@@ -89,7 +89,7 @@ do {
   }
   do {
     J = prompt('Pontuação: ' + P + '\n' + mostraTab(T) + '\nDigite as letras respectivos aos movimentos').trim().toUpperCase();
-  } while (['W','A','S','D','R','O'].indexOf(J) == -1);
+  } while (['W','A','S','D','R','V'].indexOf(J) == -1);
   switch(J) {
     case 'W':
       moveCima(T);
@@ -108,9 +108,9 @@ do {
       renovaTab(T);
       break;
     case 'O':
-      O = ++O%4;
+      V = ++V%4;
   }
-} while (J != 'N');
+} while (WinOrLose(T) == undefined);
 */
 
 /*
