@@ -234,7 +234,7 @@ do {
         renovaTab(T);
     }
     renovaTab(T);
-  } while (WinOrLose(T) == undefined);
+  } while (WinOrLose(T) != true && WinOrLose(T) != false);
   if (WinOrLose(T) == true) {
     alert(mostraTab(T) + '\nVocê ganhou!   ヽ(⌒∇⌒)ﾉ');
   } 
