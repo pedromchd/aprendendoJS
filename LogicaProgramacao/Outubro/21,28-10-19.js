@@ -218,7 +218,7 @@ do {
       if (moves == 'V' || moves == 5) {
         V = ++V%4;
       }
-    } while (['W','A','S','D','R',8 ,4 ,2 ,6 ,0].indexOf(moves) == -1);
+    } while (['W','A','S','D','R',8,4,2,6,0].indexOf(moves) == -1);
     switch (moves) {
       case 'W': case 8: 
         moveCima(T);
@@ -239,7 +239,7 @@ do {
         renovaTab(T);
     }
     renovaTab(T);
-  } while (WinOrLose(T) === undefined);
+  } while (WinOrLose(T) == undefined);
   if (WinOrLose(T) == true) {
     alert(mostraTab(T) + '\nVocê ganhou!   ヽ(⌒∇⌒)ﾉ');
   } 
