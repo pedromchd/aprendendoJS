@@ -152,27 +152,13 @@ function switchTab() {
   return config;
 }
 function WinOrLose (tabu) {
-  for (var L = 0; L < 4; L++) {
-    if (tabu[L].indexOf(2048) != -1) {
-      return true;
-    }
+  if (tabu.join(',').indexOf(2048) != -1) {
+    return true;
   }
-  var tab1_aux = tabu.join('').replace(/,/g,'').split('');
-  var tab2_aux = tabu.join('').replace(/,/g,'').split('');
-  var tab3_aux = tabu.join(',').split(',');
-  for (C = 0; C < tab2_aux.length; C++) {
-    if (tab2_aux[C] == '_') {
-      tab2_aux.splice(C,1);
-      tab2_aux.unshift('_');
-    }
-  }
-  if (tab1_aux.join('') == tab2_aux.join('')) {
-    moveCima(tabu);
-    moveEsq(tabu);
-    moveBaixo(tabu);
-    moveDir(tabu);
+  if (tabu.join(',').indexOf('_') == -1) {
     var tab1_aux = tabu.join('').replace(/,/g,'').split('');
     var tab2_aux = tabu.join('').replace(/,/g,'').split('');
+    var tab3_aux = tabu.join(',').split(',');
     for (C = 0; C < tab2_aux.length; C++) {
       if (tab2_aux[C] == '_') {
         tab2_aux.splice(C,1);
@@ -180,12 +166,26 @@ function WinOrLose (tabu) {
       }
     }
     if (tab1_aux.join('') == tab2_aux.join('')) {
-      return false;
+      moveCima(tabu);
+      moveEsq(tabu);
+      moveBaixo(tabu);
+      moveDir(tabu);
+      var tab1_aux = tabu.join('').replace(/,/g,'').split('');
+      var tab2_aux = tabu.join('').replace(/,/g,'').split('');
+      for (C = 0; C < tab2_aux.length; C++) {
+        if (tab2_aux[C] == '_') {
+          tab2_aux.splice(C,1);
+          tab2_aux.unshift('_');
+        }
+      }
+      if (tab1_aux.join('') == tab2_aux.join('')) {
+        return false;
+      }
     }
-  }
-  for (var I = 0, L = 0; L < 4; L++) {
-    for (var C = 0; C < 4; C++, I++) {
-      tabu[L][C] = tab3_aux[I];
+    for (var I = 0, L = 0; L < 4; L++) {
+      for (var C = 0; C < 4; C++, I++) {
+        tabu[L][C] = parseInt(tab3_aux[I]);
+      }
     }
   }
 }
@@ -193,7 +193,7 @@ do {
   var T, P, V;
   P = 0; 
   V = 0;
-  T = [['','','',''],['','','',''],['','','',''],['','','','']];
+  T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
   do {
     var menu = parseInt(prompt('𝑩𝒆𝒎-𝒗𝒊𝒏𝒅𝒐 𝒂𝒐 𝟐𝟎𝟒𝟖!   (◡‿◡✿)' + '\n▸ Digite 1 para ver as regras;' + '\n▸ Digite 2 para ver os controles;' + '\n▸ Digite 3 para jogar.'));
     switch (menu) {
@@ -218,7 +218,7 @@ do {
       if (moves == 'V' || moves == 5) {
         V = ++V%4;
       }
-    } while (['W','A','S','D','R','V',8 ,4 ,2 ,6 ,0 ,5].indexOf(moves) == -1);
+    } while (['W','A','S','D','R',8 ,4 ,2 ,6 ,0].indexOf(moves) == -1);
     switch (moves) {
       case 'W': case 8: 
         moveCima(T);
@@ -234,11 +234,12 @@ do {
         break;
       case 'R': case 0:
         P = 0;
-        T = [['','','',''],['','','',''],['','','',''],['','','','']];
+        V = 0;
+        T = [['_','_','_','_'],['_','_','_','_'],['_','_','_','_'],['_','_','_','_']];
         renovaTab(T);
     }
     renovaTab(T);
-  } while (WinOrLose(T) == undefined);
+  } while (WinOrLose(T) === undefined);
   if (WinOrLose(T) == true) {
     alert(mostraTab(T) + '\nVocê ganhou!   ヽ(⌒∇⌒)ﾉ');
   } 
