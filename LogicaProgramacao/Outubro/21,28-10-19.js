@@ -154,11 +154,14 @@ function switchTab() {
 function WinOrLose (tabu) {
   if (tabu.join(',').indexOf(2048) != -1) {
     return true;
-  }
-  if (tabu.join(',').indexOf('_') == -1) {
+  } else if (tabu.join(',').indexOf('_') == -1) {
+    var tab3_aux = tabu.join(',').split(',');
+    moveCima(tabu);
+    moveEsq(tabu);
+    moveBaixo(tabu);
+    moveDir(tabu);
     var tab1_aux = tabu.join('').replace(/,/g,'').split('');
     var tab2_aux = tabu.join('').replace(/,/g,'').split('');
-    var tab3_aux = tabu.join(',').split(',');
     for (C = 0; C < tab2_aux.length; C++) {
       if (tab2_aux[C] == '_') {
         tab2_aux.splice(C,1);
@@ -166,27 +169,19 @@ function WinOrLose (tabu) {
       }
     }
     if (tab1_aux.join('') == tab2_aux.join('')) {
-      moveCima(tabu);
-      moveEsq(tabu);
-      moveBaixo(tabu);
-      moveDir(tabu);
-      var tab1_aux = tabu.join('').replace(/,/g,'').split('');
-      var tab2_aux = tabu.join('').replace(/,/g,'').split('');
-      for (C = 0; C < tab2_aux.length; C++) {
-        if (tab2_aux[C] == '_') {
-          tab2_aux.splice(C,1);
-          tab2_aux.unshift('_');
-        }
-      }
-      if (tab1_aux.join('') == tab2_aux.join('')) {
-        return false;
-      }
+      return false;
     }
     for (var I = 0, L = 0; L < 4; L++) {
       for (var C = 0; C < 4; C++, I++) {
-        tabu[L][C] = parseInt(tab3_aux[I]);
+        if (tab3_aux[I] == '_') {
+          tabu[L][C] = tab3_aux[I];
+        } else {
+          tabu[L][C] = parseInt(tab3_aux[I]);
+        }
       }
     }
+  } else {
+    return undefined;
   }
 }
 do {
