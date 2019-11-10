@@ -31,48 +31,64 @@ function fillTab(tab,chr) {
     }
   }
 }
-function showTab(tab) {
+function showTab(tab,opt) {
   var aux = [];
+  lin = ['A','B','C','D','E'];
+  col = ['1','2','3','4','5','6'];
+  lin.length = 2 + opt;
+  col.length = 3 + opt;
+  col = '  ' + col.join('   ');
   for (var I = 0; I < tab.length; I++) {
-    aux[I] = tab[I].join(' ');
+    aux[I] = lin[I] + ' ' + tab[I].join(' ');
   }
-  return aux.join('\n');
+  return col + '\n' + aux.join('\n');
 }
-//function revealTab()
-//function verifyWin()
+function revealTab(tab,hid,pos) {
+  var Y = pos[0];
+  var X = pos[1];
+  tab[Y][X] = hid[Y][X];
+  return tab[Y][X];
+}
 function pickPiece(tab,opt) {
-  var P1, P2, LI, CO, PE;
-  LI = ['A','B','C','D','E'];
-  CO = ['1','2','3','4','5','6'];
-  LI.length = 2 + opt;
-  CO.length = 3 + opt;
-  PE = [];
-  for (var I = 0; I < LI.length; I++) {
-    for (var J = 0; J < CO.length; J++) {
-      PE.push(LI[I] + CO[J]);
-      PE.push(CO[J] + LI[I]);
+  var pos, lin, col, pes;
+  lin = ['A','B','C','D','E'];
+  col = ['1','2','3','4','5','6'];
+  lin.length = 2 + opt;
+  col.length = 3 + opt;
+  pes = [];
+  for (var I = 0; I < lin.length; I++) {
+    for (var J = 0; J < col.length; J++) {
+      pes.push(lin[I] + col[J]);
+      pes.push(col[J] + lin[I]);
     }
   }
   do {
     do {
-      P1 = prompt('Escolha uma posição:').trim().toUpperCase();
-    } while (PE.indexOf(P1) == -1);
-    if (!isNaN(parseInt(P1)) == true) {
-      P1 = P1[1] + parseInt(P1);
+      pos = prompt(showTab(tab,opt) + '\nEscolha uma posição:').trim().toUpperCase();
+    } while (pes.indexOf(pos) == -1);
+    if (!isNaN(parseInt(pos)) == true) {
+      pos = pos[1] + parseInt(pos);
     }
-    var X = LI.indexOf(P1[0]);
-    var Y = CO.indexOf(P1[1]);
-  } while (tab[X][Y] != '❏');
-  do {
-    do {
-      P2 = prompt('Escolha uma posição:').trim().toUpperCase();
-    } while (PE.indexOf(P2) == -1);
-    if (!isNaN(parseInt(P2)) == true) {
-      P2 = P2[1] + parseInt(P2);
+    var Y = lin.indexOf(pos[0]);
+    var X = col.indexOf(pos[1]);
+  } while (tab[Y][X] != '❏');
+  return [Y,X];
+}
+function verifyWin(tab) {
+  if (tab.join().indexOf('❏') == -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function verifyPieces(tab,pos1,pos2,opt) {
+  if (pos1 != pos2) {
+    alert(showTab(tab,opt));
+    for (var I = 0; I < tab.length; I++) {
+      tab[I] = tab[I].join().replace(pos1,'❏').split(',');
+      tab[I] = tab[I].join().replace(pos2,'❏').split(',');
     }
-    var X = LI.indexOf(P2[0]);
-    var Y = CO.indexOf(P2[1]);
-  } while (tab[X][Y] != '❏');
+  }
 }
 function mainMenu() {
   do {
@@ -87,7 +103,29 @@ function mainMenu() {
   if (men == '') return true;
   else return false;
 }
+function mainGame() {
+  var C, O, H, T, P1, P2;
+  C = ['✞','✰','◆','△','☂','★','☃','☢','☭','♘','♟','❖','❤','✄','☎','☠','✈','❡','☀','☁','✪','◎','✔','☯','Ω','♛','✿','✎','▼','♔'];
+  do {
+    O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares)'));
+  } while ([1,2,3].indexOf(O) == -1);
+    H = buildTab(O);
+    T = buildTab(O);
+    fillTab(H,C);
+  do {
+    P1 = pickPiece(T,O);
+    P1 = revealTab(T,H,P1);
+    P2 = pickPiece(T,O);
+    P2 = revealTab(T,H,P2);
+    verifyPieces(T,P1,P2,O);
+  } while (verifyWin(T) == false);
+  alert(showTab(T,O) + '\nParabéns, você venceu o jogo!!');
+  do {
+    G = prompt('Deseja jogar novamente? \n[S] - Selecionar uma nova dificuldade e jogar novamente \n[N] - Sair do jogo e retornar ao menu principal').trim().toUpperCase();
+  } while (G != 'S' && G != 'N');
+}
 //JOGO DA MEMÓRIA
+var G;
 do {
   do {
     var M = mainMenu();
@@ -102,19 +140,7 @@ do {
     break;
   }
   alert('Use de coordenandas para selecionar a figura a revelar!')
-  var G = mainGame();
-  //retornar ao menu ou rejogar selecioanndo a difucldade
-} while (G == 'N');
-
-
-function mainGame() {
-  var C, O, T, H, P;
-  C = ['✞','✰','◆','△','☂','★','☃','☢','☭','♘','♟','❖','❤','✄','☎','☠','✈','❡','☀','☁','✪','◎','✔','☯','Ω','♛','✿','✎','▼','♔'];
   do {
-    O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares)'));
-  } while ([1,2,3].indexOf(O) == -1);
-  T = buildTab(O);
-  H = buildTab(O);
-  fillTab(T,O);
-  P = 
-}
+    mainGame();
+  } while (G == 'S');
+} while (G == 'N');
