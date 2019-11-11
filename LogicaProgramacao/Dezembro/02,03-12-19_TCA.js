@@ -7,7 +7,7 @@
 //TRABALHO DE CONCLUSÃO DE ANO: "Jogo da Memória"
 function buildTab(opt) {
   var tab;
-  tab = [['❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏']];
+  tab = [['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏']];
   tab.length = 2 + opt;
   for (var I = 0; I < tab.length; I++) {
     tab[I].length = 3 + opt;
@@ -33,8 +33,8 @@ function fillTab(tab,chr) {
 }
 function showTab(tab,opt) {
   var aux = [];
-  lin = ['A','B','C','D','E'];
-  col = ['1','2','3','4','5','6'];
+  lin = ['A','B','C','D','E','F'];
+  col = ['1','2','3','4','5','6','7'];
   lin.length = 2 + opt;
   col.length = 3 + opt;
   col = '  ' + col.join('   ');
@@ -51,8 +51,8 @@ function revealTab(tab,hid,pos) {
 }
 function pickPiece(tab,opt) {
   var pos, lin, col, pes;
-  lin = ['A','B','C','D','E'];
-  col = ['1','2','3','4','5','6'];
+  lin = ['A','B','C','D','E','F'];
+  col = ['1','2','3','4','5','6','7'];
   lin.length = 2 + opt;
   col.length = 3 + opt;
   pes = [];
