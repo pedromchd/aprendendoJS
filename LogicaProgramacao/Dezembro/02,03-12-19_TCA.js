@@ -92,7 +92,7 @@ function verifyPieces(tab,pos1,pos2,opt) {
 }
 function mainMenu() {
   do {
-    var men = prompt('Bem vindo ao Jogo da Memória!!\n' + ('-').repeat(20) + '\nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
+    var men = prompt('Bem vindo ao Jogo da Memória!! \n\nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
     if (men == 'R') {
       alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória!');
     }
