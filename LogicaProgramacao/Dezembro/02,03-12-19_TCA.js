@@ -141,6 +141,9 @@ do {
   }
   alert('Use de coordenandas para selecionar a figura a revelar!')
   do {
+    do {
+      M = parseInt(prompt('Selecione o modo de jogo \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC \n*Nas opções 2 e 3, haverá um único modo de dificuldade de 21 pares.'));
+    } while ([1,2,3].indexOf(M) == -1)
     mainGame();
   } while (G == 'S');
 } while (G == 'N');
