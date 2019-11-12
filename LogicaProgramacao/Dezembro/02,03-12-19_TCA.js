@@ -109,9 +109,9 @@ function mainGame() {
   do {
     O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares)'));
   } while ([1,2,3].indexOf(O) == -1);
-    H = buildTab(O);
-    T = buildTab(O);
-    fillTab(H,C);
+  H = buildTab(O);
+  T = buildTab(O);
+  fillTab(H,C);
   do {
     P1 = pickPiece(T,O);
     P1 = revealTab(T,H,P1);
