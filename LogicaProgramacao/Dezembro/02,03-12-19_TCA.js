@@ -43,25 +43,46 @@ function showTab(tab,opt) {
   }
   return col + '\n' + aux.join('\n');
 }
-function revealTab(tab,hid,pos) {
+function showPiece(tab,hid,pos) {
   var Y = pos[0];
   var X = pos[1];
   tab[Y][X] = hid[Y][X];
   return tab[Y][X];
 }
-function pickPiece(tab,opt) {
-  var pos, lin, col, pes;
-  lin = ['A','B','C','D','E','F'];
-  col = ['1','2','3','4','5','6','7'];
+function probPiece(lin,col,opt) {
+  pes = [];
   lin.length = 2 + opt;
   col.length = 3 + opt;
-  pes = [];
   for (var I = 0; I < lin.length; I++) {
     for (var J = 0; J < col.length; J++) {
       pes.push(lin[I] + col[J]);
       pes.push(col[J] + lin[I]);
     }
   }
+  return pes;
+}
+//*
+function botPickPi(tab,opt) {
+  var pos, lin, col, pes;
+  lin = ['A','B','C','D','E','F'];
+  col = ['1','2','3','4','5','6','7'];
+  pes = probPiece(lin,col,opt);
+  do {
+    pos = pes[Math.floor(Math.random() * pes.length)];
+    if (!isNaN(parseInt(pos)) == true) {
+      pos = pos[1] + parseInt(pos);
+    }
+    var Y = lin.indexOf(pos[0]);
+    var X = col.indexOf(pos[1]);
+  } while (tab[Y][X] != '❏');
+  return [Y,X];
+}
+//*/
+function pickPiece(tab,opt) {
+  var pos, lin, col, pes;
+  lin = ['A','B','C','D','E','F'];
+  col = ['1','2','3','4','5','6','7'];
+  pes = probPiece(lin,col,opt);
   do {
     do {
       pos = prompt(showTab(tab,opt) + '\nEscolha uma posição:').trim().toUpperCase();
@@ -103,21 +124,57 @@ function mainMenu() {
   if (men == '') return true;
   else return false;
 }
+function miniMenu() {
+  switch(M) {
+    case 2:
+      do {
+        N1 = prompt('Digite o nome do PLAYER 1 (máximo 10 letras)').trim().toUpperCase().split('');
+        N1.length = 10;
+        N1 = N1.join('');
+      } while (N1 == '');
+      do {
+        N2 = prompt('Digite o nome do PLAYER 2 (máximo 10 letras)').trim().toUpperCase().split('');
+        N2.length = 10;
+        N2 = N2.join('');
+      } while (N2 == '');
+    case 3:
+      S1 = 0;
+      S2 = 0;
+      O = 4;
+    break;
+    default:
+      do {
+        O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares)'));
+      } while ([1,2,3].indexOf(O) == -1);
+  }
+  if (N1 == undefined && N2 == undefined) {
+    N1 = ''; N2 = '';
+  }
+  return [O,N1,N2,S1,S2];
+}
 function mainGame() {
-  var C, O, H, T, P1, P2;
+  var A, C, O, H, T, P1, P2, N1, N2, S1, S2;
   C = ['✞','✰','◆','△','☂','★','☃','☢','☭','♘','♟','❖','❤','✄','☎','☠','✈','❡','☀','☁','✪','◎','✔','☯','Ω','♛','✿','✎','▼','♔'];
-  do {
-    O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares)'));
-  } while ([1,2,3].indexOf(O) == -1);
+  A = miniMenu();
+  O = A[0]; N1 = A[1]; N2 = A[2]; S1 = A[3]; S2 = A[4];
+  //console.log(N1,N2,S1,S2);
   H = buildTab(O);
   T = buildTab(O);
   fillTab(H,C);
   do {
     P1 = pickPiece(T,O);
-    P1 = revealTab(T,H,P1);
+    P1 = showPiece(T,H,P1);
     P2 = pickPiece(T,O);
-    P2 = revealTab(T,H,P2);
+    P2 = showPiece(T,H,P2);
     verifyPieces(T,P1,P2,O);
+    /*BOT
+    alert(showTab(T,O) + '\nVez do PC.');
+    P1 = botPickPi(T,O);
+    P1 = showPiece(T,H,P1);
+    P2 = botPickPi(T,O);
+    P2 = showPiece(T,H,P2);
+    verifyPieces(T,P1,P2,O);
+    //*/
   } while (verifyWin(T) == false);
   alert(showTab(T,O) + '\nParabéns, você venceu o jogo!!');
   do {
@@ -143,7 +200,7 @@ do {
   do {
     do {
       M = parseInt(prompt('Selecione o modo de jogo \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC \n*Nas opções 2 e 3, haverá um único modo de dificuldade de 21 pares.'));
-    } while ([1,2,3].indexOf(M) == -1)
+    } while ([1,2,3].indexOf(M) == -1);
     mainGame();
   } while (G == 'S');
 } while (G == 'N');
