@@ -128,7 +128,7 @@ function mainMenu() {
   do {
     var men = prompt('JOGO DA MEMÓRIA!! \nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
     if (men == 'R') {
-      alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória!');
+      alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória! \nUse de coordenandas para selecionar a figura a revelar!'');
     }
     if (men == 'C') {
       alert('JOGO DA MEMÓRIA: \nDesenvolvido por Pedro Garcia Machado \nVersão Dezembro de 2019');
@@ -224,7 +224,6 @@ do {
     alert('Jogo da Memória 2019 \nDesevolvido por Pedro Machado \nObrigador por jogar!! ❤❤');
     break;
   }
-  alert('Use de coordenandas para selecionar a figura a revelar!');
   do {
     M = parseInt(prompt('Selecione o modo de jogo \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC \n*Nas opções 2 e 3, haverá um único modo de dificuldade com 21 pares.'));
   } while ([1,2,3].indexOf(M) == -1);
