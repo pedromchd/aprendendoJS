@@ -126,7 +126,7 @@ function turnPlayer(nom1,nom2,sco1,sco2,vez) {
 }
 function mainMenu() {
   do {
-    var men = prompt('Bem vindo ao Jogo da Memória!! \n\nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
+    var men = prompt('JOGO DA MEMÓRIA!! \nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
     if (men == 'R') {
       alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória!');
     }
@@ -226,7 +226,7 @@ do {
   }
   alert('Use de coordenandas para selecionar a figura a revelar!');
   do {
-    M = parseInt(prompt('Selecione o modo de jogo \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC \n*Nas opções 2 e 3, haverá um único modo de dificuldade de 21 pares.'));
+    M = parseInt(prompt('Selecione o modo de jogo \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC \n*Nas opções 2 e 3, haverá um único modo de dificuldade com 21 pares.'));
   } while ([1,2,3].indexOf(M) == -1);
   do {
     mainGame();
