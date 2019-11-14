@@ -128,7 +128,7 @@ function mainMenu() {
   do {
     var men = prompt('JOGO DA MEMÓRIA!! \nENTER - Jogar \nR - Regras \nC - Créditos \nS - Sair').trim().toUpperCase();
     if (men == 'R') {
-      alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória! \nUse de coordenandas para selecionar a figura a revelar!'');
+      alert('No Jogo da memória, você deve encontrar pares de figuras escondidos em um tabuleiro de 3 dificuldades, forme todos e vença o jogo, utilizando de sua concentração e memória! \nUse de coordenandas para selecionar a figura a revelar!');
     }
     if (men == 'C') {
       alert('JOGO DA MEMÓRIA: \nDesenvolvido por Pedro Garcia Machado \nVersão Dezembro de 2019');
