@@ -207,7 +207,7 @@ function verifyWin() {
 }
 function mainGame() {
   var pes;
-  V = 0;
+  V = Math.round(Math.random());
   C = ['✞','✰','◆','△','☂','★','☃','☢','☭','♘','♟','❖','❤','✄','☎','☠','✈','❡','☀','☁','✪','◎','✔','☯','Ω','♛','✿','✎','▼','♔'];
   miniMenu();
   H = buildTab(O);
