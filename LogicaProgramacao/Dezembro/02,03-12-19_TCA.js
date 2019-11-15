@@ -192,13 +192,13 @@ function verifyWin() {
       N2 = 'PC';
     case 2:
       if (S1 > S2) {
-        alert(showTab(T,O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2);
+        alert(showTab(T,O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2 + '!');
       }
       if (S1 < S2) {
-        alert(showTab(T,O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1);
+        alert(showTab(T,O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1 + '!');
       }
       if (S1 == S2) {
-        alert(showTab(T,O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados.');
+        alert(showTab(T,O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados!');
       }
       break;
     default:
