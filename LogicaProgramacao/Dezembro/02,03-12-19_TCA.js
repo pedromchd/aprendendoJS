@@ -126,8 +126,8 @@ function pickPiece(tab) {
         pos = prompt(showTab(tab,O) + turnPlayer() + 'Escolha uma posição:').trim().toUpperCase();
       } while (pes.indexOf(pos) == -1);
     }
-    if (!isNaN(parseInt(pos)) == true) {
-      pos = pos[1] + parseInt(pos);
+    if (!isNaN(parseInt(pos))) {
+      pos = pos.split('').reverse().join('');
     }
     var Y = lin.indexOf(pos[0]);
     var X = col.indexOf(pos[1]);
