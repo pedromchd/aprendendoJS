@@ -178,6 +178,7 @@ function verifyPieces(tab,pos1,pos2) {
     }
   } else {
     (V%2 == 0) ? S1++ : S2++;
+    V--;
   }
 }
 function verifyFull(tab) {
