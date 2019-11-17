@@ -141,14 +141,10 @@ function showPiece(tab,hid,aux) {
   return tab[Y][X];
 }
 function botProb() {
-  var len, arr, srt, pos;
-  len = Math.ceil(Math.random() * 10);
-  for (var I = 0, arr = []; I < len; I++) {
-    srt = Math.round(Math.random());
-    arr.push(srt);
-  }
-  pos = Math.floor(Math.random() * len);
-  return M == 3 && V%2 != 0 && Boolean(arr[pos]);
+  var arr, boo;
+  arr = [0,0,0,1,0];
+  boo = Math.floor(Math.random() * 5);
+  return M == 3 && V%2 != 0 && Boolean(arr[boo]);
 }
 function botPick() {
   var aux;
