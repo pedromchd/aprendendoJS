@@ -173,13 +173,11 @@ function verifyPieces(tab,pos1,pos2) {
       tab[I] = tab[I].join().replace(pos2,'❏').split(',');
     }
   } else {
-    //*
     alert(showTab(tab,O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join().replace(pos1,'0').split(',');
-      tab[I] = tab[I].join().replace(pos2,'0').split(',');
+      tab[I] = tab[I].join().replace(pos1,'...').split(',');
+      tab[I] = tab[I].join().replace(pos2,'...').split(',');
     }
-    //*/
     (V%2 == 0) ? S1++ : S2++;
     V--;
   }
