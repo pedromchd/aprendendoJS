@@ -148,8 +148,8 @@ function botProb() {
 }
 function botPick() {
   var aux;
-  T = T.join('.');
-  H = H.join('.');
+  T = T.join(';');
+  H = H.join(';');
   aux = H.indexOf(P1);
   if (T[aux] != '❏') {
     aux = H.lastIndexOf(P1);
@@ -157,8 +157,8 @@ function botPick() {
   T = T.split('');
   T[aux] = P1;
   T = T.join('');
-  T = T.split('.');
-  H = H.split('.');
+  T = T.split(';');
+  H = H.split(';');
   for (var I = 0; I < T.length; I++) {
     T[I] = T[I].split(',');
     H[I] = H[I].split(','); 
@@ -169,14 +169,14 @@ function verifyPieces(tab,pos1,pos2) {
   if (pos1 != pos2) {
     alert(showTab(tab,O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join().replace(pos1,'❏').split(',');
-      tab[I] = tab[I].join().replace(pos2,'❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos1,'❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos2,'❏').split(',');
     }
   } else {
     alert(showTab(tab,O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join().replace(pos1,'...').split(',');
-      tab[I] = tab[I].join().replace(pos2,'...').split(',');
+      tab[I] = tab[I].join(',').replace(pos1,'...').split(',');
+      tab[I] = tab[I].join(',').replace(pos2,'...').split(',');
     }
     (V%2 == 0) ? S1++ : S2++;
     V--;
