@@ -142,7 +142,7 @@ function showPiece(tab,hid,aux) {
 }
 function botProb() {
   var arr, boo;
-  arr = [0,0,0,1,0];
+  arr = [0,0,0,1];
   boo = Math.floor(Math.random() * 5);
   return M == 3 && V%2 != 0 && Boolean(arr[boo]);
 }
