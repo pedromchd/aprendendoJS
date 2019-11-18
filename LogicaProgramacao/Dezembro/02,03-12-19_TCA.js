@@ -183,7 +183,7 @@ function verifyPieces(tab,pos1,pos2) {
   }
 }
 function verifyFull(tab) {
-  if (tab.join().indexOf('❏') != -1) {
+  if (tab.join(',').indexOf('❏') != -1) {
     return true;
   }
 }
