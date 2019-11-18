@@ -190,6 +190,7 @@ function verifyFull(tab) {
 function verifyWin() {
   switch(M) {
     case 3:
+      N1 = 'Você';
       N2 = 'PC';
     case 2:
       if (S1 > S2) {
