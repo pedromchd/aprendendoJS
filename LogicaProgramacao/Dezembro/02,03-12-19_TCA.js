@@ -142,14 +142,14 @@ function showPiece(tab,hid,aux) {
 }
 function botProb() {
   var arr, boo;
-  arr = [0,1,0,1,0];
+  arr = [0,0,0,1];
   boo = Math.floor(Math.random() * 5);
   return M == 3 && V%2 != 0 && Boolean(arr[boo]);
 }
 function botPick() {
   var aux;
-  T = T.join('.');
-  H = H.join('.');
+  T = T.join(';');
+  H = H.join(';');
   aux = H.indexOf(P1);
   if (T[aux] != '❏') {
     aux = H.lastIndexOf(P1);
@@ -157,8 +157,8 @@ function botPick() {
   T = T.split('');
   T[aux] = P1;
   T = T.join('');
-  T = T.split('.');
-  H = H.split('.');
+  T = T.split(';');
+  H = H.split(';');
   for (var I = 0; I < T.length; I++) {
     T[I] = T[I].split(',');
     H[I] = H[I].split(','); 
@@ -169,36 +169,42 @@ function verifyPieces(tab,pos1,pos2) {
   if (pos1 != pos2) {
     alert(showTab(tab,O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join().replace(pos1,'❏').split(',');
-      tab[I] = tab[I].join().replace(pos2,'❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos1,'❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos2,'❏').split(',');
     }
   } else {
+    alert(showTab(tab,O));
+    for (var I = 0; I < tab.length; I++) {
+      tab[I] = tab[I].join(',').replace(pos1,'...').split(',');
+      tab[I] = tab[I].join(',').replace(pos2,'...').split(',');
+    }
     (V%2 == 0) ? S1++ : S2++;
     V--;
   }
 }
 function verifyFull(tab) {
-  if (tab.join().indexOf('❏') != -1) {
+  if (tab.join(',').indexOf('❏') != -1) {
     return true;
   }
 }
 function verifyWin() {
   switch(M) {
     case 3:
+      N1 = 'Você';
       N2 = 'PC';
     case 2:
       if (S1 > S2) {
-        alert(showTab(T,O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2 + '!');
+        alert(showTab(H,O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2 + '!');
       }
       if (S1 < S2) {
-        alert(showTab(T,O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1 + '!');
+        alert(showTab(H,O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1 + '!');
       }
       if (S1 == S2) {
-        alert(showTab(T,O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados!');
+        alert(showTab(H,O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados!');
       }
       break;
     default:
-      alert(showTab(T,O) + '\nParabéns, você venceu o jogo!!');
+      alert(showTab(H,O) + '\nParabéns, você venceu o jogo!!');
   }
 }
 function mainGame() {
