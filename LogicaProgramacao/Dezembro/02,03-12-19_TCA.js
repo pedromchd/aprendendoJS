@@ -146,16 +146,16 @@ function botProb() {
   boo = Math.floor(Math.random() * 5);
   return M == 3 && V%2 != 0 && Boolean(arr[boo]);
 }
-function botPick() {
+function botPick(pos1) {
   var aux;
   T = T.join(';');
   H = H.join(';');
-  aux = H.indexOf(P1);
+  aux = H.indexOf(pos1);
   if (T[aux] != '❏') {
-    aux = H.lastIndexOf(P1);
+    aux = H.lastIndexOf(pos1);
   }
   T = T.split('');
-  T[aux] = P1;
+  T[aux] = pos1;
   T = T.join('');
   T = T.split(';');
   H = H.split(';');
@@ -163,7 +163,7 @@ function botPick() {
     T[I] = T[I].split(',');
     H[I] = H[I].split(','); 
   }
-  P2 = P1;
+  P2 = pos1;
 }
 function verifyPieces(tab,pos1,pos2) {
   if (pos1 != pos2) {
@@ -224,7 +224,7 @@ function mainGame() {
     pickPiece(T);
     P1 = showPiece(T,H,A);
     if (botProb()) {
-      botPick();
+      botPick(P1);
     } else {
       pickPiece(T);
       P2 = showPiece(T,H,A);
