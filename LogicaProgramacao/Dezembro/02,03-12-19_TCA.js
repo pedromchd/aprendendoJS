@@ -83,7 +83,7 @@ function showTab(tab,opt) {
   col.length = 3 + opt;
   col = '  ' + col.join('   ');
   for (var I = 0; I < tab.length; I++) {
-    aux[I] = lin[I] + ' ' + tab[I].join(' ').replace(/0/g,'...');
+    aux[I] = lin[I] + ' ' + tab[I].join(' ').replace(/0/g,'    ');
   }
   return col + '\n' + aux.join('\n');
 }
