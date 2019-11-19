@@ -49,10 +49,12 @@ function miniMenu() {
   }
 }
 function buildTab(opt) {
-  var tab = [['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏'],['❏','❏','❏','❏','❏','❏','❏']];
-  tab.length = 2 + opt;
-  for (var I = 0; I < tab.length; I++) {
-    tab[I].length = 3 + opt;
+  var tab = [];
+  for (var I = 0; I < opt + 2; I++) {
+    tab.push([]);
+    for (var J = 0; J < opt + 3; J++) {
+      tab[I].push('❏');
+    }
   }
   return tab;
 }
