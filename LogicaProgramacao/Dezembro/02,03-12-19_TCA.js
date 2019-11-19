@@ -73,6 +73,16 @@ function fillTab(tab,chr) {
     }
   }
 }
+function hidePiece(tab,I) {
+  var aux = [];
+  for (var J = 0; J < tab[I].length; J++) {
+    aux.push(tab[I][J]);
+    if (tab[I][J] == '0') {
+      aux.splice(J,1,'...');
+    }
+  }
+  return aux.join(' ');
+}
 function showTab(tab,opt) {
   var aux = [];
   lin = ['A','B','C','D','E','F'];
@@ -81,7 +91,7 @@ function showTab(tab,opt) {
   col.length = 3 + opt;
   col = '  ' + col.join('   ');
   for (var I = 0; I < tab.length; I++) {
-    aux[I] = lin[I] + ' ' + tab[I].join(' ');
+    aux[I] = lin[I] + ' ' + hidePiece(tab,I);
   }
   return col + '\n' + aux.join('\n');
 }
@@ -173,13 +183,11 @@ function verifyPieces(tab,pos1,pos2) {
       tab[I] = tab[I].join(',').replace(pos2,'❏').split(',');
     }
   } else {
-    /*
     alert(showTab(tab,O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join(',').replace(pos1,'...').split(',');
-      tab[I] = tab[I].join(',').replace(pos2,'...').split(',');
+      tab[I] = tab[I].join(',').replace(pos1,'0').split(',');
+      tab[I] = tab[I].join(',').replace(pos2,'0').split(',');
     }
-    //*/
     (V%2 == 0) ? S1++ : S2++;
     V--;
   }
