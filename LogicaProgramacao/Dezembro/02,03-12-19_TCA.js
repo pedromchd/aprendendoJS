@@ -69,7 +69,7 @@ function fillTab(tab,chr) {
         lin = Math.floor(Math.random() * tab.length);
         col = Math.floor(Math.random() * tab[0].length);
       } while (tab[lin][col] != '❏');
-      tab[lin][col] = aux;
+      tab[lin].splice(col,1,aux);
     }
   }
 }
@@ -137,7 +137,7 @@ function pickPiece(tab) {
 function showPiece(tab,hid,aux) {
   var Y = aux[0];
   var X = aux[1];
-  tab[Y][X] = hid[Y][X];
+  tab[Y].splice(X,1,hid[Y][X]);
   return tab[Y][X];
 }
 function botProb() {
@@ -155,7 +155,7 @@ function botPick(pos1) {
     aux = H.lastIndexOf(pos1);
   }
   T = T.split('');
-  T[aux] = pos1;
+  T.splice(aux,1,pos1);
   T = T.join('');
   T = T.split(';');
   H = H.split(';');
