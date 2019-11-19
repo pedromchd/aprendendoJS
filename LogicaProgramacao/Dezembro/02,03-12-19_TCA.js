@@ -73,16 +73,6 @@ function fillTab(tab,chr) {
     }
   }
 }
-function hidePiece(tab,I) {
-  var aux = [];
-  for (var J = 0; J < tab[I].length; J++) {
-    aux.push(tab[I][J]);
-    if (tab[I][J] == '0') {
-      aux.splice(J,1,'...');
-    }
-  }
-  return aux.join(' ');
-}
 function showTab(tab,opt) {
   var aux = [];
   lin = ['A','B','C','D','E','F'];
@@ -91,7 +81,7 @@ function showTab(tab,opt) {
   col.length = 3 + opt;
   col = '  ' + col.join('   ');
   for (var I = 0; I < tab.length; I++) {
-    aux[I] = lin[I] + ' ' + hidePiece(tab,I);
+    aux[I] = lin[I] + ' ' + tab[I].join(' ').replace(/0/g,'...');
   }
   return col + '\n' + aux.join('\n');
 }
