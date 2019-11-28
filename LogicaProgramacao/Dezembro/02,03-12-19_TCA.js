@@ -23,17 +23,17 @@ function mainMenu() {
   }
 }
 function miniMenu() {
-  switch(M) {
+  switch (M) {
     case 2:
       do {
         N1 = prompt('Digite o nome do PLAYER 1 (máximo 10 letras)').trim().toLowerCase().split('');
         N1.length = 10;
-        N1 = N1.join('').replace(N1[0],N1[0].toUpperCase());
+        N1 = N1.join('').replace(N1[0], N1[0].toUpperCase());
       } while (N1 == '');
       do {
         N2 = prompt('Digite o nome do PLAYER 2 (máximo 10 letras)').trim().toLowerCase().split('');
         N2.length = 10;
-        N2 = N2.join('').replace(N2[0],N2[0].toUpperCase());
+        N2 = N2.join('').replace(N2[0], N2[0].toUpperCase());
       } while (N2 == '');
     case 3:
       S1 = 0;
@@ -41,7 +41,7 @@ function miniMenu() {
     default:
       do {
         O = parseInt(prompt('Selecione a dificuldade: \n1 - FÁCIL (6 pares) \n2 - MÉDIO (10 pares) \n3 - DIFÍCIL (15 pares) \n4 - EXPERT (21 pares)'));
-      } while ([1,2,3,4].indexOf(O) == -1);
+      } while ([1, 2, 3, 4].indexOf(O) == -1);
   }
   if (M != 2) {
     N1 = '';
@@ -58,7 +58,7 @@ function buildTab(opt) {
   }
   return tab;
 }
-function fillTab(tab,chr) {
+function fillTab(tab, chr) {
   var lin, col, aux, his;
   his = [];
   while (tab.join().indexOf('❏') != -1) {
@@ -71,39 +71,39 @@ function fillTab(tab,chr) {
         lin = Math.floor(Math.random() * tab.length);
         col = Math.floor(Math.random() * tab[0].length);
       } while (tab[lin][col] != '❏');
-      tab[lin].splice(col,1,aux);
+      tab[lin].splice(col, 1, aux);
     }
   }
 }
-function showTab(tab,opt) {
+function showTab(tab, opt) {
   var aux = [];
-  lin = ['A','B','C','D','E','F'];
-  col = ['1','2','3','4','5','6','7'];
+  lin = ['A', 'B', 'C', 'D', 'E', 'F'];
+  col = ['1', '2', '3', '4', '5', '6', '7'];
   lin.length = 2 + opt;
   col.length = 3 + opt;
   col = '  ' + col.join('   ');
   for (var I = 0; I < tab.length; I++) {
-    aux[I] = lin[I] + ' ' + tab[I].join(' ').replace(/0/g,'    ');
+    aux[I] = lin[I] + ' ' + tab[I].join(' ').replace(/0/g, '    ');
   }
   return col + '\n' + aux.join('\n');
 }
 function turnPlayer() {
-  switch(M) {
-  case 2:
-    if (V%2 == 0) {
-      return '\nSua vez, ' + N1 + '. Pares combinados: ' + S1 + '\n';
-    } else {
-      return '\nSua vez, ' + N2 + '. Pares combinados: ' + S2 + '\n';
-    }
-    break;
-  case 3:
-    return '\nPares combinados: ' + S1 + '\n';
-    break;
-  default:
-    return '\n';
+  switch (M) {
+    case 2:
+      if (V % 2 == 0) {
+        return '\nSua vez, ' + N1 + '. Pares combinados: ' + S1 + '\n';
+      } else {
+        return '\nSua vez, ' + N2 + '. Pares combinados: ' + S2 + '\n';
+      }
+      break;
+    case 3:
+      return '\nPares combinados: ' + S1 + '\n';
+      break;
+    default:
+      return '\n';
   }
 }
-function probPiece(lin,col,opt) {
+function probPiece(lin, col, opt) {
   var aux = [];
   lin.length = 2 + opt;
   col.length = 3 + opt;
@@ -117,15 +117,15 @@ function probPiece(lin,col,opt) {
 }
 function pickPiece(tab) {
   var lin, col, pos;
-  lin = ['A','B','C','D','E','F'];
-  col = ['1','2','3','4','5','6','7'];
-  probPiece(lin,col,O);
+  lin = ['A', 'B', 'C', 'D', 'E', 'F'];
+  col = ['1', '2', '3', '4', '5', '6', '7'];
+  probPiece(lin, col, O);
   do {
-    if (M == 3 && V%2 != 0) {
+    if (M == 3 && V % 2 != 0) {
       pos = pes[Math.floor(Math.random() * pes.length)];
     } else {
       do {
-        pos = prompt(showTab(tab,O) + turnPlayer() + 'Escolha uma posição:').trim().toUpperCase();
+        pos = prompt(showTab(tab, O) + turnPlayer() + 'Escolha uma posição:').trim().toUpperCase();
       } while (pes.indexOf(pos) == -1);
     }
     if (!isNaN(parseInt(pos))) {
@@ -134,19 +134,19 @@ function pickPiece(tab) {
     var Y = lin.indexOf(pos[0]);
     var X = col.indexOf(pos[1]);
   } while (tab[Y][X] != '❏');
-  return A = [Y,X];
+  return A = [Y, X];
 }
-function showPiece(tab,hid,aux) {
+function showPiece(tab, hid, aux) {
   var Y = aux[0];
   var X = aux[1];
-  tab[Y].splice(X,1,hid[Y][X]);
+  tab[Y].splice(X, 1, hid[Y][X]);
   return tab[Y][X];
 }
 function botProb() {
   var arr, boo;
-  arr = [0,0,0,1];
+  arr = [0, 0, 0, 1];
   boo = Math.floor(Math.random() * 5);
-  return M == 3 && V%2 != 0 && Boolean(arr[boo]);
+  return M == 3 && V % 2 != 0 && Boolean(arr[boo]);
 }
 function botPick(pos1) {
   var aux;
@@ -157,30 +157,30 @@ function botPick(pos1) {
     aux = H.lastIndexOf(pos1);
   }
   T = T.split('');
-  T.splice(aux,1,pos1);
+  T.splice(aux, 1, pos1);
   T = T.join('');
   T = T.split(';');
   H = H.split(';');
   for (var I = 0; I < T.length; I++) {
     T[I] = T[I].split(',');
-    H[I] = H[I].split(','); 
+    H[I] = H[I].split(',');
   }
   P2 = pos1;
 }
-function verifyPieces(tab,pos1,pos2) {
+function verifyPieces(tab, pos1, pos2) {
   if (pos1 != pos2) {
-    alert(showTab(tab,O));
+    alert(showTab(tab, O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join(',').replace(pos1,'❏').split(',');
-      tab[I] = tab[I].join(',').replace(pos2,'❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos1, '❏').split(',');
+      tab[I] = tab[I].join(',').replace(pos2, '❏').split(',');
     }
   } else {
-    alert(showTab(tab,O));
+    alert(showTab(tab, O));
     for (var I = 0; I < tab.length; I++) {
-      tab[I] = tab[I].join(',').replace(pos1,'0').split(',');
-      tab[I] = tab[I].join(',').replace(pos2,'0').split(',');
+      tab[I] = tab[I].join(',').replace(pos1, '0').split(',');
+      tab[I] = tab[I].join(',').replace(pos2, '0').split(',');
     }
-    (V%2 == 0) ? S1++ : S2++;
+    (V % 2 == 0) ? S1++ : S2++;
     V--;
   }
 }
@@ -190,46 +190,46 @@ function verifyFull(tab) {
   }
 }
 function verifyWin() {
-  switch(M) {
+  switch (M) {
     case 3:
       N1 = 'Você';
       N2 = 'PC';
     case 2:
       if (S1 > S2) {
-        alert(showTab(H,O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2 + '!');
+        alert(showTab(H, O) + '\n' + N1 + ' venceu o jogo com ' + S1 + ' pares combinados contra ' + S2 + ' de ' + N2 + '!');
       }
       if (S1 < S2) {
-        alert(showTab(H,O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1 + '!');
+        alert(showTab(H, O) + '\n' + N2 + ' venceu o jogo com ' + S2 + ' pares combinados contra ' + S1 + ' de ' + N1 + '!');
       }
       if (S1 == S2) {
-        alert(showTab(H,O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados!');
+        alert(showTab(H, O) + '\n' + N1 + ' e ' + N2 + ' empataram com ' + S1 + ' pares combinados!');
       }
       break;
     default:
-      alert(showTab(H,O) + '\nParabéns, você venceu o jogo!!');
+      alert(showTab(H, O) + '\nParabéns, você venceu o jogo!!');
   }
 }
 function mainGame() {
   var pes;
   V = Math.round(Math.random());
-  C = ['✞','✰','◆','△','☂','★','☃','☢','☭','♘','♟','❖','❤','✄','☎','☠','✈','❡','☀','☁','✪','◎','✔','☯','Ω','♛','✿','✎','▼','♔'];
+  C = ['✞', '✰', '◆', '△', '☂', '★', '☃', '☢', '☭', '♘', '♟', '❖', '❤', '✄', '☎', '☠', '✈', '❡', '☀', '☁', '✪', '◎', '✔', '☯', 'Ω', '♛', '✿', '✎', '▼', '♔'];
   miniMenu();
   H = buildTab(O);
   T = buildTab(O);
-  fillTab(H,C);
+  fillTab(H, C);
   do {
-    if (M == 3 && V%2 != 0) {
-      alert(showTab(T,O) + '\nVez do PC. Pares combinados: ' + S2);
+    if (M == 3 && V % 2 != 0) {
+      alert(showTab(T, O) + '\nVez do PC. Pares combinados: ' + S2);
     }
     pickPiece(T);
-    P1 = showPiece(T,H,A);
+    P1 = showPiece(T, H, A);
     if (botProb()) {
       botPick(P1);
     } else {
       pickPiece(T);
-      P2 = showPiece(T,H,A);
+      P2 = showPiece(T, H, A);
     }
-    verifyPieces(T,P1,P2);
+    verifyPieces(T, P1, P2);
     V++;
   } while (verifyFull(T));
   verifyWin();
@@ -256,7 +256,7 @@ do {
   }
   do {
     M = parseInt(prompt('Selecione o modo de jogo: \n1 - Singleplayer \n2 - Multiplayer \n3 - Versus PC'));
-  } while ([1,2,3].indexOf(M) == -1);
+  } while ([1, 2, 3].indexOf(M) == -1);
   do {
     var V, C, O, H, T, A, N1, N2, S1, S2, P1, P2;
     mainGame();
