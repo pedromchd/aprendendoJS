@@ -63,7 +63,7 @@ function fillTab(tab, chr) {
   his = [];
   while (tab.join().indexOf('❏') != -1) {
     do {
-      aux = chr[Math.floor(Math.random() * 30)];
+      aux = chr[Math.floor(Math.random() * chr.length)];
     } while (his.indexOf(aux) != -1);
     his.push(aux);
     for (J = 0; J < 2; J++) {
@@ -212,7 +212,7 @@ function verifyWin() {
 function mainGame() {
   var pes;
   V = Math.round(Math.random());
-  C = ['✞', '✰', '◆', '△', '☂', '★', '☃', '☢', '☭', '♘', '♟', '❖', '❤', '✄', '☎', '☠', '✈', '❡', '☀', '☁', '✪', '◎', '✔', '☯', 'Ω', '♛', '✿', '✎', '▼', '♔'];
+  C = ['✞', '✰', '◆', '△', '☂', '★', '☃', '☢', '◉', '♘', '♟', '❖', '❤', '✄', '☎', '☠', '✈', '❡', '☀', '☁', '✪', '◎', '✔', '☯', 'Ω', '♛', '✿', '✎', '▼', '♔'];
   miniMenu();
   H = buildTab(O);
   T = buildTab(O);
