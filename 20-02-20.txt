@@ -27,4 +27,4 @@ Deve-se:
 3 - Voltar com 1C para A, e levar 2J para B;
 4 - Voltar com 1C e 1J para A, levar 2J para B;
 5 - Voltar com 1C para A e levar 2C para B;
-6 - Voltar com 1J para A, e levar 1J e 1C para B; 
+6 - Voltar com 1J para A, e levar 1J e 1C para B.
