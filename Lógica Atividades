@@ -19,3 +19,12 @@ Deve-se, portanto;
 3 - Levar 1 para A e 2 para C;
 4 - Levar 1 para C;
 
+3) Para levar os 3 canibais e os 3 jesuítas de A para B:
+- sem que a quantidade de jesuítas seja menor que a de canibais em uma margem.
+Deve-se:
+1 - Levar 1C e 1J para B, e deixar 1C lá;
+2 - Voltar com 1J para A, e levar 2C para B;
+3 - Voltar com 1C para A, e levar 2J para B;
+4 - Voltar com 1C e 1J para A, levar 2J para B;
+5 - Voltar com 1C para A e levar 2C para B;
+6 - Voltar com 1J para A, e levar 1J e 1C para B; 
