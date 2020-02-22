@@ -1,3 +1,5 @@
+ECERCÍCOS DE LÓGICA
+
 1) Para o homem transportar o cachorro, a galinha e o milho da margem A até B sem deixar: 
 - o cachorro e a galinha sozinhos; 
 - o milho e a galinha sozinhos.
