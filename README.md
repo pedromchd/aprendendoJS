@@ -1,1 +1,1 @@
-# aprendendoJS // learning2Code
+# aprendendoJS
