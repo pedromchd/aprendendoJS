@@ -1,0 +1,23 @@
+{
+  "name": "dbo-workspace-template-padawan-level",
+  "version": "1.0.0",
+  "description": "Workspace com o ambiente node necessário para o Desenvolvimento Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "live-server --ignore='**/node_modules/*'"
+  },
+  "keywords": [],
+  "author": "Prof. Márcio Torres",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dbo-2020/template-newbie.git"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-google": "^0.12.0",
+    "jest": "^24.9.0",
+    "live-server": "^1.2.0"
+  }
+}
