@@ -53,7 +53,7 @@ alert("abc".charCodeAt(0)); //97
 alert("ABC".charCodeAt(0)); //65
 "1".charCodeAt(0); //49
 
-alert(String.fromCharCode(97)): //"a"
+alert(String.fromCharCode(97)); //"a"
 alert(String.fromCharCode(72, 69, 76, 76, 79)); //"HELLO"
 
 var y = String.fromCharCode("abc".charCodeAt(0) - 32) + String.fromCharCode("abc".charCodeAt(1) - 32) + String.fromCharCode("abc".charCodeAt(2) - 32); //"ABC"

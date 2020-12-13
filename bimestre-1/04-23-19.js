@@ -14,7 +14,8 @@ R == 10 //true
 
 "3" != 3 //false //valor
 "3" !== 3 //true //valor_tipo
-//**********************
+
+/**********************
 
 //TABELA_VERDADE
 A B A&&B
@@ -32,7 +33,8 @@ F F   F
 A !A
 V  F
 F  V
-//*************
+
+*********************/
 
 
 //Calcule o raio da circunferência em caso positivo
